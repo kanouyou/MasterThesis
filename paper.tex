@@ -1,0 +1,62 @@
+\documentclass[a4paper, 11pt, twoside]{book}
+
+% including package
+\usepackage{times}
+\usepackage{makeidx}
+\usepackage{fancyhdr}
+\usepackage{amsmath, amsthm, mathtools}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage[top=25truemm,bottom=25truemm,left=22.5truemm,right=22.5truemm]{geometry}
+\usepackage[nottoc, notlot, notlof]{tocbibind}
+\usepackage{CJKutf8}
+\usepackage[titletoc]{appendix}
+\usepackage{float}
+\usepackage{subcaption}
+\usepackage[dvipdfmx, colorlinks=true, 
+			linkcolor=blue, citecolor=red,
+			bookmarks=true, bookmarkstype=toc]{hyperref}
+\usepackage{url}
+\usepackage[font=small]{caption}
+\usepackage{setspace}
+\setstretch{1.28}
+%\setlength{\textheight}{41\baselineskip}
+%\addtolength{\textheight}{\topskip}
+
+\pagestyle{fancy}
+%\fancyhf{}
+%\fancyhead[EL]{\slshape \nouppercase \leftmark}
+%\fancyhead[OR]{\slshape \nouppercase \rightmark}
+%\fancyhead[ER,OL]{\thepage}
+\fancyhead{}
+\fancyhead[RO, RE]{\slshape \nouppercase \rightmark}
+\fancyhead[LE, LO]{\slshape \nouppercase \leftmark}
+\cfoot{\thepage}
+
+\renewcommand{\bibname}{References}
+
+\begin{document}
+
+ \frontmatter
+  \input{others/index}
+
+ \mainmatter
+  \input{chapter1/chapter1}
+  \input{chapter2/chapter2}
+  \input{chapter3/chapter3}
+  \input{chapter4/chapter4}
+  \input{chapter5/chapter5}
+  \input{chapter6/chapter6}
+
+\backmatter
+  % acknowledgment
+  \input{others/acknowledgement}
+  % reference
+  \bibliographystyle{unsrt}
+  \bibliography{others/reference}
+ 
+ \appendix
+  \input{others/appendix1}
+
+ \printindex
+
+\end{document}
