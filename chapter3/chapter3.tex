@@ -62,7 +62,7 @@ One script has been written to convert the coordinate and pretend the PHITS dump
 The proton beam used in radiation estimation is TURTLE data for phase-I and gaussian beam for phase-II, respectively.
 \begin{figure}[H]
  \centering
- \includegraphics[scale=0.40]{chapter3/fig/beam.pdf}
+ \includegraphics[scale=0.5]{chapter3/fig/beam.eps}
  \caption{Proton beam distribution simulated by TURTLE code. Top two are the momentum distribution of x and y axis, respectively. Bottom two are the momentum distribution and spatial distribution. Here, intensity means the normalized intensity.}
  \label{beam}
 \end{figure}
@@ -93,12 +93,12 @@ It will affect the proton beam transportation definitely, but this map is enough
  \begin{figure}[H]
   \begin{subfigure}{0.3\textwidth}
    \centering
-   \includegraphics[scale=0.34]{chapter3/fig/fieldmap.pdf}
+   \includegraphics[scale=0.32]{chapter3/fig/fieldmap.pdf}
   \end{subfigure}
   \hspace{0.2\textwidth}
   \begin{subfigure}{0.3\textwidth}
    \centering
-   \includegraphics[scale=0.37]{chapter3/fig/fieldxy}
+   \includegraphics[scale=0.35]{chapter3/fig/fieldxy}
   \end{subfigure}
   \caption{Magnetic field map of phase-I experiment used in PHITS simulation. It is calculated by FEM with iron yoke. Mangetic field vector at z = 0 cm is shown on the right.}
   \label{field}
@@ -131,12 +131,12 @@ Because the pion only comes from the high energy cascade model, the different mu
   \begin{figure}[H]
    \begin{subfigure}{0.3\textwidth}
     \centering
-	\includegraphics[scale=0.43]{chapter3/fig/backward}
+	\includegraphics[scale=0.43]{chapter3/fig/backward.eps}
    \end{subfigure}
    \hspace{0.2\textwidth}
    \begin{subfigure}{0.3\textwidth}
     \centering
-	\includegraphics[scale=0.43]{chapter3/fig/production}
+	\includegraphics[scale=0.43]{chapter3/fig/production.eps}
    \end{subfigure}
    \caption{Compared the backward particle yield and integral yield with GEANT4 and PHITS. Left one is the backward pion and muon yield, red and blue line represent the yield calculated by QGSP\_BERT\_G4NDL and JAM\_BERT\_JENDL respectively. Right one shows the integral yield of pion and muon from target, red and blue point are the result of QGSP\_BERT\_G4NDL and JAM\_BERT\_JENDL.}
    \label{model}
@@ -174,7 +174,7 @@ Because the geometry is only for phase-I experiment, the production target is re
     \centering
 	\includegraphics[scale=0.32]{chapter3/fig/neutronzy.pdf}
    \end{subfigure}
-  % \caption{\it The phase-II neutron distribution calculated with phase-II target and beam intensity.}
+  % \caption{ The phase-II neutron distribution calculated with phase-II target and beam intensity.}
   % \label{neutrondist}
   \end{figure}
   \begin{figure}[H]
@@ -201,13 +201,13 @@ Compared with the other particle, neutron and photon is most dominated particle 
 Almost neutron is in the range of low energy, and photon is with energy from 0.01 MeV to 100 MeV.
   \begin{figure}[H]
    \centering
-   \includegraphics[scale=0.43]{chapter3/fig/Neutron}
+   \includegraphics[scale=0.43]{chapter3/fig/Neutron.eps}
    \caption{Energy spectrum of muon, photon and neutron from both experimental hall and beamline at the end of 90 degree bending. Most of neutrons are at the low energy region, and photon are all higher than 10 keV.}
    \label{2bending}
   \end{figure}
   \begin{figure}[H]
    \centering
-   \includegraphics[scale=0.43]{chapter3/fig/heat}
+   \includegraphics[scale=0.43]{chapter3/fig/heat.eps}
    \caption{The energy deposition of each magnets in phase-I and phase-II experiment. Black and red point represent the energy deposition of phase-I and phase-II experiment respectively. The energy deposition of phase-II is one order higher than phase-I's, and its peak is located in CS0 coil.}
    \label{2heat}
   \end{figure}
@@ -231,14 +231,14 @@ The residual radiation has been investigated by using FLUKA code and PHITS code.
 % \begin{subfigure}{0.3\textwidth}
 %  \centering
 %  \includegraphics[scale=0.43]{chapter3/fig/copper}
-  %\caption{\it Copper}
+  %\caption{ Copper}
   %\label{fig:cuyashima}
 %  \end{subfigure}
 %  \hspace{0.2\textwidth}
 % \begin{subfigure}{0.3\textwidth}
 %  \centering
 %  \includegraphics[scale=0.43]{chapter3/fig/nickel}
-  %\caption{\it Nickel}
+  %\caption{ Nickel}
   %\label{fig:coyashima}
 %  \end{subfigure}
 %  \caption{Comparison of the activation cross section from experiment with PHTIS. Figure on left and right show the activation cross section of copper and nickel. The activation cross section is measured in FermiLAB by HPGe detector, using 120 GeV, 1.0$\times$10$^9$ pps roton beam.}
@@ -260,6 +260,13 @@ The operation time schedule used in calculation are 1-year cooling after 1-month
 Residual radiation of vacuum vessel, magnet, radiation shield and iron yoke are given by figure~\ref{2part}.
 To reduce the residual radiation as much as possible, considering copper is hard to weld with stainless steel, some parts of vacuum vessel is able to be changed to iron.
 As listed in table~\ref{vecuum}, residual radiation of stainless steel is 10 times higher than iron's.
+Thus, the stainless steel is replaced by iron for vacuum vessel outside the superconducting magnet due to magnetism of iron.
+ \begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.43]{chapter3/fig/partres.pdf}
+  \caption{Residual radiation of vacuum vessel, magnet, radiation shield and iron yoke with 1 month operation and 10 month cooling.}
+  \label{2part}
+ \end{figure}
 \begin{table}[H]
  \centering
  \begin{tabular}{ccc} \hline \hline
@@ -269,13 +276,7 @@ As listed in table~\ref{vecuum}, residual radiation of stainless steel is 10 tim
  \caption{Residual radiation of vacuum vessel between CS0 and iron yoke.}
  \label{vecuum}
 \end{table}
-Thus, the stainless steel is replaced by iron for vacuum vessel outside the superconducting magnet due to magnetism of iron.
- \begin{figure}[H]
-  \centering
-  \includegraphics[scale=0.43]{chapter3/fig/partres.pdf}
-  \caption{Residual radiation of vacuum vessel, magnet, radiation shield and iron yoke with 1 month operation and 10 month cooling.}
-  \label{2part}
- \end{figure}
+
 The residual radiation of superconducting magnet is calculated as one conductor which consists of aluminum, copper and NbTi with density of 4.0 g/cm$^3$.
 The activity and radiation dose given by figure~\ref{2dose} shows that the maximum radiation dose is 0.33 $\mu$Sv/h after 1 month operation and 10 month cooling for phase-I experiment and the peak of activation is at CS0 and CS1.
 Isotopes like $^{93}$Nb, $^{22}$Na, $^3$H, $^{60}$Co et al. with long half life are generated in CS1 and CS0 coils.
@@ -299,10 +300,6 @@ It is added from many parts of small regions.
 The maximum dose equivalent is predicted to 0.75 mSv/h for 1-month operation and 10-month cooling at production target.
 To ensure the dose equivalent, we also compare this result with FLUKA code which can simulate the residual radiation dose without region cutting.
 M. Brugger et al. present the residual radiation calculated from FLUKA code has good agreement experimental data~\cite{brugger}.
-As the result shown in figure~\ref{2dose2} (right), the maximum dose equivalent is predicted to 3.74 mSv/h with same time schedule, which is 5 times higher than PHITS result.
-In figure~\ref{dosepo}, the dose equivalent at different position along the axis is compared.
-Besides the place where peak is, the dose equivalent is quite similar between the FLUKA and PHITS.
-Difference may be owing to the mesh cutting of PHITS calculation around target.
  \begin{figure}[H]
   \begin{subfigure}{0.3\textwidth}
    \centering
@@ -316,7 +313,11 @@ Difference may be owing to the mesh cutting of PHITS calculation around target.
   \caption{Compared the residual radiation distribution of pion capture solenoid between PHITS and FLUKA. Left and right represent the PHITS and FLUKA result respectively.}
   \label{2dose2}
  \end{figure}
-\begin{table}[H]
+As the result shown in figure~\ref{2dose2} (right), the maximum dose equivalent is predicted to 3.74 mSv/h with same time schedule, which is 5 times higher than PHITS result.
+In figure~\ref{dosepo}, the dose equivalent at different position along the axis is compared.
+Besides the place where peak is, the dose equivalent is quite similar between the FLUKA and PHITS.
+Difference may be owing to the mesh cutting of PHITS calculation around target.
+ \begin{table}[H]
  \centering
  \begin{tabular}{ccccc} \hline \hline
   Code & z = 0 & z = 300 & z = -300 & z = -500 \\

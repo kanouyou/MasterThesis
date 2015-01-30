@@ -1,0 +1,73 @@
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Charged lepton flavor violation}{1}{section.1.1}
+\contentsline {section}{\numberline {1.2}Searches for cLFV with muon}{2}{section.1.2}
+\contentsline {subsection}{\numberline {1.2.1}$\mu \rightarrow e \gamma $}{2}{subsection.1.2.1}
+\contentsline {subsection}{\numberline {1.2.2}$\mu \rightarrow eee$}{3}{subsection.1.2.2}
+\contentsline {subsection}{\numberline {1.2.3}$\mu \rightarrow e$ conversion}{3}{subsection.1.2.3}
+\contentsline {section}{\numberline {1.3}COMET experiment}{4}{section.1.3}
+\contentsline {subsection}{\numberline {1.3.1}Proton beamline}{5}{subsection.1.3.1}
+\contentsline {subsection}{\numberline {1.3.2}Signal of $\mu ^-N \rightarrow e^-N$ conversion}{6}{subsection.1.3.2}
+\contentsline {subsection}{\numberline {1.3.3}Background of $\mu ^-N \rightarrow e^-N$ conversion}{7}{subsection.1.3.3}
+\contentsline {subsubsection}{Requirement of magnetic field}{7}{section*.14}
+\contentsline {section}{\numberline {1.4}Objetive}{8}{section.1.4}
+\contentsline {chapter}{\numberline {2}Superconducting solenoid system for COMET experiment}{9}{chapter.2}
+\contentsline {section}{\numberline {2.1}Superconducting magnet system}{9}{section.2.1}
+\contentsline {section}{\numberline {2.2}Pion capture solenoid}{10}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Coils structure}{10}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Production target}{12}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}Radiation shield}{12}{subsection.2.2.3}
+\contentsline {subsection}{\numberline {2.2.4}Quench protection system}{12}{subsection.2.2.4}
+\contentsline {section}{\numberline {2.3}Muon transport solenoid}{14}{section.2.3}
+\contentsline {section}{\numberline {2.4}Detector solenoid}{15}{section.2.4}
+\contentsline {chapter}{\numberline {3}Radiation estimation}{17}{chapter.3}
+\contentsline {section}{\numberline {3.1}Hadronic models}{17}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}PHITS}{17}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}FLUKA}{18}{subsection.3.1.2}
+\contentsline {subsection}{\numberline {3.1.3}GEANT4}{18}{subsection.3.1.3}
+\contentsline {section}{\numberline {3.2}Modification of PHITS code}{18}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Proton beam}{18}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Magnetic field}{19}{subsection.3.2.2}
+\contentsline {section}{\numberline {3.3}Prompt radiation}{20}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Physical model comparison}{20}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Geometry}{21}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}Radiation estimation}{22}{subsection.3.3.3}
+\contentsline {section}{\numberline {3.4}Residual radiation estimation}{24}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Residual radiation}{24}{subsection.3.4.1}
+\contentsline {section}{\numberline {3.5}Radiation shielding optimization}{26}{section.3.5}
+\contentsline {subsection}{\numberline {3.5.1}Radiation shield for MS}{26}{subsection.3.5.1}
+\contentsline {subsection}{\numberline {3.5.2}Radiation shield for CS}{27}{subsection.3.5.2}
+\contentsline {chapter}{\numberline {4}Irradiation test for superconducting magnet material}{31}{chapter.4}
+\contentsline {section}{\numberline {4.1}Glass Fiber Reinforced Plastic}{31}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Experiment}{31}{subsection.4.1.1}
+\contentsline {section}{\numberline {4.2}Quench protection diode}{33}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Experiment}{33}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Neutron measurement}{34}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.3}Electrical property of diode}{35}{subsection.4.2.3}
+\contentsline {subsection}{\numberline {4.2.4}Electrical property at cryogenic temperature}{37}{subsection.4.2.4}
+\contentsline {subsection}{\numberline {4.2.5}Forward voltage at 210 A}{37}{subsection.4.2.5}
+\contentsline {section}{\numberline {4.3}Insulation tape}{38}{section.4.3}
+\contentsline {section}{\numberline {4.4}Radiation test for conductor}{39}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}Discussion}{42}{subsection.4.4.1}
+\contentsline {chapter}{\numberline {5}Thermal stability of superconducting solenoids}{45}{chapter.5}
+\contentsline {section}{\numberline {5.1}Quench estimation}{45}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Specific heat}{45}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}Electrical resistivity}{48}{subsection.5.1.2}
+\contentsline {subsubsection}{Magnetoresistivity}{50}{section*.81}
+\contentsline {subsection}{\numberline {5.1.3}Thermal conductivity}{51}{subsection.5.1.3}
+\contentsline {subsection}{\numberline {5.1.4}MIITs}{52}{subsection.5.1.4}
+\contentsline {section}{\numberline {5.2}Cooling estimation}{54}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Geometry}{54}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Heat generation}{55}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.3}Maximum temperature of cooling}{56}{subsection.5.2.3}
+\contentsline {subsection}{\numberline {5.2.4}Discussion}{58}{subsection.5.2.4}
+\contentsline {subsubsection}{Improvement of CS1 coil}{59}{section*.100}
+\contentsline {chapter}{\numberline {6}Conclusion}{61}{chapter.6}
+\contentsline {chapter}{Acknowledgement}{63}{chapter*.103}
+\contentsline {chapter}{References}{65}{chapter*.104}
+\contentsline {chapter}{Michel decay}{69}{appendix*.105}
+\contentsline {chapter}{cLFV in Standard Model}{71}{appendix*.106}
+\contentsline {chapter}{cLFV in supersymmetry}{73}{appendix*.108}
+\contentsline {subsubsection}{SUSY-GUT}{74}{section*.110}
+\contentsline {subsubsection}{SUSY-Seasaw}{74}{section*.112}
+\contentsline {chapter}{Impact of cLFV}{77}{appendix*.114}
+\contentsline {chapter}{Magnetic field interpolation}{79}{appendix*.116}

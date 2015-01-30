@@ -34,6 +34,11 @@
 
 \renewcommand{\bibname}{References}
 
+\makeatletter
+\def\@biblabel#1{(#1)}
+\def\@cite#1{\textsuperscript{(#1)}}
+\makeatother
+
 \begin{document}
 
  \frontmatter
@@ -51,7 +56,7 @@
   % acknowledgment
   \input{others/acknowledgement}
   % reference
-  \bibliographystyle{unsrt}
+  \bibliographystyle{phcpc}
   \bibliography{others/reference}
  
  \appendix

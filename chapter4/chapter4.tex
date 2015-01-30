@@ -81,15 +81,15 @@ Its electrical characteristics under low temperature and radiation is investigat
 ~~~~~The irradiation test for quench protection diode is taken with COMET detector group together at the Tendem accelerator, Kyushu university.
 The fast neutron is produced from carbon target with incident 9 MeV deutron, which creates neutron by deutron-deutron reaction.
 5 kinds of samples are set up in front of the production target with the distance of 3 cm as the sequence of MPPC, APD, Artix-7, ROESTI and diode, which is shown in figure~\ref{3setup}.
-Because diode is with the radius of 3 cm and length of 10 cm, which is possible to stop the neutron, it is located at last of samples where 30 cm far from the production target.
-Its turn-on voltage is measured during the irradiation with 5 A power supply, and neutron flux is measured by activation analysis with aluminum, nickel and gold wire (0.07\% Fe).
-Temperature of diode during the irradiation is recorded by thermometer.
  \begin{figure}[H]
   \centering
   \includegraphics[scale=0.45]{chapter4/fig/diodepic.pdf}
   \caption{Sample setup for neutron irradiation test. Diode is set up in front of MPPC, APD, Artix-7 and ROESTI where is 30 cm far from the neutron production target.}
   \label{3setup}
  \end{figure}
+Because diode is with the radius of 3 cm and length of 10 cm, which is possible to stop the neutron, it is located at last of samples where 30 cm far from the production target.
+Its turn-on voltage is measured during the irradiation with 5 A power supply, and neutron flux is measured by activation analysis with aluminum, nickel and gold wire (0.07\% Fe).
+Temperature of diode during the irradiation is recorded by thermometer.
   
   \subsection{Neutron measurement}
 ~~~~~Activation analysis is a common and easy way of neutron measurement, but with the bad energy resolution.
@@ -108,6 +108,19 @@ The photon from neutron reaction on each activation sample which is list in tabl
  \caption{Neutron acvtivation reactions.}
  \label{act}
 \end{table}
+  \begin{figure}[H]
+   \begin{subfigure}{0.3\textwidth}
+    \centering
+	\includegraphics[scale=0.46]{chapter4/fig/Eufit.eps}
+   \end{subfigure}
+   \hspace{0.25\textwidth}
+   \begin{subfigure}{0.3\textwidth}
+    \centering
+	\includegraphics[scale=0.35]{chapter4/fig/detectioneff.eps}
+   \end{subfigure}
+   \caption{The detection effciency is calibrated by using $^{152}$Eu radiation source. Several peak of $^{152}$Eu is fitted as convolution on left, and the detection effciency of HPGe is fitted on right.}
+   \label{3source}
+  \end{figure}
 $^{152}$Eu with 2.79$\times$10$^7$ Bq is employed as the calibration source to estimate the detection efficiency of HPGe detector.
 As shown in figure~\ref{3source}, each peak of radiation source $^{152}$Eu is fitted as gaussian and linear function.
 The detection efficiency is fitted as
@@ -124,23 +137,10 @@ where the counts for the calculation of detection efficiency $\epsilon$ is withi
  \caption{Fitting parameters for detection efficiency.}
 \end{table}
 
-  \begin{figure}[H]
-   \begin{subfigure}{0.3\textwidth}
-    \centering
-	\includegraphics[scale=0.46]{chapter4/fig/Eufit.eps}
-   \end{subfigure}
-   \hspace{0.25\textwidth}
-   \begin{subfigure}{0.3\textwidth}
-    \centering
-	\includegraphics[scale=0.35]{chapter4/fig/detectioneff.eps}
-   \end{subfigure}
-   \caption{The detection effciency is calibrated by using $^{152}$Eu radiation source. Several peak of $^{152}$Eu is fitted as convolution on left, and the detection effciency of HPGe is fitted on right.}
-   \label{3source}
-  \end{figure}
 %  \begin{figure}[H]
 %   \centering
 %   \includegraphics[scale=0.45]{chapter4/fig/aupeak}
-%   \caption{\it The peak of $^{197}$Au decay on the diode downstream.}
+%   \caption{ The peak of $^{197}$Au decay on the diode downstream.}
 %   \label{3nipeak}
 %  \end{figure}
 
@@ -245,7 +245,7 @@ Using this fitting parameters, the forward voltage at 300 K and 77 K can be pred
 Compared with the case of room temperature, 0.33 V is increased during the cooling.
  \begin{figure}[H]
   \centering
-  \includegraphics[scale=0.28]{chapter4/fig/cryotemp.pdf}
+  \includegraphics[scale=0.35]{chapter4/fig/cryotemp.pdf}
   \caption{Measurement of the forward voltage of diode at cryogenic temperature.}
   \label{3cryotemp}
  \end{figure}
@@ -298,14 +298,14 @@ This insulation tape shown in figure~\ref{3stur} is made of polyimide film cover
   \begin{subfigure}{0.3\textwidth}
   \centering
   \includegraphics[scale=0.36]{chapter4/fig/prepreg.pdf}
-  %\caption{\it The structure of pre-preg tape.}
+  %\caption{ The structure of pre-preg tape.}
   \label{3stur}
   \end{subfigure}
   \hspace{0.2\textwidth}
   \begin{subfigure}{0.3\textwidth}
   \centering
   \includegraphics[scale=0.31]{chapter4/fig/BUGT.pdf}
-  %\caption{\it Tensile test for pre-preg tape.}
+  %\caption{ Tensile test for pre-preg tape.}
   \label{3break}
   \end{subfigure}
   \caption{Insulation tape is made of glass cross and polyimide film impregnated by BT ans epoxy resin (left). The two pieces of insulation tapes are sandwiched with aluminum strip to take tensile test (right).}
@@ -410,7 +410,7 @@ Details of RRR degradation for main superconducting magnets of pion capture sole
     \centering
 	\includegraphics[scale=0.43]{chapter5/fig/rrrmagnets.eps}
    \end{subfigure}
-   \caption{\it Predicted the RRR-neutron curve from the neutron irradiation test in KUR.}
+   \caption{ Predicted the RRR-neutron curve from the neutron irradiation test in KUR.}
    \label{4rrr}
   \end{figure}
 
@@ -457,13 +457,13 @@ In addition, reference~\cite{yu} shows many results of Frenkel pair resistivity 
 \end{table}
 It shows that J.A. Horak's data is the maximum value compared with the other references.
 The relation between DPA and RRR by using these prediction from experimental data is shown in~\ref{dpaaa}.
-\begin{figure}[H]
- \centering
- \includegraphics[scale=0.45]{chapter4/fig/dpadegradation.eps}
- \caption{\it A relation between DPA and RRR.}
- \label{dpaaa}
-\end{figure}
+
 For the COMET phase-II experiment, the DPA peak of CS1 coil is about 1.1$\times$10$^{-5}$ DPA for 280-day operation from the prediction of PHITS code with NRT model.
 The aluminum strip will not degrade lower than 100 for 280-day operation from this estimation.
-However, the design has to consider the worst situation for superconducting coils, the uncertainty of the prediction from neutron DPA and neutron fluence needs to be reconsidered,
-
+However, the design has to consider the worst situation for superconducting coils, the uncertainty of the prediction from neutron DPA and neutron fluence needs to be reconsidered.
+\begin{figure}[H]
+ \centering
+ \includegraphics[scale=0.5]{chapter4/fig/dpadegradation.eps}
+ \caption{ A relation between DPA and RRR.}
+ \label{dpaaa}
+\end{figure}

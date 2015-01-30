@@ -6,6 +6,12 @@ In phase-II experiment, nowadays' 90 degree bent transport solenoid will be exte
 \section{Superconducting magnet system}
 ~~~~~~Superconducting magnet system plays a key role in pion capture, muon transport and signal tracking.
 In the case of COMET phase-I experiment, the 8 GeV proton with high intensity is injected into superconducting magnet and hits the target to produce pion, then these backward pions are captured by pion capture solenoid, which provides 5 Tesla magnetic field at peak.
+\begin{figure}[H]
+ \centering
+ \includegraphics[scale=0.45]{chapter2/fig/solenoid.pdf}
+ \caption{Schematic layout of superconducting magnet system for COMET phase-I experiment.}
+ \label{solenoid}
+\end{figure}
 Muons with low momentum from the decay of captured pions are transported to stopping target by the muon transport solenoid with 3 Tesla.
 Because the high momentum muon and the other particles will cause the background on detector, the muon transport solenoid is designed with 90 degree curve to throw out these particles.
 After the muon captured by stopping target, the emitted electron from stopping target will be bent by detector solenoid which provides 1 Tesla magnetic field and tracked in cylindrical drift chamber (CDC).
@@ -13,12 +19,7 @@ After the muon captured by stopping target, the emitted electron from stopping t
 The schematic layout of COMET superconducting solenoid is given in figure~\ref{solenoid}.
 Pion capture solenoid consists of CS0, CS1, MS1, MS2 and TS1a-TS1f superconducting coils.
 Meanwhile, muon transport solenoid includes TS2, TS3 and BS coils, and detector solenoid has 12 DS coils.
-\begin{figure}[H]
- \centering
- \includegraphics[scale=0.45]{chapter2/fig/solenoid.pdf}
- \caption{Schematic layout of superconducting magnet system for COMET phase-I experiment.}
- \label{solenoid}
-\end{figure}
+
 
  \section{Pion capture solenoid}
 ~~~~~~Pion capture solenoid is most critical magnet for capturing the pions from production target with a large solid angle.
@@ -56,7 +57,7 @@ The reason why
 \begin{figure}[H]
  \centering
  \includegraphics[scale=0.45]{chapter2/fig/coil.pdf}
- \caption{\it Coil and conductor structure of CS1.}
+ \caption{ Coil and conductor structure of CS1.}
  \label{cssrtu}
 \end{figure}
 
@@ -185,20 +186,6 @@ The muon transport solenoid consists of 16 coils without stabilizer and a dipole
 Details of each coil and design parameters are listed in table~\ref{tscoil} and \ref{designts}.
 \begin{table}[H]
  \centering
- \begin{tabular}{cccccccc} \hline \hline
-  Coil & B$_z$ & B$_y$ & Length & Inner radius & Outer radius & Current & Current density \\
-   & [T] & [T] & [mm] & [mm] & [mm] & [A] & [A/mm$^2$] \\ \hline
-  TS2a & 3 & NA & 255 & 234 & 249 & 210 & 72 \\
-  TS2-1 & 3 & 0.06 & 205 & 234 & 264 & 210 & 95 \\
-  TS2-2$\sim$15 & 3 & 0.06 & 205 & 234 & 272 & 210 & 95 \\
-  TS2-16 & 3 & 0.06 & 205 & 234 & 254 & 210 & 94 \\
-  TS3 & 3 & NA & 600 & 400 & 437 & 190 & 85.5 \\ \hline \hline
- \end{tabular}
- \caption{Coils parameters for muon transport solenoid.}
- \label{tscoil}
-\end{table}
-\begin{table}[H]
- \centering
  \begin{tabular}{ll} \hline \hline
   Item & Value \\ \hline
   Conductor & NbTi/Cu wire \\
@@ -226,6 +213,22 @@ Details of each coil and design parameters are listed in table~\ref{tscoil} and 
  \caption{Design parameters of transport solenoid.}
  \label{designts}
 \end{table}
+
+\begin{table}[H]
+ \centering
+ \begin{tabular}{cccccccc} \hline \hline
+  Coil & B$_z$ & B$_y$ & Length & Inner radius & Outer radius & Current & Current density \\
+   & [T] & [T] & [mm] & [mm] & [mm] & [A] & [A/mm$^2$] \\ \hline
+  TS2a & 3 & NA & 255 & 234 & 249 & 210 & 72 \\
+  TS2-1 & 3 & 0.06 & 205 & 234 & 264 & 210 & 95 \\
+  TS2-2$\sim$15 & 3 & 0.06 & 205 & 234 & 272 & 210 & 95 \\
+  TS2-16 & 3 & 0.06 & 205 & 234 & 254 & 210 & 94 \\
+  TS3 & 3 & NA & 600 & 400 & 437 & 190 & 85.5 \\ \hline \hline
+ \end{tabular}
+ \caption{Coils parameters for muon transport solenoid.}
+ \label{tscoil}
+\end{table}
+
 
 
 \section{Detector solenoid}

@@ -1,0 +1,74 @@
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces SINDRUM-II experiment observes a $\mu ^- + Ti \rightarrow e^- + Ti$ conversion with branching ratio of 7$\times $10$^{-13}$. Two signal is founded in high energy region but it is out of the range of $\mu ^- \rightarrow e^-$ signal.\relax }}{3}{figure.caption.7}
+\contentsline {figure}{\numberline {1.2}{\ignorespaces A schematic layout of COMET. 8 GeV proton from B-line hits the target and produce pion first, these pions are captured by pion capture solenoid, and decays to muons in muon transport solenoid. Then, the muon with low momentum is captured by stopping target, meanwhile, an electron with 105 MeV/c from $\mu \rightarrow e$ conversion will be transported to E-cal to take a measurement by detector solenoid.\relax }}{4}{figure.caption.8}
+\contentsline {figure}{\numberline {1.3}{\ignorespaces Dedicated proton beamline for COMET experiment. A new proton beamline, B-line is under construction. COMET Hall is located beside Hadron Hall.\relax }}{5}{figure.caption.10}
+\contentsline {figure}{\numberline {1.4}{\ignorespaces The time concept of proton beam. The time window will open from 700 nsec to take data.\relax }}{6}{figure.caption.12}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Schematic layout of superconducting magnet system for COMET phase-I experiment.\relax }}{9}{figure.caption.15}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Coil and conductor structure of CS1.\relax }}{11}{figure.caption.17}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Schematics of quench protection circuit.\relax }}{13}{figure.caption.19}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Schematics of quench protection system for pion capture solenoid.\relax }}{13}{figure.caption.20}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces The physical model used in PHITS code. Default hadronic model is JAM\_INCL4.6\_JENDL, moreover, JAM\_BERT\_JENDL and JAM\_INC-ELF\_JENDL are able to be selected in PHITS code.\relax }}{17}{figure.caption.23}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Proton beam distribution simulated by TURTLE code. Top two are the momentum distribution of x and y axis, respectively. Bottom two are the momentum distribution and spatial distribution. Here, intensity means the normalized intensity.\relax }}{19}{figure.caption.24}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Tracking of 100 MeV electron with uniform 5 Tesla field. One electron is injected with angle of 30 degree. Magnetic field is applied in a cylinder with radius of 50 cm and length of 300 cm.\relax }}{19}{figure.caption.25}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Magnetic field map of phase-I experiment used in PHITS simulation. It is calculated by FEM with iron yoke. Mangetic field vector at z = 0 cm is shown on the right.\relax }}{20}{figure.caption.26}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Compared the backward particle yield and integral yield with GEANT4 and PHITS. Left one is the backward pion and muon yield, red and blue line represent the yield calculated by QGSP\_BERT\_G4NDL and JAM\_BERT\_JENDL respectively. Right one shows the integral yield of pion and muon from target, red and blue point are the result of QGSP\_BERT\_G4NDL and JAM\_BERT\_JENDL.\relax }}{21}{figure.caption.28}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces COMET phase-I experiment geometry in PHITS simulation.\relax }}{21}{figure.caption.29}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Neutron and photon distribution for COMET phase-II experiment. Top two show the neutron distribution from x-z and y-z view. Bottom two are the distribution of photon from x-z and y-z view.\relax }}{22}{figure.caption.31}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Energy spectrum of muon, photon and neutron from both experimental hall and beamline at the end of 90 degree bending. Most of neutrons are at the low energy region, and photon are all higher than 10 keV.\relax }}{23}{figure.caption.32}
+\contentsline {figure}{\numberline {3.10}{\ignorespaces The energy deposition of each magnets in phase-I and phase-II experiment. Black and red point represent the energy deposition of phase-I and phase-II experiment respectively. The energy deposition of phase-II is one order higher than phase-I's, and its peak is located in CS0 coil.\relax }}{23}{figure.caption.33}
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Residual radiation of vacuum vessel, magnet, radiation shield and iron yoke with 1 month operation and 10 month cooling.\relax }}{24}{figure.caption.34}
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Activity and peak of dose equivalent of each magnets with 1-month operation and 10-month cooling.\relax }}{25}{figure.caption.36}
+\contentsline {figure}{\numberline {3.13}{\ignorespaces Compared the residual radiation distribution of pion capture solenoid between PHITS and FLUKA. Left and right represent the PHITS and FLUKA result respectively.\relax }}{25}{figure.caption.37}
+\contentsline {figure}{\numberline {3.14}{\ignorespaces The concept of COMET radiation shield. It consists of tungsten alloy, stainless steel and copper. Tungsten ally and stainless steel are employed on the high and low radiation side respectively. On the downstream of target, copper is used. Right figure shows the distribution of neutron from x-y view. Azimuthal angle is also defined in here. The peak of neutron flux is located at 180 degree of CS coils.\relax }}{28}{figure.caption.42}
+\contentsline {figure}{\numberline {3.15}{\ignorespaces Compared the azimuthal DPA and energy deposition of middel part of CS1 coil in different verion of shielding design. The long CS1 coil is cut to 3 parts along the z axis and 12 parts along the azimuthal axis.\relax }}{28}{figure.caption.44}
+\contentsline {figure}{\numberline {3.16}{\ignorespaces High energy neutron (E $\geq $ 0.1 MeV) along the azimuthal direction of CS1 coils.\relax }}{29}{figure.caption.45}
+\contentsline {figure}{\numberline {3.17}{\ignorespaces A relation of muon and pion yield with shielding backward radius. Current shielding backward radius is 36 cm. Black line: $\mu ^-$, red line: $\pi ^-$, blue line: $\mu ^- + \pi ^-$.\relax }}{30}{figure.caption.47}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces GFRP samples before the iradiation are shown on the left. The samples are tensioned until break after irradiation (right).\relax }}{32}{figure.caption.48}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces The tensile strength of irradiated samples (G10, CE, BMI and BT) when it breaks. Left and Right figure represent 1 MeV electron irradiation test in JAEA, Takasaki and 30 MeV electron irradiation test in LINAC, KURRI.\relax }}{32}{figure.caption.49}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Sample setup for neutron irradiation test. Diode is set up in front of MPPC, APD, Artix-7 and ROESTI where is 30 cm far from the neutron production target.\relax }}{33}{figure.caption.50}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces The detection effciency is calibrated by using $^{152}$Eu radiation source. Several peak of $^{152}$Eu is fitted as convolution on left, and the detection effciency of HPGe is fitted on right.\relax }}{34}{figure.caption.52}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Neutron flux is measured by Au wire, Al and Ni foils. The comparison of experimental data with simualtion (left). The neutron flux on the place where samples are set up is shown on rihgt.\relax }}{35}{figure.caption.54}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces The temperature during the irradiation (left). The turn-on voltage decreases with the neutron fluence (right).\relax }}{36}{figure.caption.55}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Measured trun-on voltage for quench protection diode. It is fitted as diode V-I function. Black and green point represent the original V-I curve and V-I curve after 10$^{12}$ n/m$^2$ irradiation.\relax }}{36}{figure.caption.56}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Measurement of the forward voltage of diode at cryogenic temperature.\relax }}{37}{figure.caption.59}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Relative increase of the forward voltage versus neutron fluence at room temperature.\relax }}{38}{figure.caption.60}
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Foward V-I curve measured at room temperature and nitrogen temperature without irradiation (left). The measurement of trun-on voltage at 100 mA from room temperature to 77 K (right).\relax }}{38}{figure.caption.61}
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Insulation tape is made of glass cross and polyimide film impregnated by BT ans epoxy resin (left). The two pieces of insulation tapes are sandwiched with aluminum strip to take tensile test (right).\relax }}{39}{figure.caption.62}
+\contentsline {figure}{\numberline {4.12}{\ignorespaces 3 samples of each BTGU, BTGK-A, BTGK-B and BTGK-C are tensioned without irradiation (left). BTGU shows no degradation after irradiated with 10 MGy at limit by cobalt $\gamma $ ray source.\relax }}{39}{figure.caption.63}
+\contentsline {figure}{\numberline {4.13}{\ignorespaces all kinds of particles which hit the CS1 coil (left). The displacement cross section of aluminum for neutron (right).\relax }}{40}{figure.caption.64}
+\contentsline {figure}{\numberline {4.14}{\ignorespaces Neutron spectrum at core of KUR reactor.\relax }}{40}{figure.caption.65}
+\contentsline {figure}{\numberline {4.15}{\ignorespaces Predicted the RRR-neutron curve from the neutron irradiation test in KUR.\relax }}{41}{figure.caption.68}
+\contentsline {figure}{\numberline {4.16}{\ignorespaces A relation between DPA and RRR.\relax }}{43}{figure.caption.71}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces The specific heat of aluminum is fitted from the range from 4.5 K to 22.67 K, 22.67 K to 46 K and 46 K until 350 K respectively.\relax }}{46}{figure.caption.72}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Fitted copper specific heat curve.\relax }}{47}{figure.caption.74}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Fitted aluminum resistivity.\relax }}{49}{figure.caption.78}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Fitted the Kohler plot with experimental data for pure aluminum.\relax }}{50}{figure.caption.82}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Thermal conductivity of aluminum with difference RRR.\relax }}{51}{figure.caption.85}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces The MIITs calculation of CS1 coils with 5.5 Tesla magnetic field and 2700 A current.\relax }}{53}{figure.caption.87}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Improvement of power supply according to the results of MIITs estimation.\relax }}{53}{figure.caption.88}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Details of the geometry used in magnet thermal simulation.\relax }}{54}{figure.caption.89}
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Mesh cutting of CS1 coils.\relax }}{55}{figure.caption.91}
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Calculated the energy deposition distribution with realistic radiation shield geometry.\relax }}{55}{figure.caption.92}
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Calculated the temperature rising during the operation.\relax }}{56}{figure.caption.95}
+\contentsline {figure}{\numberline {5.12}{\ignorespaces Maximum temperature for the original coil structure.\relax }}{57}{figure.caption.96}
+\contentsline {figure}{\numberline {5.13}{\ignorespaces The maximum temperature against the operation time.\relax }}{58}{figure.caption.97}
+\contentsline {figure}{\numberline {5.14}{\ignorespaces the thermal conductivity dependance of indulation tape.\relax }}{58}{figure.caption.98}
+\contentsline {figure}{\numberline {5.15}{\ignorespaces The temperature peak increases linearly with the energy deposition factor.\relax }}{59}{figure.caption.99}
+\contentsline {figure}{\numberline {5.16}{\ignorespaces The CS1 coils can be optimized by imcreasing the thickness of aluminium strip.\relax }}{59}{figure.caption.101}
+\contentsline {figure}{\numberline {5.17}{\ignorespaces The scenario of CS1 seperating.\relax }}{60}{figure.caption.102}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {1}{\ignorespaces Feynman diagram of $\mu ^- \rightarrow e^-\gamma $ predicted by massive neutrino. cLFV occurs through a neutrino oscillation, and $\gamma $ is emitted from a $W^-$\relax }}{71}{figure.caption.107}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2}{\ignorespaces Feynman diagram of $\mu ^- \rightarrow e^-\gamma $ predicted by slepton mixing. it occurs through its superpartner $\mathaccentV {tilde}07E{\mu }$ and $\mathaccentV {tilde}07E{e}$ mixing.\relax }}{73}{figure.caption.109}
+\contentsline {figure}{\numberline {3}{\ignorespaces Pridiction of branching ratio of $\mu \rightarrow e$ conversion in SUSY-GUT SU(5). Mass of right-hand $\mathaccentV {tilde}07E{e}$ can be observed indirectly if the $\mu \rightarrow e$ conversion experiment gets more precision sensitivity.\relax }}{74}{figure.caption.111}
+\contentsline {figure}{\numberline {4}{\ignorespaces Prediction of branching ratio of $\mu \rightarrow e\gamma $ in SUSY-Seasaw model.\relax }}{75}{figure.caption.113}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5}{\ignorespaces \it The size of the observable flavor effect for a variety of SUSY and non-SUSY models.\relax }}{77}{figure.caption.115}
+\addvspace {10\p@ }

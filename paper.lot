@@ -1,0 +1,49 @@
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {1.1}{\ignorespaces Decay modes and branching ratio of muon.\relax }}{2}{table.caption.5}
+\contentsline {table}{\numberline {1.2}{\ignorespaces History of $\mu ^- \rightarrow e^-$ conversion experiments.\relax }}{3}{table.caption.6}
+\contentsline {table}{\numberline {1.3}{\ignorespaces Current running muon beamline around the world. Current most intense muon beamline is in PSI, COMET muon beamline will be 3 orders higher than PSI muon beamline.\relax }}{5}{table.caption.9}
+\contentsline {table}{\numberline {1.4}{\ignorespaces Different requirement of proton beam in phase-I and phase-II.\relax }}{6}{table.caption.11}
+\contentsline {table}{\numberline {1.5}{\ignorespaces Potential backgrounds for searching $\mu ^-N \rightarrow e^-N$ conversion.\relax }}{7}{table.caption.13}
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {2.1}{\ignorespaces Details of coils for pion capture solenoid.\relax }}{10}{table.caption.16}
+\contentsline {table}{\numberline {2.2}{\ignorespaces Details of design parameters for capture solenoid magnet.\relax }}{11}{table.caption.18}
+\contentsline {table}{\numberline {2.3}{\ignorespaces Design parameters of transport solenoid.\relax }}{14}{table.caption.21}
+\contentsline {table}{\numberline {2.4}{\ignorespaces Coils parameters for muon transport solenoid.\relax }}{15}{table.caption.22}
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {3.1}{\ignorespaces Comparison of PHITS with GEANT4. $\sigma $ represents (G4-PHITS)/PHITS.\relax }}{20}{table.caption.27}
+\contentsline {table}{\numberline {3.2}{\ignorespaces Residual radiation of vacuum vessel between CS0 and iron yoke.\relax }}{25}{table.caption.35}
+\contentsline {table}{\numberline {3.3}{\ignorespaces Compared the residual radiation along the z axis. z=0 is at the production target, z=-300 is 3 m far from the target on upstream of target, z=300 is 3 m far from the target on dreamstream of target, and z=-500 is 5 m far from teh target.\relax }}{26}{table.caption.38}
+\contentsline {table}{\numberline {3.4}{\ignorespaces Maximum residual radiation after cooling for 10 months, 1.75 year and 2 years.\relax }}{26}{table.caption.39}
+\contentsline {table}{\numberline {3.5}{\ignorespaces Heat load of stainless steel and copper shield.\relax }}{27}{table.caption.40}
+\contentsline {table}{\numberline {3.6}{\ignorespaces Actived isotopes of copper (left) and stainless steel (right).\relax }}{27}{table.caption.41}
+\contentsline {table}{\numberline {3.7}{\ignorespaces Material property of tungsten alloy (AN-1800).\relax }}{28}{table.caption.43}
+\contentsline {table}{\numberline {3.8}{\ignorespaces Details of the shielding design. CS1 is cut to 3 parts along the z axis, 12 parts along the azimuthal direction.\relax }}{29}{table.caption.46}
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {4.1}{\ignorespaces Neutron acvtivation reactions.\relax }}{34}{table.caption.51}
+\contentsline {table}{\numberline {4.2}{\ignorespaces Fitting parameters for detection efficiency.\relax }}{35}{table.caption.53}
+\contentsline {table}{\numberline {4.3}{\ignorespaces Fitting parameters for V-I curve.\relax }}{36}{table.caption.57}
+\contentsline {table}{\numberline {4.4}{\ignorespaces Fitting parameters for forward voltage of diode at 300 K and 77 K.\relax }}{37}{table.caption.58}
+\contentsline {table}{\numberline {4.5}{\ignorespaces Factor for the neutron induced resistivity.\relax }}{41}{table.caption.66}
+\contentsline {table}{\numberline {4.6}{\ignorespaces Details of RRR degradation for pion capture solenoid after 280-day operation.\relax }}{41}{table.caption.67}
+\contentsline {table}{\numberline {4.7}{\ignorespaces DPA estimation for the neutron irradiation test of pure aluminum.\relax }}{42}{table.caption.69}
+\contentsline {table}{\numberline {4.8}{\ignorespaces The Frenkel pair resistivity $\rho _{FP}$ of aluminum. Methods of the data derivation: Exp D is X-ray diffraction method, Exp T is the threshold energy determination for electron irradiation of single crystals at low temperature. Exp T(p) is for the electron irradiation of polycrystals, Evl S is the estimation made with the help of the systematics\nobreakspace {}\cite {yu}.\relax }}{42}{table.caption.70}
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {5.1}{\ignorespaces The details for fitting the aluminum specific heat.\relax }}{47}{table.caption.73}
+\contentsline {table}{\numberline {5.2}{\ignorespaces Fitting parameters for copper specific heat.\relax }}{47}{table.caption.75}
+\contentsline {table}{\numberline {5.3}{\ignorespaces The fit parameters for NbTi specific heat.\relax }}{47}{table.caption.76}
+\contentsline {table}{\numberline {5.4}{\ignorespaces NIST fitting parameters for copper electrical resistivity.\relax }}{48}{table.caption.77}
+\contentsline {table}{\numberline {5.5}{\ignorespaces NIST fitting parameter for pure aluminum.\relax }}{50}{table.caption.79}
+\contentsline {table}{\numberline {5.6}{\ignorespaces Hust fitting parameter for pure aluminum.\relax }}{50}{table.caption.80}
+\contentsline {table}{\numberline {5.7}{\ignorespaces Fitting parameters for pure aluminum magnetorestivity.\relax }}{51}{table.caption.83}
+\contentsline {table}{\numberline {5.8}{\ignorespaces Fitting parameters for copper magnetoresistivity.\relax }}{51}{table.caption.84}
+\contentsline {table}{\numberline {5.9}{\ignorespaces The parameters for MIITs estimation of CS1.\relax }}{52}{table.caption.86}
+\contentsline {table}{\numberline {5.10}{\ignorespaces Heat generation for the capture solenoid.\relax }}{55}{table.caption.90}
+\contentsline {table}{\numberline {5.11}{\ignorespaces Parameter setting in thermal estimation of CS1 coils.\relax }}{56}{table.caption.93}
+\contentsline {table}{\numberline {5.12}{\ignorespaces Meshing set in thermal analysis of CS1 coils.\relax }}{56}{table.caption.94}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }

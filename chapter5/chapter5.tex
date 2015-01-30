@@ -1,7 +1,7 @@
 \chapter{Thermal stability of superconducting solenoids}
 ~~~~~~Radiation will not only genarate the heat inside the coils but also cause the damage of superconducting material, which is possible to lead the degradation of cooling strip.
 Due to the conduction cooling, the consequence of aluminum strip degradation is over-heat and quench, which are the major issue for COMET superconducting magnets.
-Here, the thermal property of the most dangerous coil in whole system, CS1 coil, is analysed.
+Here, the thermal property of the most dangerous coil, CS1 coil, is analysed.
 
 \section{Quench estimation}
 ~~~~~Quench plays a significant role in superconducting magnet performance.
@@ -18,7 +18,7 @@ One parameter called MIITs is estimated for the worst situation of quench.
 To calculate the MIITs, the specific heat and thermal conductivity from cryogenic temperature to room temperature is required.
 The specific heat and electrical resistivity of copper, aluminum and NbTi are fitted with experimental data correctly.
 
-  \subsection{Specific heat}
+\subsection{Specific heat}
 ~~~~~There are two models for lattice specific heat, the Debye model and Einstein model~\cite{kittle}.
 In Debye model, the phonon energy is written as
 \begin{equation}
@@ -53,7 +53,20 @@ Therefore, the specific heat of aluminum is fitted as polynomial function with d
 The details is shown in table~\ref{4alsh} and the fitting result is given in figure~\ref{4alsh2}.
 The experimental data is given in reference~\cite{aldata}.
 The fitting function does not agree with the experimental in the range from 0 K to 2 K.
-Because the initial temperature is 4.5 K, it will not affect the calcualtion here.
+Because the initial temperature is 4.5 K, it will not affect the calculation here.
+  \begin{figure}[H]
+   \begin{subfigure}{0.3\textwidth}
+    \centering
+	\includegraphics[scale=0.43]{chapter5/fig/alspheat.eps}
+   \end{subfigure}
+   \hspace{0.2\textwidth}
+   \begin{subfigure}{0.3\textwidth}
+    \centering
+	\includegraphics[scale=0.43]{chapter5/fig/alspheat2.eps}
+   \end{subfigure}
+   \caption{The specific heat of aluminum is fitted from the range from 4.5 K to 22.67 K, 22.67 K to 46 K and 46 K until 350 K respectively.}
+   \label{4alsh2}
+  \end{figure}
 \begin{equation}
  C = p_0 + p_1 \cdot T + p_2 \cdot T^2 + p_3 \cdot T^3
 \end{equation}
@@ -68,19 +81,6 @@ Because the initial temperature is 4.5 K, it will not affect the calcualtion her
  \caption{The details for fitting the aluminum specific heat.}
  \label{4alsh}
 \end{table}
-  \begin{figure}[H]
-   \begin{subfigure}{0.3\textwidth}
-    \centering
-	\includegraphics[scale=0.43]{chapter5/fig/alspheat.eps}
-   \end{subfigure}
-   \hspace{0.2\textwidth}
-   \begin{subfigure}{0.3\textwidth}
-    \centering
-	\includegraphics[scale=0.43]{chapter5/fig/alspheat2.eps}
-   \end{subfigure}
-   \caption{\it The specific heat of aluminum is fitted prefectly from low temperature to room temperature.}
-   \label{4alsh2}
-  \end{figure}
 
 The Copper specific heat is fitted as polynomial function with the experimental data in referance~\cite{aldata}.
 Here $p_0$ and $p_2 \cdot T^2$ are the correction of specific heat.
@@ -88,8 +88,8 @@ $p_1 \cdot T$ and $p_3 \cdot T^3$ are the lattice specific heat and electronic s
 The fitting parameters are listed in table~\ref{cufit} and the result is shown in figure~\ref{4cush}.
 \begin{figure}[H]
    \centering
-   \includegraphics[scale=0.45]{chapter5/fig/cush.eps}
-   \caption{\it Fitted copper specific heat curve.}
+   \includegraphics[scale=0.47]{chapter5/fig/cush.eps}
+   \caption{ Fitted copper specific heat curve.}
    \label{4cush}
   \end{figure}
 \begin{table}[H]
@@ -103,12 +103,6 @@ The fitting parameters are listed in table~\ref{cufit} and the result is shown i
  \caption{Fitting parameters for copper specific heat.}
  \label{cufit}
 \end{table}
-
-The NbTi specific heat is same to the CUDI parameters which is given in ROXIE's database~\cite{roxie}.
-The fit parameters are reported in table~\ref{nbtish}.
-\begin{equation}
- C = \rho_{NbTi}\cdot (p_0 + p_1 \cdot T + p_2 \cdot T^2 + p_3 \cdot T^3 + p_4 \cdot T^4)
-\end{equation}
 \begin{table}[H]
  \centering
  \begin{tabular}{ccccccc} \hline \hline
@@ -123,6 +117,11 @@ The fit parameters are reported in table~\ref{nbtish}.
  \caption{The fit parameters for NbTi specific heat.}
  \label{nbtish}
 \end{table}
+The NbTi specific heat is same to the CUDI parameters which is given in ROXIE's database~\cite{roxie}.
+The fit parameters are reported in table~\ref{nbtish}.
+\begin{equation}
+ C = \rho_{NbTi}\cdot (p_0 + p_1 \cdot T + p_2 \cdot T^2 + p_3 \cdot T^3 + p_4 \cdot T^4)
+\end{equation}
 
   \subsection{Electrical resistivity}
 ~~~~~~Because of collisions of free electrons with impurities, lattice and phonons, it generates the electrical resistivity.
@@ -131,8 +130,8 @@ The electrical resistivity is obtained from the free electron gas model.
  \rho = \frac{1}{\sigma} = \frac{m}{ne^2\tau}
 \end{equation}
 
-In the room temperature, the collisons of electrons with phonon is dominated the electrical resistivity.
-However, only the collisons of electrons with impurities and defects occurs in the cryogenic temperature.
+In the room temperature, the collisions of electrons with phonon is dominated the electrical resistivity.
+However, only the collisions of electrons with impurities and defects occurs in the cryogenic temperature.
 Therefore, the total resistivity can be written as
 \begin{equation}
  \rho = \rho_L + \rho_i
@@ -195,6 +194,24 @@ The $W_c$ is correction parameter for only the pure aluminum which is compared w
 \end{equation}
 
 As for the pure aluminum, the fitting parameter for NIST and Hust equation is listed in table~\ref{paraAl} and \ref{paraAl2} respectively.
+  \begin{figure}[H]
+   \begin{subfigure}{3.1in}
+	\centering
+    \includegraphics[scale=0.45]{chapter5/fig/alres1.eps}
+	\caption{Fixed the Hust's equation and NIST's equation of aluminum electric resistivity.}
+    \label{4alres}
+   \end{subfigure}
+   \quad
+   %\hspace{1in}
+   \begin{subfigure}{3.1in}
+    \centering
+    \includegraphics[scale=0.45]{chapter5/fig/resist.eps}
+	\caption{Comparison of the aluminum electric resistivity with different RRR.}
+    \label{4alres2}
+   \end{subfigure}
+   \caption{Fitted aluminum resistivity.}
+  \end{figure}
+
 \begin{table}[H]
  \centering
  \begin{tabular}{ccccccc} \hline \hline
@@ -216,23 +233,7 @@ As for the pure aluminum, the fitting parameter for NIST and Hust equation is li
 Figure~\ref{4alres} shows the comparsion of the Hust and NIST equation with experimental data by using these fitting parameters for pure aluminum (RRR = 10000)~\cite{desai}.
 The fixed Hust equation is higher than the experimental data in the range from 10 K to 100 K.
 Hence the Hust equation still needs to be fixed in future.
-  \begin{figure}[H]
-   \begin{subfigure}{3.1in}
-	\centering
-    \includegraphics[scale=0.45]{chapter5/fig/alres1.eps}
-	\caption{\it Fixed the Hust's equation and NIST's equation of aluminum electric resistivity.}
-    \label{4alres}
-   \end{subfigure}
-   \quad
-   %\hspace{1in}
-   \begin{subfigure}{3.1in}
-    \centering
-    \includegraphics[scale=0.45]{chapter5/fig/resist.eps}
-	\caption{\it Comparison of the aluminum electric resistivity with different RRR.}
-    \label{4alres2}
-   \end{subfigure}
-   \caption{\it Fitted aluminum resistivity.}
-  \end{figure}
+
 In figure~\ref{4alres}, only the aluminum with 10000 of RRR is compared to the fitting function.
 While, the pure aluminum with different RRR must be agreed to the fitting function and it is shown in figure~\ref{4alres2}.
 (The experimental data is obtained from Prof. Nakamoto.)
@@ -249,6 +250,12 @@ The electrical resistivity in the high field can be written as
  \rho(B, T) = \rho(0, T) + \rho(0, T) \cdot \frac{h^2 \cdot (p_0 + p_1 \cdot h)}{p_2 + p_3\cdot h + p_4 \cdot h^2} \\
  h = B \cdot \frac{\rho_{ref}}{\rho(0, T)} \cdot 10
 \end{gather}
+\begin{figure}[H]
+ \centering
+ \includegraphics[scale=0.45]{chapter5/fig/Magnetores.eps}
+ \caption{Fitted the Kohler plot with experimental data for pure aluminum.}
+ \label{4magres}
+\end{figure}
 where $\rho_{ref}$ is 2.75$\times$10$^{-8}$ [$\Omega\cdot m$] and $\rho(0, T)$ is the eletrical resistivity without magnetic field.
 As for the aluminum, the fitting parameters are list in table~\ref{almag} and the fitted Kohler plot is shown in figure~\ref{4magres}.
 \begin{table}[H]
@@ -260,13 +267,6 @@ As for the aluminum, the fitting parameters are list in table~\ref{almag} and th
  \caption{Fitting parameters for pure aluminum magnetorestivity.}
  \label{almag}
 \end{table}
-
-\begin{figure}[H]
- \centering
- \includegraphics[scale=0.45]{chapter5/fig/Magnetores.eps}
- \caption{\it Fitted the Kohler plot with experimental data for pure aluminum.}
- \label{4magres}
-\end{figure}
 
 As for the copper, the same fitting equation for copper magnetoresistivity in ROXIE is employed in here.
 It is fitted as the polynomial function which is given as follows.
@@ -290,17 +290,17 @@ It is fitted as the polynomial function which is given as follows.
 \begin{equation}
  k = \frac{L_0 \cdot T}{\rho}
 \end{equation}
-where $\rho$ is the resistivity, and Lorentz constant $L_0$ is defined as
-\begin{equation}
- L_0 = \frac{\pi^2}{3}(\frac{k_B}{e})^2 = 2.44\times 10^{-8} W\cdot\Omega /K^2
-\end{equation}
-The thermal conductivity used in thermal estimation is shown in figure~\ref{therm}.
 \begin{figure}[H]
  \centering
  \includegraphics[scale=0.43]{chapter5/fig/thermalcon.eps}
  \caption{Thermal conductivity of aluminum with difference RRR.}
  \label{therm}
 \end{figure}
+where $\rho$ is the resistivity, and Lorentz constant $L_0$ is defined as
+\begin{equation}
+ L_0 = \frac{\pi^2}{3}(\frac{k_B}{e})^2 = 2.44\times 10^{-8} W\cdot\Omega /K^2
+\end{equation}
+The thermal conductivity used in thermal estimation is shown in figure~\ref{therm}.
 
   \subsection{MIITs}
 ~~~~~~Because over 2000 A current will generate the joule heat inside the coils, the wire has a risk of burn-out after a quench.
@@ -350,7 +350,7 @@ Since the MIITs calculated from time term is 250 MA$^2$sec, the maximum temperat
   \begin{figure}[H]
    \centering
    \includegraphics[scale=0.48]{chapter5/fig/I2700.eps}
-   \caption{\it The MIITs calculation of CS1 coils with 5.5 Tesla magnetic field and 2700 A current.}
+   \caption{ The MIITs calculation of CS1 coils with 5.5 Tesla magnetic field and 2700 A current.}
    \label{4miits}
   \end{figure}
 
@@ -361,28 +361,27 @@ Following the temperature increasing, it is possible to lead to the consequence 
 To avoid the overheat after quench, the voltage should be increased.
 Figure~\ref{4miitsv} gives the relation between voltage and MIITs predicted maximum temperature.
 To reduce the maximum temperature after quench, the MIITs should be restrained under 200 MA$^2$sec and the voltage must be higher than 600 V.
-
-However, MIITs can only estimate the maximum temperature of the worst situation.
-As the case of COMET superconducting magnets, there are aluminum stabilizer is enclosed around the coils.
-The current decay will be more quickly for the real case due to the aluminum stabilizer self resistance.
-Furthermore, the magnetic field decay is not considered in MIITs estimation as well.
-Thus, the quench simulation is necessary for estimation of the temperature after quench.
   \begin{figure}[H]
    \begin{subfigure}{3.1in}
     \centering
     \includegraphics[scale=0.43]{chapter5/fig/RRRvsMIITs.eps}
-    \caption{\it The maximum temperature after magnet quench predicted by MIITs calcualtion.}
+    \caption{The maximum temperature after magnet quench predicted by MIITs calculation.}
     \label{4rrrmiits}
    \end{subfigure}
    \quad
    \begin{subfigure}{3.1in}
     \centering
     \includegraphics[scale=0.43]{chapter5/fig/miitsvoltage.eps}
-    \caption{\it A relation between voltage and maximum temperature predicted by MIITs.}
+    \caption{A relation between voltage and maximum temperature predicted by MIITs.}
     \label{4miitsv}
    \end{subfigure}
-   \caption{\it Improvement of power supply according to the results of MIITs estimation.}
+   \caption{Improvement of power supply according to the results of MIITs estimation.}
   \end{figure}
+However, MIITs can only estimate the maximum temperature of the worst situation.
+As the case of COMET superconducting magnets, there are aluminum stabilizer is enclosed around the coils.
+The current decay will be more quickly for the real case due to the aluminum stabilizer self resistance.
+Furthermore, the magnetic field decay is not considered in MIITs estimation as well.
+Thus, the quench simulation is necessary for estimation of the temperature after quench.
 
 
  \section{Cooling estimation}
@@ -421,7 +420,7 @@ On the top of coils, one aluminum supporter with 5 cm suppresses the coils from 
     \centering
 	\includegraphics[scale=0.29]{chapter5/fig/geo2.pdf}
    \end{subfigure}
-   \caption{\it Details of the geometry used in magnet thermal simulation.}
+   \caption{Details of the geometry used in magnet thermal simulation.}
    \label{4geo}
   \end{figure}
  
@@ -452,7 +451,7 @@ Because the prompt radiation contributes 172.5 W in heat load, the others can be
    \centering
    \includegraphics[scale=0.23]{chapter5/fig/heatgeo2.pdf}
   \end{subfigure}
-  \caption{\it Mesh cutting of CS1 coils.}
+  \caption{Mesh cutting of CS1 coils.}
   \label{4geoh}
  \end{figure}
 The heat load (energy deposition) is calculated by PHITS code with realistic shielding geometry in figure~\ref{4geoh}.
@@ -462,14 +461,14 @@ The energy deposition of inner layer is about 3 times higher than the outer laye
  \begin{figure}[H]
   \centering
   \includegraphics[scale=0.62]{chapter5/fig/HRS.pdf}
-  \caption{\it Calculated the energy deposition distribution with realastic radiation shield geometry.}
+  \caption{ Calculated the energy deposition distribution with realistic radiation shield geometry.}
   \label{4heat}
  \end{figure}
 
   \subsection{Maximum temperature of cooling}
 ~~~~~~The parameters used in thermal analysis for CS1 coil is listed in table~\ref{para}.
 The specific heat only affects the speed of heat transfer and thermal conductivity has no remarkable in range from cryogenic temperature to about 20 K for both copper and aluminum, therefore the specific heat and thermal conductivity are set to constant which does not change with temperature here.
-However, the thermal conductivity of insulation tape is still unkownable, so it is supposed to 0.01 W/m/K which is worser than Kapton tape.
+However, the thermal conductivity of insulation tape is still unknown, so it is supposed to 0.01 W/m/K which is worser than Kapton tape.
 Its thermal conductivity although depends on the temperature, setting it to one constant is the worst circumstances for CS1 coil.
  \begin{table}[H]
   \centering
@@ -485,7 +484,7 @@ Its thermal conductivity although depends on the temperature, setting it to one 
  \caption{Parameter setting in thermal estimation of CS1 coils.}
  \label{para}
  \end{table}
-Due to the finite differnce method used in thermal simualtion, the result will grow up to infinit if the geometry's mesh and time mesh is not proper in calculation.
+Due to the finite difference method used in thermal simulation, the result will grow up to infinite if the geometry's mesh and time mesh is not proper in calculation.
 Here, as for the issue of meshing, the proper mesh for thermal analysis in this time is founded and listed in table~\ref{4mesh}.
  \begin{table}[H]
   \centering
@@ -499,14 +498,6 @@ Here, as for the issue of meshing, the proper mesh for thermal analysis in this 
   \caption{Meshing set in thermal analysis of CS1 coils.}
   \label{4mesh}
  \end{table}
-Superconducting coils have a risk of quench when its temperature closes to the current sharing temperature.
-Thus, the peak of temperature must be suppressed under the current sharing temperature for sercuring the coils' burn-out from quench.
-According to K. H. Mess's book, the current sharing temperature is given by
-\begin{equation}
- T_{cs} = T_0 + (T_c - T_0)\cdot (1 - \frac{I}{I_c(T_0)})
-\end{equation}
-where $T_0$ is the initial temperature, $I$ is the operating current, and $I_c(T_0)$ is the critical current in initial temperature.
-The current sharing for COMET CS1 coils is 5.6 K (Dr. Sasaki's work).
  \begin{figure}[H]
    \begin{subfigure}{0.3\textwidth}
     \centering
@@ -517,13 +508,21 @@ The current sharing for COMET CS1 coils is 5.6 K (Dr. Sasaki's work).
     \centering
 	\includegraphics[scale=0.42]{chapter5/fig/heatdis.pdf}
    \end{subfigure}
-   \caption{\it Calculated the temperature rising during the operation.}
+   \caption{Calculated the temperature rising during the operation.}
    \label{4heatdis}
   \end{figure}
+Superconducting coils have a risk of quench when its temperature closes to the current sharing temperature.
+Thus, the peak of temperature must be suppressed under the current sharing temperature for sercuring the coils from quench.
+According to K. H. Mess's book, the current sharing temperature is given by
+\begin{equation}
+ T_{cs} = T_0 + (T_c - T_0)\cdot (1 - \frac{I}{I_c(T_0)})
+\end{equation}
+where $T_0$ is the initial temperature, $I$ is the operating current, and $I_c(T_0)$ is the critical current in initial temperature.
+The current sharing for COMET CS1 coils is 5.6 K (Dr. Sasaki's work).
 \begin{figure}[H]
  \centering
  \includegraphics[scale=0.43]{chapter5/fig/temp.eps}
- \caption{\it Maximum temperature for the original coil structure.}
+ \caption{ Maximum temperature for the original coil structure.}
  \label{origin}
 \end{figure}
 Figure~\ref{4heatdis} gives the temperature distribution of 9 layers of conductor and the temperature change with time.
@@ -549,7 +548,7 @@ Operating for more than 30 days is feasible for phase-II experiment.
   \begin{figure}[H]
    \centering
    \includegraphics[scale=0.45]{chapter5/fig/maxtemp.eps}
-   \caption{\it The maximum temperature against the operation time.}
+   \caption{ The maximum temperature against the operation time.}
    \label{4maxtemp}
   \end{figure}
 
@@ -562,7 +561,7 @@ Therefore, the thermal conductivity of insualtion tape is necessary to take a me
  \begin{figure}[H]
   \centering
   \includegraphics[scale=0.45]{chapter6/fig/tape.eps}
-  \caption{\it the thermal conductivity dependance of indulation tape.}
+  \caption{ the thermal conductivity dependance of indulation tape.}
   \label{4tape}
  \end{figure}
 
@@ -577,14 +576,14 @@ Thus, the energy depostion and neutron production is necessary to be checked cor
 \begin{figure}[H]
  \begin{subfigure}{0.3\textwidth}
  \centering
- \includegraphics[scale=0.45]{chapter6/fig/g4phs.eps}
+ \includegraphics[scale=0.45]{chapter5/fig/g4phs.eps}
  \end{subfigure}
  \hspace{0.2\textwidth}
  \begin{subfigure}{0.3\textwidth}
  \centering
- \includegraphics[scale=0.45]{chapter5/fig/factor.eps}
+ \includegraphics[scale=0.45]{chapter6/fig/factor.eps}
  \end{subfigure}
- \caption{\it The temperature peak increases linearly with the energy deposition factor.}
+ \caption{ The temperature peak increases linearly with the energy deposition factor.}
  \label{5factor}
 \end{figure}
 
@@ -603,7 +602,7 @@ It still needs to discuss in future.
 \begin{figure}[H]
  \centering
  \includegraphics[scale=0.45]{chapter6/fig/Strip.eps}
- \caption{\it The CS1 coils can be optimized by imcreasing the thickness of aluminium strip.}
+ \caption{ The CS1 coils can be optimized by imcreasing the thickness of aluminium strip.}
  \label{5opti}
 \end{figure}
 
@@ -612,7 +611,7 @@ Since the energy deposition peak in the middle of the CS1 coils, seperating the 
 \begin{figure}[H]
  \centering
  \includegraphics[scale=0.4]{chapter6/fig/CS1new.pdf}
- \caption{\it The scenario of CS1 seperating.}
+ \caption{ The scenario of CS1 seperating.}
  \label{5new}
 \end{figure}
 To validate this scenario, the cooling, quench, magnetic field, muon yield and mechanical issue must be estimated.
