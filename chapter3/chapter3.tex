@@ -43,7 +43,7 @@ G4 also provides the FTF String model from the range of 5 GeV to 20 TeV and QG S
 %\end{table}
 
  \section{Modification of PHITS code}
-~~~~~~Here, the modification of PHITS code will be introduced to achieve the realastic simualtion of COMET experiment.
+~~~~~~Here, the modification of PHITS code will be introduced to achieve the realistic simulation of COMET experiment.
 The main optimization of PHITS code is listed as follows.
 \begin{itemize}
  \setlength{\itemsep}{-5pt}
@@ -62,7 +62,7 @@ One script has been written to convert the coordinate and pretend the PHITS dump
 The proton beam used in radiation estimation is TURTLE data for phase-I and gaussian beam for phase-II, respectively.
 \begin{figure}[H]
  \centering
- \includegraphics[scale=0.54]{chapter3/fig/beam.eps}
+ \includegraphics[scale=0.6]{chapter3/fig/beam.eps}
  \caption{Proton beam distribution simulated by TURTLE code. Top two are the momentum distribution of x and y axis, respectively. Bottom two are the momentum distribution and spatial distribution. Here, intensity means the normalized intensity.}
  \label{beam}
 \end{figure}
@@ -77,9 +77,9 @@ The charged particles are bended with a circular path in the magnetic field whic
  R = \frac{p}{eB} = \frac{m\gamma \beta c}{eB} = p \cdot \frac{3.336}{B}
 \label{beq}
 \end{equation}
-To enesure the magnetic field interpolation, the uniform field map with 5 Tesla has been tested and the tracking is shown in~\ref{2uniform}.
+To ensure the magnetic field interpolation, the uniform field map with 5 Tesla has been tested and the tracking is shown in~\ref{2uniform}.
 Following the equation~\ref{beq}, the bending radius of 0.1 GeV/c momentum electron in 5 Tesla is 6.6 cm.
-The radius from the simualtion is totally agree with the calculation.
+The radius from the simulation is totally agree with the calculation.
  \begin{figure}[H]
   \centering
   \includegraphics[scale=0.45]{chapter3/fig/magtest.pdf}
@@ -93,14 +93,14 @@ It will affect the proton beam transportation definitely, but this map is enough
  \begin{figure}[H]
   \begin{subfigure}{0.3\textwidth}
    \centering
-   \includegraphics[scale=0.32]{chapter3/fig/fieldmap.pdf}
+   \includegraphics[angle=-90,scale=0.43]{chapter3/fig/map.pdf}
   \end{subfigure}
   \hspace{0.2\textwidth}
   \begin{subfigure}{0.3\textwidth}
    \centering
    \includegraphics[scale=0.35]{chapter3/fig/fieldxy}
   \end{subfigure}
-  \caption{Magnetic field map of phase-I experiment used in PHITS simulation. It is calculated by FEM with iron yoke. Mangetic field vector at z = 0 cm is shown on the right.}
+  \caption{Magnetic field map of phase-I experiment used in PHITS simulation. It is calculated by FEM with iron yoke. Magnetic field vector at z = 0 cm is shown on the right.}
   \label{field}
  \end{figure}
 
@@ -151,12 +151,12 @@ Every detail of COMET phase-I geometry is established in PHITS simulation in ter
    \caption{COMET phase-I experiment geometry in PHITS simulation.}
    \label{geom}
   \end{figure}
-As shown in figure~\ref{geom}, the COMET experimental hall is seperated by concrete wall with 1 m thickness at end of 90 degree bending and 2 m at beam dump.
-The concrete wall between experimental hall and control room and accelrator hall is with 3 m thickness to prevent the radiation leaking.
+As shown in figure~\ref{geom}, the COMET experimental hall is separated by concrete wall with 1 m thickness at end of 90 degree bending and 2 m at beam dump.
+The concrete wall between experimental hall and control room and accelerator hall is with 3 m thickness to prevent the radiation leaking.
 Beam dump consists of iron yoke with 1.5$\times$1.5$\times$1 m and 2.5$\times$2.5$\times$1 m holes which is same to the Mu2e beam absorber design and concrete~\cite{mu2ereport}.
 Ceiling board is made of iron yoke with thickness of 0.6 m, gas (air) with thickness of 0.7 m and concrete with 3.7 m thickness.
 Shielding supporter structure is made of stainless steel (SUS-304) with two holes for proton beam exit and target changing.
-Radiation shield is employed the composit shield which will be described later.
+Radiation shield is employed the composite shield which will be described later.
 In the muon beamline, two 1 mm titanium vacuum windows are set up in the end of pion capture solenoid and muon transport solenoid respectively.
 Cosmic shield is consist of 20 cm concrete with 50\% iron, 10 cm polythylene and 10 cm lead.
 
@@ -191,7 +191,7 @@ Because the geometry is only for phase-I experiment, the production target is re
    \label{2photon}
   \end{figure}
 Furthermore, to prevent neutrons leak to the detector room, the concrete wall with 2 m thick is replaced by iron yoke.
-Even if the iron yoke is employed as a wall here, it still has 5$\times$10$^6$ n/cm$^2$/sec neutrons at least which leak from experimental room to detector room which is 5 times higher than phase-I exiperment.
+Even if the iron yoke is employed as a wall here, it still has 5$\times$10$^6$ n/cm$^2$/sec neutrons at least which leak from experimental room to detector room which is 5 times higher than phase-I experiment.
 The neutron along the muon beamline is with low energy and it is easy to be capture or scattered in the detector solenoid.
 While, as for the photon, it comes from the neutron capture, muon capture, bremsstrahlung et al.
 Thus, the photon in the detector solenoid is about 10$^9$ n/cm$^2$/sec at peak, which is 100 times higher than phase-I experiment at same place.
@@ -211,15 +211,15 @@ Almost neutron is in the range of low energy, and photon is with energy from 0.0
    \caption{The energy deposition of each magnets in phase-I and phase-II experiment. Black and red point represent the energy deposition of phase-I and phase-II experiment respectively. The energy deposition of phase-II is one order higher than phase-I's, and its peak is located in CS0 coil.}
    \label{2heat}
   \end{figure}
-The radiation remains thier energy into superconducting coils, which will cause the hot spot inside the magnets.
+The radiation remains their energy into superconducting coils, which will cause the hot spot inside the magnets.
 Once the hot spot is generated in the superconducting magnet, these magnets are at risk from quench.
 The heat load of each magnet for phase-I and phase-II experiment are shown in figure~\ref{2heat}.
 Compared with phase-I experiment, heat load of phase-II experiment is 10 times higher than phase-I experiment at least.
-The peak of heat load is at CS0 coil which 0.03 W/kg correspending to 0.73 MGy for 280-day operation.
+The peak of heat load is at CS0 coil which 0.03 W/kg corresponding to 0.73 MGy for 280-day operation.
 
  \section{Residual radiation estimation}
-~~~~~~To achieve the muon with higher intensity, the graphite target will be replaced by pure tungten target after phase-I experiment finished.
-Thus, the residual radiation plays an important role in target changing and maintainance of the superconducting magnets.
+~~~~~~To achieve the muon with higher intensity, the graphite target will be replaced by pure tungsten target after phase-I experiment finished.
+Thus, the residual radiation plays an important role in target changing and maintenance of the superconducting magnets.
 The residual radiation has been investigated by using FLUKA code and PHITS code.
 
 %  \subsection{Cross section comparison}
@@ -277,7 +277,7 @@ Thus, the stainless steel is replaced by iron for vacuum vessel outside the supe
  \label{vecuum}
 \end{table}
 
-The residual radiation of superconducting magnet is calculated as one conductor which consists of aluminum, copper and NbTi with density of 4.0 g/cm$^3$.
+The residual radiation of superconducting magnet is calculated as one conductor which consists of aluminium, copper and NbTi with density of 4.0 g/cm$^3$.
 The activity and radiation dose given by figure~\ref{2dose} shows that the maximum radiation dose is 0.33 $\mu$Sv/h after 1 month operation and 10 month cooling for phase-I experiment and the peak of activation is at CS0 and CS1.
 Isotopes like $^{93}$Nb, $^{22}$Na, $^3$H, $^{60}$Co et al. with long half life are generated in CS1 and CS0 coils.
  \begin{figure}[H]
@@ -325,7 +325,7 @@ Difference may be owing to the mesh cutting of PHITS calculation around target.
   FLUKA & 3.74 & 0.04 & 0.009 & 0.002 \\
   PHITS & 0.75 & 0.03 & 0.01 & 0.002 \\ \hline \hline
  \end{tabular}
- \caption{Compared the residual radiation along the z axis. z=0 is at the production target, z=-300 is 3 m far from the target on upstream of target, z=300 is 3 m far from the target on dreamstream of target, and z=-500 is 5 m far from teh target.}
+ \caption{Compared the residual radiation along the z axis. z=0 is at the production target, z=-300 is 3 m far from the target on upstream of target, z=300 is 3 m far from the target on downstream of target, and z=-500 is 5 m far from the target.}
  \label{dosepo}
 \end{table}
 Because of the target changing after phase-I experiment, this residual radiation is still too high for co-workers.
@@ -474,7 +474,7 @@ Details of several shielding designs are listed as follows.
    \centering
    \includegraphics[scale=0.43]{chapter3/fig/shieldheat.eps}
   \end{subfigure}
-  \caption{Compared the azimuthal DPA and energy deposition of middel part of CS1 coil in different verion of shielding design. The long CS1 coil is cut to 3 parts along the z axis and 12 parts along the azimuthal axis.}
+  \caption{Compared the azimuthal DPA and energy deposition of middle part of CS1 coil in different version of shielding design. The long CS1 coil is cut to 3 parts along the z axis and 12 parts along the azimuthal axis.}
   \label{2dpa}
  \end{figure}
 \begin{itemize}

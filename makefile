@@ -1,11 +1,13 @@
 # makefile for master paper
 .SUFFIXES: .tex .dvi .pdf
-TEX = latex
+TEX = platex
 TEXFLAGS = #-interaction=batchmode
 TARGET = paper
 
 .tex.dvi:
 		$(TEX) $(TEXFLAGS) $<
+.aux.dvi:
+		bibtex $<
 .dvi.pdf:
 		dvipdfmx $<
 
