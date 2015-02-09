@@ -1,4 +1,4 @@
-\chapter{Thermal stability of superconducting solenoids}
+\chapter{Thermal stability and quench protection of superconducting solenoids}
 ~~~~~~Radiation will not only generate the heat inside the coils but also cause the damage of superconducting material, which is possible to lead the degradation of cooling strip.
 Due to the conduction cooling, the consequence of aluminium strip degradation is over-heat and quench, which are the major issue for COMET superconducting magnets.
 Here, the thermal property of the most dangerous coil, CS1 coil, is analysed.
@@ -237,7 +237,7 @@ Hence the Hust equation still needs to be fixed in future.
 In figure~\ref{4alres}, only the aluminium with 10000 of RRR is compared to the fitting function.
 While, the pure aluminium with different RRR must be agreed to the fitting function and it is shown in figure~\ref{4alres2}.
 (The experimental data is obtained from Prof. Nakamoto.)
-The fixed NIST equation is employed in here.
+The modified NIST equation is employed in here.
 The fitting function is higher than experimental data about factor 0.2, and its difference is only shown in low temperature.
 As for the high temperature, it has good agreement with data.
 
@@ -308,21 +308,23 @@ Usually, there is external sump resistor to dissipate the stored energy in magne
 Once the quench has been detected, the power supply will be switched off and the current decays due to the dump resistor.
 The current decay can be presented as
 \begin{equation}
- I = I_0 \cdot exp(-\frac{R}{L} t)
+ I(t) = I_0 \cdot exp(-\frac{R}{L} t)
+\label{curde}
 \end{equation}
 where $L$ is the inductance of magnet.
 The speed of current decay depends on the inductance and resistance and the current can totally decay in the time of $\tau = L/R$.
 The quenching temperature can be restrained if the current decays quickly.
 
-Due to the stored energy is $I^2(t)R(T)$, a relation between the time dependence of the current after quench and the maximum temperature can be established.
+Due to the joule heat $I^2(t)R(T)$, a relation between the time dependence of the current after quench and the maximum temperature can be established.
 The temperature change during the a time interval $dt$ can be written as
 \begin{equation}
- dT = \frac{1}{C(T)} R(T) I^2(t) dt
+ \frac{C(T)}{R(T)} dT = I^2(t) dt
 \end{equation}
-where specific heat $C(T)$ and resistance $R(T)$ depend on the temperature, and the current $I(t)$ depends on the time.
+where specific heat $C(T)$ and resistance $R(T)$ depend on the temperature, and the current decay shown in equation~\ref{curde} $I(t)$ depends on the time.
 Separating and integrating the time term and the temperature term, one relation can be obtained
 \begin{equation}
  f(T_{max}) = \int^{\infty}_0 I^2(t) \cdot dt = \int^{T_{max}}_{T_0} \frac{C(T)}{R(T)} \cdot dT
+\label{timeterm}
 \end{equation}
 The unit of the time integral over the square of the current is usually defined as 10$^6\cdot$A$^2\cdot$sec, which sometimes is called as "MIITs".
 As for COMET superconducting magnet, the conductor consists of NbTi superconducting filament, copper matrix and aluminium stabilizer.
@@ -346,7 +348,9 @@ The parameters used in MIITs calculation is listed as follows.
 \end{table}
 The resistance in table~\ref{miitspara} is the resistance of dump resistor, which is calculated by assuming the allowable voltage of 500 V.
 The MIITs curve with 5.5 Tesla for different RRR is shown in figure~\ref{4miits}.
-Since the MIITs calculated from time term is 250 MA$^2$sec, the maximum temperature will exceed 260 K if the RRR drops to 100 (90-day continuous operation).
+MIITs is calculated from the integral time term of current decay in equation~\ref{timeterm} using the parameters in table~\ref{miitspara}, which is 250 MA$^2$sec and corresponds to 260 K (RRR=100).
+RRR is assumed to about 100 after 90-day irradiation in COMET experiment in the worst case.
+%Since the MIITs calculated from time term is 250 MA$^2$sec, the maximum temperature will exceed 260 K if the RRR drops to 100 (90-day continuous operation).
   \begin{figure}[H]
    \centering
    \includegraphics[scale=0.48]{chapter5/fig/I2700.eps}
@@ -405,11 +409,8 @@ Considering the insulation tape has the worse thermal conductivity, the thermal 
 The temperature margin for COMET superconducting magnets can be solved by using the result of energy deposition and neutron flux from PHITS code.
 
   \subsection{Geometry}
-~~~~~~~The geometry which used in thermal analysis is shown in figure~\ref{4geo}.
+~~~~~~~The geometry which used in thermal analysis is shown in figure~\ref{4geo} and \ref{cssrtu}.
 CS1 coils have 9 layers and 270 turns totally, and aluminium strips with RRR of 2000 are inserted into each layer.
-Because there is a GFRP spacer in the edge of each layer, aluminium strips only can be inserted from single side.
-Every aluminium is connected to the 2 phase LHe cooling pipe with 4.5 K.
-On the top of coils, one aluminium supporter with 5 cm suppresses the coils from hoop stress.
  \begin{figure}[H]
    \begin{subfigure}{0.3\textwidth}
     \centering
@@ -423,6 +424,13 @@ On the top of coils, one aluminium supporter with 5 cm suppresses the coils from
    \caption{Details of the geometry used in magnet thermal simulation.}
    \label{4geo}
   \end{figure}
+Here it is approached to 270 conductors along the axis 19 layers (conductor + strip) along the radius.
+Each aluminium strip is inserted from single side due to the GFRP spacer in the edge of coil.
+Aluminium strips with long 25 cm are connected to the 2 phase LHe cooling pipe with 4.5 K.
+On the azimuthal direction, the thermal conductivity of aluminium is defined with factor 0.7 because there is resin between the aluminium strips.
+On the top of coils, one aluminium supporter with 5 cm suppresses the coils from hoop stress.
+The magnetic field is set to 5.5 Tesla in whole coil.
+
  
  \subsection{Heat generation}
 ~~~~~~During the operation, heat generation inside the superconducting magnet is easy to cause the quench of magnet.
@@ -454,20 +462,22 @@ Because the prompt radiation contributes 172.5 W in heat load, the others can be
   \caption{Mesh cutting of CS1 coils.}
   \label{4geoh}
  \end{figure}
-The heat load (energy deposition) is calculated by PHITS code with realistic shielding geometry in figure~\ref{4geoh}.
-Superconducting coils consist of NbTi, Al and Cu with 3.80 g/cm$^3$ are cut for 5 parts along the z direction, 4 parts along the azimuthal direction and 9 parts along the radius direction in calculation.
-As the result shown in figure~\ref{4heat}, the peak is located on the place 40 cm far from the production target along the z direction, and from 3$\pi$/4 to 5$\pi$/4 along the azimuthal direction.
-The energy deposition of inner layer is about 3 times higher than the outer layer's.
- \begin{figure}[H]
+  \begin{figure}[H]
   \centering
   \includegraphics[scale=0.62]{chapter5/fig/HRS.pdf}
   \caption{ Calculated the energy deposition distribution with realistic radiation shield geometry.}
   \label{4heat}
  \end{figure}
+The heat load (energy deposition) is calculated by PHITS code with realistic shielding geometry in figure~\ref{4geoh}.
+Superconducting coils consist of NbTi, Al and Cu with 3.80 g/cm$^3$ are cut for 5 parts along the z direction, 4 parts along the azimuthal direction and 9 parts along the radius direction in calculation.
+As the result shown in figure~\ref{4heat}, the peak is located on the place 40 cm far from the production target along the z direction, and from 3$\pi$/4 to 5$\pi$/4 along the azimuthal direction.
+The energy deposition of inner layer is about 3 times higher than the outer layer's.
+
 
   \subsection{Maximum temperature of cooling}
 ~~~~~~The parameters used in thermal analysis for CS1 coil is listed in table~\ref{para}.
-The specific heat only affects the speed of heat transfer and thermal conductivity has no remarkable in range from cryogenic temperature to about 20 K for both copper and aluminium, therefore the specific heat and thermal conductivity are set to constant which does not change with temperature here.
+Heat generation map and neutron induced RRR map are calculated by Monte Carlo code.
+The specific heat only affects the speed of heat transfer and thermal conductivity has no remarkable change in range from cryogenic temperature to about 20 K for both copper and aluminium, therefore the specific heat and thermal conductivity are set to constant which does not change with temperature here.
 However, the thermal conductivity of insulation tape is still unknown, so it is supposed to 0.01 W/m/K which is worse than Kapton tape.
 Its thermal conductivity although depends on the temperature, setting it to one constant is the worst circumstances for CS1 coil.
  \begin{table}[H]
@@ -486,18 +496,6 @@ Its thermal conductivity although depends on the temperature, setting it to one 
  \end{table}
 Due to the finite difference method used in thermal simulation, the result will grow up to infinite if the geometry's mesh and time mesh is not proper in calculation.
 Here, as for the issue of meshing, the proper mesh for thermal analysis in this time is founded and listed in table~\ref{4mesh}.
- \begin{table}[H]
-  \centering
-  \begin{tabular}{ccc} \hline \hline
-   Axis & Meshing & Length \\ \hline
-   z & 45 & 135 cm \\
-   $\phi$ & 4 & 503 cm \\
-   r & 19 & 14.4 cm \\
-   time & 0.0001 sec & \\ \hline \hline
-  \end{tabular}
-  \caption{Meshing set in thermal analysis of CS1 coils.}
-  \label{4mesh}
- \end{table}
  \begin{figure}[H]
    \begin{subfigure}{0.3\textwidth}
     \centering
@@ -511,6 +509,18 @@ Here, as for the issue of meshing, the proper mesh for thermal analysis in this 
    \caption{Calculated the temperature rising during the operation.}
    \label{4heatdis}
   \end{figure}
+ \begin{table}[H]
+  \centering
+  \begin{tabular}{ccc} \hline \hline
+   Axis & Meshing & Length \\ \hline
+   z & 45 & 135 cm \\
+   $\phi$ & 4 & 503 cm \\
+   r & 19 & 14.4 cm \\
+   time & 0.0001 sec & \\ \hline \hline
+  \end{tabular}
+  \caption{Meshing set in thermal analysis of CS1 coils.}
+  \label{4mesh}
+ \end{table}
 Superconducting coils have a risk of quench when its temperature closes to the current sharing temperature.
 Thus, the peak of temperature must be suppressed under the current sharing temperature for securing the coils from quench.
 According to K. H. Mess's book, the current sharing temperature is given by
@@ -518,7 +528,7 @@ According to K. H. Mess's book, the current sharing temperature is given by
  T_{cs} = T_0 + (T_c - T_0)\cdot (1 - \frac{I}{I_c(T_0)})
 \end{equation}
 where $T_0$ is the initial temperature, $I$ is the operating current, and $I_c(T_0)$ is the critical current in initial temperature.
-The current sharing for COMET CS1 coils is 5.6 K (Dr. Sasaki's work).
+The current sharing for COMET CS1 coils is 6.5 K (Dr. Sasaki's work).
 \begin{figure}[H]
  \centering
  \includegraphics[scale=0.43]{chapter5/fig/temp.eps}
@@ -568,11 +578,14 @@ Therefore, the thermal conductivity of insulation tape is necessary to take a me
 \subsection{Discussion}
 ~~~~~~As mentioned in previous chapter, different result of neutron production and energy deposition is obtained in terms of different physics model.
 Nowadays' heat calculation bases on the model of JAM\_INCL\_JENDL.
+The figure~\ref{5factor} on left shows the different between JAM\_INCL\_JENDL and QGSP\_BERT\_ENDF model.
+The difference is almost with factor 10 at TS1d and with factor 1.5 at CS1.
+Although the GEANT4 predicts higher heat load, the maximum temperature will be 5.35 K with 0.03 W/kg heat generation and aluminium RRR of 50.
+
 We suppose there is factor of $\pm$0.3 in different physics model.
 The figure~\ref{5factor} shows the temperature changes with the factor of energy deposition for 90 day operation.
 The maximum temperature grows up with factor.
 Supposed that the energy deposition predicted by the other physics model is higher than JAM\_INCL\_JENDL by factor 1.5, cooling for 30 days is not allowed for phase-II experiment.
-Thus, the energy deposition and neutron production is necessary to be checked correctly by using different physics model in future.
 \begin{figure}[H]
  \begin{subfigure}{0.3\textwidth}
  \centering
@@ -616,4 +629,50 @@ Since the energy deposition peak in the middle of the CS1 coils, separating the 
 \end{figure}
 To validate this scenario, the cooling, quench, magnetic field, muon yield and mechanical issue must be estimated.
 
+\subsubsection{Heat load and neutron flux}
+~~~~~~Assuming current CS1 coil is cut to two equal parts, CS1-a and CS1-b, the heat load and neutron flux may be changed inside CS1.
+The neutron flux for 90-day operation and heat load are calculated by PHTIS with the geometry shown in figure~\ref{5new}.
+Its results are shown in figure~\ref{heatload} and \ref{neutr}.
+The peak of neutron flux ($\textgreater$ 1 MeV) is 7.5$\times$10$^{20}$ n/m$^2$ for 90-day operation, obviously, the peak of neutron flux grows up to 8.4$\times$10$^{20}$ n/m$^2$ after optimization.
+As for the heat load, its peak decreases from 0.033 W/kg to 0.031 W/kg before and after optimization.
+After the CS1 coil cutting, the peak of both heat load and neutron flux are located on the edge of CS1-a coil, which is easy to cool down efficiently.
+\begin{figure}[H]
+ \centering
+ \includegraphics[scale=0.70]{chapter5/fig/flux.eps}
+ \caption{Neutron flux for 90-day operation.}
+ \label{neutr}
+\end{figure}
+\begin{figure}[H]
+ \centering
+ \includegraphics[scale=0.70]{chapter5/fig/heat.eps}
+ \caption{Heat load of CS1-a and CS1-b coils.}
+ \label{heatload}
+\end{figure}
 
+\subsubsection{Thermal stability and quench}
+~~~~~~The temperature during is estimated the privious program, and the heat generation and RRR distribution uses the distribution in figure~\ref{heatload} and \ref{neutr}.
+Considering the peak of heat load and neutron flux is located in CS1-a coil, here only the temperature of CS1-a is estimated.
+Figure~\ref{thequen} (left) shows the temperature distribution of CS1-a coil.
+Its maximum temperature is 5.6 K for 90-day operation, which is totally lower than the current sharing temperature.
+Operation for over 90 days is available if the CS1 coil is separated to two equal parts.
+
+After the coil separate to two parts, its aluminium self resistance is reduced in terms of the decreasing of stabilizer.
+Because the aluminium self resistance helps the current decay after quench, its temperature of CS1-a after quench may be higher than the case before separating.
+The maximum temperature after quench is shown in figure~\ref{thequen}.
+Its current decays to about zero in 80 sec, and the temperature at quench spot is 120 K after quench.
+
+From the aspect of thermal stability, separating the CS1 to two equal parts is available, but the magnetic field will decrease after separating and the muon yield will be affected.
+Also the mechanical property is important issue for the coil separating, the design still needs to be discussed.
+\begin{figure}[H]
+ \begin{subfigure}{0.3\textwidth}
+  \centering
+  \includegraphics[scale=0.4]{chapter5/fig/CS1a.pdf}
+ \end{subfigure}
+ \hspace{0.2\textwidth}
+ \begin{subfigure}{0.3\textwidth}
+  \centering
+  \includegraphics[scale=0.4]{chapter5/fig/SimQuench.eps}
+ \end{subfigure}
+ \caption{Left: temperature distribution of CS1-a coil during operation. Right: The temperature at quench spot and current decay of CS1-a coil.}
+ \label{thequen}
+\end{figure}

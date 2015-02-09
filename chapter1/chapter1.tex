@@ -2,7 +2,7 @@
 ~~~~~~Although the Higgs boson has been found in 2012 by CMS and ATLAS collaboration~\cite{higgs}, there are no clues of new physics in last running with 3.5 TeV per beam.
 the Standard Model still remains many unsolved problems such as neutrino oscillation, the lack of dark matter candidate, fine-tuning and matter anti-matter asymmetry.
 On the other hand, it is known that the quarks and neutrinos are mixing as the Cabibbo-Kobayashi-Maskawa (CKM) matrix and Pontecorvo-Maki-Nakagawa-Sakata (PMNS) matrix, respectively~\cite{mark}.
-However, as the same family with neutrino, it is strange that charged lepton flavor violation (cFLV) is still not found.
+However, as the same family with neutrino, charged lepton flavor violation (cFLV) is still not found.
 As the prediction of lower branching ratio from the physics beyond the Standard model (BSM), new physics is possible to be probed through the cLFV.
 
 Coherent muon to electron transition (COMET) experiment is planning to seek the cLFV channel of $\mu^- N \rightarrow e^- N$ from 2017.
@@ -19,7 +19,7 @@ where the electron lepton number $L_e$ and muon lepton number $L_\mu$ on left si
 This decay is the ordinary muon decay and also called Michel decay.
 However this is not the only decay for muon, all kinds of muon decay is listed in table~\ref{mudecay}~\cite{pdg}.
 
-Unlike to the michel decay, decay mode of charged lepton like $\mu^- \rightarrow e^- \gamma$ has very tiny probability of decay, observely, its electron and muon lepton number are not conserved on two sides.
+Unlike to the michel decay, decay mode of charged lepton like $\mu^- \rightarrow e^- \gamma$ has very small probability of decay, apparently, its electron and muon lepton number are not conserved on two sides.
 The branching ratio predicted by standard model is less than 10$^{-54}$, which the details are described in Appendix.
 Otherwise, the physics beyond the standard model such as SUSY-Seasaw, SUSY-GUT etc. predicts the branching ratio higher than 10$^{-15}$, which is possible to be obversed.
 The reaction like this is called charged lepton flavor violation.
@@ -62,7 +62,9 @@ The first and second term of this equation are meant to the dipole-like ($\kappa
 
 \subsection{$\mu \rightarrow e \gamma$}
 ~~~~~$\mu \rightarrow e\gamma$ is a 2-body back-to-back decay with monoenergetic $e$ and $\gamma$.
-The way to search this decay is to reconstruct these back-to-back monoenergetic $e$ and $\gamma$.
+The way to search this decay is to reconstruct the time and momentum of these back-to-back monoenergetic $e$ and $\gamma$ to 105.7 MeV.
+It is difficult to distinguish the signals from Michel decay and $\mu \rightarrow e\gamma$.
+Thus, its experimental sensitivity is totally constricted by the detector.
 The earliest $\mu \rightarrow e\gamma$ search dates back to 1947 with branching ratio of 0.1 (90\% C.L.)~\cite{1947}, and the most recent experiment for seeking this mode is the MEG experiment.
 
 MEG experiment searches the $\mu^+ \rightarrow e^{+}\gamma$ in Paul Scherrer Institute (PSI) with 3$\times$10$^7$ $\mu^+/sec$.
@@ -81,6 +83,7 @@ Mu3e has two phases, which phase-I and phase-II will taken in $\pi$E5 beamline a
 Unlike to $\mu \rightarrow e\gamma$ decay, $\mu^+ \rightarrow e^+e^+e^-$ is a 3-body decay.
 The reconstruction of signal of positron and electron must be from the same vertex.
 Thus, the challenges of Mu3e are the vertex, timing and momentum resolution~\cite{mu3e}.
+Its experimental sensitivity also limited by detector.
 
 \subsection{$\mu \rightarrow e$ conversion}
 ~~~~~$\mu \rightarrow e$ conversion is a different process from the other two, because the processes of $\mu \rightarrow e\gamma$ and $\mu \rightarrow eee$ are detector-limited owing to accidental background, whilst, the $\mu \rightarrow e$ conversion has no accident background but the background from beam, which depends on the beam qualities.
@@ -102,15 +105,83 @@ The past experiments for searching $\mu^- \rightarrow e^-$ conversion is listed 
  \caption{History of $\mu^- \rightarrow e^-$ conversion experiments.}
  \label{muehis}
 \end{table}
-The most precision branching ratio is measured by SINDRUM-II experiment with gold target at PSI.
-As shown in figure~\ref{sind}, there is one event found at high momentum region, but it just outside the region of interest.
+
+\subsubsection{Signal and background}
+~~~~~~When the $\mu^-N \rightarrow e^-N$ conversion is occurred, the event signal of electron is mono-energetic with energy
+\begin{equation}
+ E_{\mu e} = m_\mu - B_\mu - E_{rec}
+\end{equation}
+where $m_\mu$ and $B_\mu$ are mass of muon and bind energy of the 1s monic atom respectively.
+$E_{rec}$ is the nuclear recoil energy, which is given by $E_{rec} \approx (m_\mu - B_\mu)^2/2m_N$.
+It is very small and can be neglected.
+The signal depends on the nuclei, for instance, it is 105.0 MeV for Al stopping target.
+This mono-energtic signal is beyond the background, and one peak behind electron background can be observed in $\mu^-N \rightarrow e^-N$ conversion.
+That peak depends on the atom number of stopping target, the coherent $\mu \rightarrow e$ conversion peak for SINDRUM-II experiment (Ti target) is 95 MeV/c.
+
+As for the background, the Michel decay in orbit (DIO) emits a electron and dominates the intrinsic background of $\mu \rightarrow e$ conversion.
+Without the direct background like DIO, there are many background such as beam related background listed in table~\ref{backg} will cause the indistinguishable signal in CDC during the reconstruction of signal.
+\begin{table}[H]
+ \centering
+ \begin{tabular}{cc} \hline \hline
+  Intrinsic physics backgrounds & \\ \hline
+  Muon decay in orbit & $\mu^- \rightarrow e^-\nu_\mu\bar\mu_e$ \\
+  Radiative muon capture (external) & $\mu^- + A \rightarrow \nu_\mu + A' + \gamma$ \\
+  Radiative muon capture (internal) & $\mu^- + A \rightarrow \nu_\mu + A' + e^+ + e^-$ \\
+  Neutron emission & $\mu^- + A \rightarrow \nu_\mu + A' + n$ \\
+  Charged particle emission & $\mu^- + A \rightarrow \nu_\mu + A' + p$ (or $d$ or $\alpha$) \\ \hline
+  Beam related backgrounds & \\ \hline
+  Radiative pion capture (external) & $\pi^- + A \rightarrow \gamma + A', \gamma \rightarrow e^- + e^+$ \\
+  Radiative pion capture (internal) & $\pi^- + A \rightarrow e^+ + e^- + A'$ \\
+  Beam electrons & $e^-$ scattering \\
+  Muon decay in flight & $\mu^-$ decays in flight to produce $e^-$ \\
+  Pion decay in flight & $\pi^-$ decays in flight to produce $e^-$ \\
+  Neutron induced backgrounds & neutrons hit material to produce $e^-$ \\
+  Anti-proton induced backgrounds & anti-proton hit material to produce $e^-$ \\ \hline
+  Other background & \\ \hline
+  Cosmic-ray induced background & \\
+  Room neutron induced background & \\
+  False tracking \\ \hline \hline
+ \end{tabular}
+ \caption{Potential backgrounds for searching $\mu^-N \rightarrow e^-N$ conversion.}
+ \label{backg}
+\end{table}
+
+\subsubsection{SINDRUM-II experiment}
+~~~~~~The most precision branching ratio is measured by SINDRUM-II experiment with gold target at PSI.
+As the spectrum shown in figure~\ref{sind}, the steeply falling distribution expected from muon DIO, using 53 MeV/c negative muon, there are two events found at high momentum region, but it just outside the region of interest.
+These two events might have been incduced by cosmic rays or radiative pion capture or etc.
+The upper limit of this branching ratio ($\mu^- + Au \rightarrow e^- + Au$) is set to 7$\times$10$^{-13}$.
 \begin{figure}[H]
  \centering
- \includegraphics[scale=0.5]{chapter1/fig/sindrum.pdf}
+ \includegraphics[scale=0.54]{chapter1/fig/sindrum.pdf}
  \caption{SINDRUM-II experiment observes a $\mu^- + Ti \rightarrow e^- + Ti$ conversion with branching ratio of 7$\times$10$^{-13}$. Two signal is found in high energy region but it is out of the range of $\mu^- \rightarrow e^-$ signal.}
  \label{sind}
 \end{figure}
 COMET and Mu2e experiment are aiming to achieve the branching ratio less than 10$^{-17}$, which is 4 orders less than the previous experimental result.
+It is able to be validated by using high intense, pulsed muon beam.
+
+\subsubsection{Extinction}
+~~~~~~Because the DC beam is used in PSI, and it is hard to distinguish the signal from capture or beam.
+To solve the issue of background, the pulsed proton should be employed.
+
+In the case of COMET experiment, since the muon in aluminium have lifetimes of about 864 nsec, a pulsed proton beam with interval time of 1.17 $\mu$sec is employed to eliminate the prompt background.
+As shown in figure~\ref{time}, the prompt background like $\pi^-$ decay is occurred after 100 nsec beyond the proton beam.
+Due to the long lifetime of muonic atoms, the time window is opened from 700 nsec to distinguish the background events and signal events.
+\begin{figure}[H]
+ \centering
+ \includegraphics[scale=0.35]{chapter1/fig/time.pdf}
+ \caption{The time concept of proton beam. The time window will open from 700 nsec to take data.}
+ \label{time}
+\end{figure}
+The proton beam energy requires a pulsed beam with low production of antiproton and extinction, which will produce the backgrounds.
+Therefore, the best choice is 8 GeV for COMET experiment, and the its limit intensity is 4.4$\times$10$^{13}$ pps.
+Antiproton can produce the signal like electron and tracked by CDC when it hits the material.
+The proton extinction factor is defined as
+\begin{equation}
+ R_{Ext} = \frac{N_{leak}}{N_{pulse}}
+\end{equation}
+where $N_{leak}$ is the proton leaked from the pulse, it becomes the background if it comes into the time window, and $N_{pulse}$ is the proton number in the pulse.
+
 
 \section{COMET experiment}
 ~~~~~~The COMET experiment is designed to search the following $\mu \rightarrow e$ conversion and be carried out at J-PARC.
@@ -194,68 +265,8 @@ In table~\ref{intens}, the requirement of COMET is compared with Mu2e as well.
 \end{table}
 
 
-\subsection{Signal of $\mu^-N \rightarrow e^-N$ conversion}
-~~~~~~When the $\mu^-N \rightarrow e^-N$ conversion is occurred, the event signal of electron is mono-energetic with energy
-\begin{equation}
- E_{\mu e} = m_\mu - B_\mu - E_{rec}
-\end{equation}
-where $m_\mu$ and $B_\mu$ are mass of muon and bind energy of the 1s monic atom respectively.
-$E_{rec}$ is the nuclear recoil energy, which is given by $E_{rec} \approx (m_\mu - B_\mu)^2/2m_N$.
-It is very small and can be neglected.
-The signal depends on the nuclei, for instance, it is 105.0 MeV for Al stopping target.
-This mono-energtic signal is beyond the background, and one tail behind electron background can be observed in $\mu^-N \rightarrow e^-N$ conversion.
-
-Since the muon in aluminium have lifetimes of about 864 nsec, a pulsed proton beam with interval time of 1.17 $\mu$sec is employed to eliminate the prompt background.
-As shown in figure~\ref{time}, the prompt background like $\pi^-$ decay is occurred after 100 nsec beyond the proton beam.
-Due to the long lifetime of muonic atoms, the time window is opened from 700 nsec to distinguish the background events and signal events.
-\begin{figure}[H]
- \centering
- \includegraphics[scale=0.35]{chapter1/fig/time.pdf}
- \caption{The time concept of proton beam. The time window will open from 700 nsec to take data.}
- \label{time}
-\end{figure}
-The proton beam energy requires a pulsed beam with low production of antiproton and extinction, which will produce the backgrounds.
-Therefore, the best choice is 8 GeV for COMET experiment, and the its limit intensity is 4.4$\times$10$^{13}$ pps.
-Antiproton can produce the signal like electron and tracked by CDC when it hits the material.
-The proton extinction factor is defined as
-\begin{equation}
- R_{Ext} = \frac{N_{leak}}{N_{pulse}}
-\end{equation}
-where $N_{leak}$ is the proton leaked from the pulse, it becomes the background if it comes into the time window, and $N_{pulse}$ is the proton number in the pulse.
-
-\subsection{Background of $\mu^-N \rightarrow e^-N$ conversion}
-~~~~~~In COMET experiment, once a $\mu^-$ with low momentum is captured by nuclei, $\mu^-$ will transit to the ground state of 1s.
-During this transition, the specific X-ray is emitted from muonic atom.
-In addition, the Michel decay in orbit (DIO) emits a electron and dominates the intrinsic background of $\mu \rightarrow e$ conversion.
-Without the direct background like DIO, there are many background such as beam related background listed in table~\ref{backg} will cause the indistinguishable signal in CDC during the reconstruction of signal.
-\begin{table}[H]
- \centering
- \begin{tabular}{cc} \hline \hline
-  Intrinsic physics backgrounds & \\ \hline
-  Muon decay in orbit & $\mu^- \rightarrow e^-\nu_\mu\bar\mu_e$ \\
-  Radiative muon capture (external) & $\mu^- + A \rightarrow \nu_\mu + A' + \gamma$ \\
-  Radiative muon capture (internal) & $\mu^- + A \rightarrow \nu_\mu + A' + e^+ + e^-$ \\
-  Neutron emission & $\mu^- + A \rightarrow \nu_\mu + A' + n$ \\
-  Charged particle emission & $\mu^- + A \rightarrow \nu_\mu + A' + p (or d or \alpha)$ \\ \hline
-  Beam related backgrounds & \\ \hline
-  Radiative pion capture (external) & $\pi^- + A \rightarrow \gamma + A', \gamma \rightarrow e^- + e^+$ \\
-  Radiative pion capture (internal) & $\pi^- + A \rightarrow e^+ + e^- + A'$ \\
-  Beam electrons & $e^-$ scattering \\
-  Muon decay in flight & $\mu^-$ decays in flight to produce $e^-$ \\
-  Pion decay in flight & $\pi^-$ decays in flight to produce $e^-$ \\
-  Neutron induced backgrounds & neutrons hit material to produce $e^-$ \\
-  Anti-proton induced backgrounds & anti-proton hit material to produce $e^-$ \\ \hline
-  Other background & \\ \hline
-  Cosmic-ray induced background & \\
-  Room neutron induced background & \\
-  False tracking \\ \hline \hline
- \end{tabular}
- \caption{Potential backgrounds for searching $\mu^-N \rightarrow e^-N$ conversion.}
- \label{backg}
-\end{table}
-
-\subsubsection{Requirement of magnetic field}
-Because the background depends on the muon beam quality, to eliminate the background, the muons must be captured and transported to stopping target efficiently, which can be carried out by using superconducting solenoid magnet system.
+\subsection{Superconducting solenoids}
+~~~~~~Because the background depends on the muon beam quality, to eliminate the background, the muons must be captured and transported to stopping target efficiently, which can be carried out by using superconducting solenoid magnet system.
 The COMET superconducting magnets must be designed with requirements
 \begin{itemize}
  \setlength{\itemsep}{-5pt} 
@@ -264,7 +275,40 @@ The COMET superconducting magnets must be designed with requirements
  \item low magnetic field for detector to track the signal electron.
  \item smooth magnetic field to eliminate the trapping of charged particles.
 \end{itemize}
-The details of superconducting magnet design will be explained in next chapter.
+
+\subsubsection{Requirement of magnetic field}
+~~~~~~Muons are transported to the stopping target through the muon transport solenoid, which consists of curved superconducting magnets.
+The muon transport solenoid must be designed to select the muons with low momentum and eliminate muons with high momentum ($p_{\mu^-} \textgreater$ 75 MeV/c), in addition, it also must be long enough for the pion decay.
+Due to the beam dispersion in muon transport solenoid, the selection of charged particle depends on their momentum.
+The magnitude of drift is given by
+\begin{equation}
+ D = \frac{1}{qB}(\frac{s}{R})\frac{p_L^2 + p_T^2/2}{p_L} = \frac{1}{qB}(\frac{s}{R})\frac{p}{2}(cos\theta + \frac{1}{cos\theta})
+\end{equation}
+where $q$ is the electric charge of particle, $B$ is the magnetic field, $s$ and $R$ are the path length and the radius of curvature of solenoid respectively.
+$s/R$ is the bending angle, $p_L$ and $p_T$ [GeV/c] are longitudinal and transverse momentum.
+To keep the center of the helical trajectories of muons in the bending plane, a compensating dipole field parallel to the drift direction is applied, which is given by
+\begin{equation}
+ B_{comp} = \frac{1}{qR} \frac{p_0}{2} (cos\theta_0 + \frac{1}{cos\theta_0})
+\end{equation}
+
+\subsubsection{Superconducting magnet system}
+~~~~~~Superconducting magnet system plays a key role in pion capture, muon transport and signal tracking.
+In the case of COMET phase-I experiment, the 8 GeV proton with high intensity is injected into superconducting magnet and hits the target to produce pion, then these backward pions are captured by pion capture solenoid, which provides 5 Tesla magnetic field at peak.
+
+Muons with low momentum from the decay of captured pions are transported to stopping target by the muon transport solenoid with 3 Tesla.
+Because the high momentum muon and the other particles will cause the background on detector, the muon transport solenoid is designed with 90 degree curve to throw out these particles.
+After the muon captured by stopping target, the emitted electron from stopping target will be bent by detector solenoid which provides 1 Tesla magnetic field and tracked in cylindrical drift chamber (CDC).
+\begin{figure}[H]
+ \centering
+ \includegraphics[scale=0.45]{chapter2/fig/solenoid.pdf}
+ \caption{Schematic layout of superconducting magnet system for COMET phase-I experiment.}
+ \label{solenoid}
+\end{figure}
+
+The schematic layout of COMET superconducting solenoid is given in figure~\ref{solenoid}.
+Pion capture solenoid consists of CS0, CS1, MS1, MS2 and TS1a-TS1f superconducting coils.
+Meanwhile, muon transport solenoid includes TS2, TS3 and BS coils, and detector solenoid has 12 DS coils.
+
 \begin{figure}[H]
  \centering
  \includegraphics[scale=0.4]{chapter2/fig/field.pdf}
@@ -272,7 +316,7 @@ The details of superconducting magnet design will be explained in next chapter.
  \label{2field}
 \end{figure}
 
-\section{Objetive}
+\section{Objective}
 ~~~~~~The branching ratio of $\mu^- \rightarrow e^-$ conversion is predicted to around 10$^{-15}$ by the physics beyond the Standard model such as SUSY-GUT, SUSY-Seasaw.
 To obtain that experimental sensitivity for searching $\mu^- \rightarrow e^-$ conversion less than 10$^{-17}$, a 8 GeV, 4.4$\times$10$^{13}$ pps proton beam is employed to produce high intense muon beam of 10$^{11}$ $\mu^-$/sec with low momentum.
 
@@ -282,7 +326,7 @@ Its main issue is the radiation, which cause the over-heat and quench of superco
 %Because the conduction cooling is employed in whole superconducting system, considering the cooling path of superconducting magnets will degrade under high radiation, in this thesis, effects of radiation on superconducting magnet and its radiation resistance have been studied.
 Thus, the radiation effects on COMET superconducting solenoid are studied in this thesis.
 
-In chapter 2, the design details of superconducting magnets for COMET phase-I experiment, pion capture solenoid, muon transport solenoid and detector solenoid, will be explained.
+In chapter 2, the current design details of superconducting magnets for COMET experiment, pion capture solenoid, and muon transport solenoid, will be explained.
 
 In chapter 3, to investigate how much radiation will be produced in COMET experiment, Monte Carlo code is modified to carry out the calculation with COMET condition.
 Using the real geometry of COMET experiment, the prompt radiation for phase-II and the residual radiation after phase-I experiment is estimated.

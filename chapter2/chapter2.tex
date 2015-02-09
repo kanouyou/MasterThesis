@@ -3,27 +3,21 @@
 Its superconducting magnet system consists of pion capture solenoid, muon transport solenoid and detector solenoid.
 In phase-II experiment, nowadays' 90 degree bent transport solenoid will be extended to 180 degree curved solenoid, and another spectrometer solenoid will be added.
  
-\section{Superconducting magnet system}
-~~~~~~Superconducting magnet system plays a key role in pion capture, muon transport and signal tracking.
-In the case of COMET phase-I experiment, the 8 GeV proton with high intensity is injected into superconducting magnet and hits the target to produce pion, then these backward pions are captured by pion capture solenoid, which provides 5 Tesla magnetic field at peak.
-\begin{figure}[H]
- \centering
- \includegraphics[scale=0.45]{chapter2/fig/solenoid.pdf}
- \caption{Schematic layout of superconducting magnet system for COMET phase-I experiment.}
- \label{solenoid}
-\end{figure}
-Muons with low momentum from the decay of captured pions are transported to stopping target by the muon transport solenoid with 3 Tesla.
-Because the high momentum muon and the other particles will cause the background on detector, the muon transport solenoid is designed with 90 degree curve to throw out these particles.
-After the muon captured by stopping target, the emitted electron from stopping target will be bent by detector solenoid which provides 1 Tesla magnetic field and tracked in cylindrical drift chamber (CDC).
-
-The schematic layout of COMET superconducting solenoid is given in figure~\ref{solenoid}.
-Pion capture solenoid consists of CS0, CS1, MS1, MS2 and TS1a-TS1f superconducting coils.
-Meanwhile, muon transport solenoid includes TS2, TS3 and BS coils, and detector solenoid has 12 DS coils.
-
  \section{Pion capture solenoid}
-~~~~~~Pion capture solenoid is most critical magnet for capturing the pions from production target with a large solid angle.
+~~~~~~Pion capture solenoid shown in figure~\ref{capturesol} is most critical magnet for capturing the pions from production target with a large solid angle.
 Considering the valleys of magnetic field causes the trapping of charged particle, the magnetic field distribution must be smooth.
 The details of the magnetic field of pion capture solenoid is shown in table~\ref{magfldcs}.
+\begin{figure}[H]
+ \centering
+ \includegraphics[scale=0.4]{chapter2/fig/capturesol.pdf}
+ \caption{Schematic layout of pion capture solenoid.}
+ \label{capturesol}
+\end{figure}
+All of the superconducting coils in pion capture solenoid is connected together with the same current provided by one power supply.
+Furthermore, conduction cooling is employed in whole COMET superconducting magnet system to minimize the tritium production under high radiation environment by reaction of $^3$He(n,p)$^3$H.
+Also the conduction cooling eliminates a helium vessel, which requires significant additional structure to the superconducting coil assembly resulting move heat load by the irradiation.
+From all aspect, the conduction cooling is the best choice for COMET superconducting magnet system.
+aluminium-stabilized conductors is used in all the coils for reducing the heat load and preventing the over heat of coils after quench.
 \begin{table}[H]
  \centering
  \begin{tabular}{ccccccc} \hline \hline
@@ -43,16 +37,12 @@ The details of the magnetic field of pion capture solenoid is shown in table~\re
  \caption{Details of coils for pion capture solenoid.}
  \label{magfldcs}
 \end{table}
-All of the superconducting coils in pion capture solenoid is connected together with the same current provided by one power supply.
-Furthermore, conduction cooling is employed in whole COMET superconducting magnet system due to the tritium production under high radiation environment by reaction of $^3$He(n,p)$^3$H.
-Also the direct cooling needs helium vessel and the coils must be enlarged, the more radiation and stored energy deposits in larger coils.
-From all aspect, the conduction cooling is the best choice for COMET superconducting magnet system.
-aluminium-stabilized conductors is used in all the coils for reducing the heat load and preventing the over heat of coils after quench.
+
 
 \subsection{Coils structure}
-~~~~~~To reduce the energy deposition in coils, superconducting wires are all merged with 5N aluminium (0.1\% Ni) due to its low density.
-The reason why 
-0.1\% nickel is mixed to enhance the mechanical property of conductor.
+~~~~~~For stabilization and quench protection of the coils, superconducting wires are all merged with 5N aluminium (0.1\% Ni) due to its low density.
+The aluminium stabilized conductor is chosen because aluminium is lighter than copper, which is employed as superconducting stabilizer popularly, such that it can be more transparent to the irradiation.
+Here, 0.1\% nickel mixed is to enhance the mechanical property of conductor.
 \begin{figure}[H]
  \centering
  \includegraphics[scale=0.45]{chapter2/fig/coil.pdf}
@@ -106,11 +96,15 @@ The proton beam also has to be fitted to a gaussian beam with 0.2 cm radius.
 ~~~~~~A radiation shield is installed inside the CS and MS coils to protect superconducting coils from radiation.
 This radiation shield has to be designed for both phase-I and phase-II experiment due to the high residual radiation.
 The neutron came from production target directly is about 3$\times$10$^{12}$ n/cm$^2$/sec in COMET phase-II experiment, which corresponds to 10$^{24}$ n/m$^2$.
-Both NbTi superconducting cable and stabilizers degrade if they are irradiated by neutrons with this order.
+Both NbTi superconducting cable and stabilizers will degrade if they are irradiated by neutrons with over 10$^{22}$ n/m$^2$.
 Therefore, due to a small radius of capture solenoid, a powerful radiation shield is needed to stop or decrease the radiation in short distance.
 The most ideal radiation shield is made of pure tungsten with density of 19.25 g/cm$^3$.
 
-However, to reduce the costs, a new composited radiation shield is designed and the details will be described in next chapter.
+However, to reduce the costs, a new radiation shield is necessary, and there are 3 candidates for the shielding design, which are the copper, tungsten and stainless steel.
+Tungsten is most ideal material for shielding but it has bad thermal conductivity, thus, the water cooling should be installed into tungsten shield.
+Copper has good thermal conductivity, but the eddy current will generate inside it during the hysteresis, so it needs to be cut in somewhere to prevent the eddy current.
+Stainless steel has good shielding ability but higher residual radiation.
+The detrails of shielding design will show in next chapter.
 
 \subsection{Quench protection system}
 ~~~~~~Quench is caused by a hot spot in superconducting magnet.
@@ -128,6 +122,19 @@ The time constant is written as
  \tau = \frac{L}{R_{dump}}
 \end{equation}
 where $L$ is the inductance of magnets and $R_{dump}$ is the resistance of dump resistor respectively.
+\begin{figure}[H]
+ \begin{subfigure}{0.3\textwidth}
+ \centering
+ \includegraphics[scale=0.38]{chapter2/fig/dump.pdf}
+ \end{subfigure}
+ \hspace{0.2\textwidth}
+ \begin{subfigure}{0.3\textwidth}
+ \centering
+ \includegraphics[scale=0.38]{chapter2/fig/heater.pdf}
+ \end{subfigure}
+ \caption{Schematics of quench protection circuit.}
+ \label{dump}
+\end{figure}
 Higher resistance of dump resistor makes current decay quicker.
 In the case of the pion capture solenoid, it is covered by the aluminium stabilizer.
 Once quench is occurred, the current will flow into the aluminium stabilizer and copper matrix.
@@ -139,19 +146,6 @@ The time constant is written as
 
 Another way is to make the superconducting magnet quench to increase the self resistance by external heater.
 It needs external power supply to heat the heater.
-\begin{figure}[H]
- \begin{subfigure}{0.3\textwidth}
- \centering
- \includegraphics[scale=0.4]{chapter2/fig/dump.pdf}
- \end{subfigure}
- \hspace{0.2\textwidth}
- \begin{subfigure}{0.3\textwidth}
- \centering
- \includegraphics[scale=0.4]{chapter2/fig/heater.pdf}
- \end{subfigure}
- \caption{Schematics of quench protection circuit.}
- \label{dump}
-\end{figure}
 
 The quench protection system for pion capture solenoid is shown in figure~\ref{capture}.
 All superconducting magnets in pion capture solenoid are connected together.
@@ -161,28 +155,36 @@ Once quench is occurred in one of the superconducting magnet of pion capture sol
 Total resistivity of pion capture solenoid increases after heated, thus, the current will decay to zero in 1 min.
 \begin{figure}[H]
  \centering
- \includegraphics[scale=0.4]{chapter2/fig/capture.pdf}
+ \includegraphics[scale=0.38]{chapter2/fig/capture.pdf}
  \caption{Schematics of quench protection system for pion capture solenoid.}
  \label{capture}
 \end{figure}
 
  \section{Muon transport solenoid}
-~~~~~~Muons are transported to the stopping target through the muon transport solenoid, which consists of curved superconducting magnets.
-The muon transport solenoid must be designed to select the muons with low momentum and eliminate muons with high momentum ($p_{\mu^-} \textgreater$ 75 MeV/c), in addition, it also must be long enough for the pion decay.
-Due to the beam dispersion in muon transport solenoid, the selection of charged particle depends on their momentum.
-The magnitude of drift is given by
-\begin{equation}
- D = \frac{1}{qB}(\frac{s}{R})\frac{p_L^2 + p_T^2/2}{p_L} = \frac{1}{qB}(\frac{s}{R})\frac{p}{2}(cos\theta + \frac{1}{cos\theta})
-\end{equation}
-where $q$ is the electric charge of particle, $B$ is the magnetic field, $s$ and $R$ are the path length and the radius of curvature of solenoid respectively.
-$s/R$ is the bending angle, $p_L$ and $p_T$ [GeV/c] are longitudinal and transverse momentum.
-To keep the center of the helical trajectories of muons in the bending plane, a compensating dipole field parallel to the drift direction is applied, which is given by
-\begin{equation}
- B_{comp} = \frac{1}{qR} \frac{p_0}{2} (cos\theta_0 + \frac{1}{cos\theta_0})
-\end{equation}
-
-The muon transport solenoid consists of 16 coils without stabilizer and a dipole coil with 0.056 Tesla compensating field is attached on the outer surface of each solenoid.
+~~~~~~The muon transport solenoid consists of 16 coils without stabilizer and a dipole coil with 0.056 Tesla compensating field is attached on the outer surface of each solenoid, which is shown in figure~\ref{transol}.
+\begin{table}[H]
+ \centering
+ \begin{tabular}{cccccccc} \hline \hline
+  Coil & B$_z$ & B$_y$ & Length & Inner radius & Outer radius & Current & Current density \\
+   & [T] & [T] & [mm] & [mm] & [mm] & [A] & [A/mm$^2$] \\ \hline
+  TS2a & 3 & NA & 255 & 234 & 249 & 210 & 72 \\
+  TS2-1 & 3 & 0.06 & 205 & 234 & 264 & 210 & 95 \\
+  TS2-2$\sim$15 & 3 & 0.06 & 205 & 234 & 272 & 210 & 95 \\
+  TS2-16 & 3 & 0.06 & 205 & 234 & 254 & 210 & 94 \\
+  TS3 & 3 & NA & 600 & 400 & 437 & 190 & 85.5 \\ \hline \hline
+ \end{tabular}
+ \caption{Coils parameters for muon transport solenoid.}
+ \label{tscoil}
+\end{table}
+All of the coils of muon transport solenoid are connected to each other.
 Details of each coil and design parameters are listed in table~\ref{tscoil} and \ref{designts}.
+\begin{figure}[H]
+ \centering
+ \includegraphics[scale=0.40]{chapter2/fig/transportsol.pdf}
+ \caption{Schematic layout of muon transport solenoid and detector solenoid.}
+ \label{transol}
+\end{figure}
+
 \begin{table}[H]
  \centering
  \begin{tabular}{ll} \hline \hline
@@ -213,30 +215,33 @@ Details of each coil and design parameters are listed in table~\ref{tscoil} and 
  \label{designts}
 \end{table}
 
-\begin{table}[H]
+\subsection{Quench protection}
+~~~~~~The coils in transport solenoid is not stabilized by aluminium, their self resistivity is very small.
+Thus, one semi-active quench back heater is employed in transport solenoid, which is shown in figure~\ref{transqu}.
+\begin{figure}[H]
  \centering
- \begin{tabular}{cccccccc} \hline \hline
-  Coil & B$_z$ & B$_y$ & Length & Inner radius & Outer radius & Current & Current density \\
-   & [T] & [T] & [mm] & [mm] & [mm] & [A] & [A/mm$^2$] \\ \hline
-  TS2a & 3 & NA & 255 & 234 & 249 & 210 & 72 \\
-  TS2-1 & 3 & 0.06 & 205 & 234 & 264 & 210 & 95 \\
-  TS2-2$\sim$15 & 3 & 0.06 & 205 & 234 & 272 & 210 & 95 \\
-  TS2-16 & 3 & 0.06 & 205 & 234 & 254 & 210 & 94 \\
-  TS3 & 3 & NA & 600 & 400 & 437 & 190 & 85.5 \\ \hline \hline
- \end{tabular}
- \caption{Coils parameters for muon transport solenoid.}
- \label{tscoil}
-\end{table}
+ \includegraphics[scale=0.45]{chapter2/fig/transport.pdf}
+ \caption{Semi-active quench protection circiut for muon transport solenoid.}
+ \label{transqu}
+\end{figure}
+Unlike to the pion capture solenoid, quench back heaters are installed in one quench protection circiut with superconducting coils.
+Once a coil of muon transport solenoid quenches, the switch will be turned off, then current will flow to the heater.
+Every heater will be actived by it own current and heat every coil in muon transport solenoid.
+
+Diode is switch to prevent the current flows to the heaters during the operation and turn on the heater when quench.
+In the case of muon transport solenoid, it operates in the cold mass (4.2 K).The radiation may cause the turn-on voltage reduced 
+Considering the radiation may cause the turn-on voltage reduced and temperature rising, the radiation test is described in next chapter.
 
 
 
-\section{Detector solenoid}
-~~~~~~The detector solenoid consists of 14 DS coils and 5 BS collimator coils with 1 and 1.57 Tesla magnetic field respectively.
-The superconducting wires of BS and DS have diameter of 1.26 mm with copper ratio of 4.2, and RRR of copper is higher than 60.
-Superconducting cable is insulated by PVF with 30 $\mu$m thick.
-The stored energy of DS and BS are about 4.45 MJ and 0.166 MJ respectively.
-Inductance of these two solenoids are 240 H and 13.8 H.
-The detector solenoid is cooled by GM refrigerators independently.
+
+%\section{Detector solenoid}
+%~~~~~~The detector solenoid consists of 14 DS coils and 5 BS collimator coils with 1 and 1.57 Tesla magnetic field respectively.
+%The superconducting wires of BS and DS have diameter of 1.26 mm with copper ratio of 4.2, and RRR of copper is higher than 60.
+%Superconducting cable is insulated by PVF with 30 $\mu$m thick.
+%The stored energy of DS and BS are about 4.45 MJ and 0.166 MJ respectively.
+%Inductance of these two solenoids are 240 H and 13.8 H.
+%The detector solenoid is cooled by GM refrigerators independently.
 %\begin{table}[H]
 % \centering
 % \begin{tabular}{cccccccc} \hline \hline
@@ -253,8 +258,7 @@ The detector solenoid is cooled by GM refrigerators independently.
 %  DS4 & 1 & 170 & 1070 & 1078 & 12027.39 & 191 & 131 \\
 %  DS5 & 1 & 170 & 1070 & 1078 & 12237.39 & 191 & 131 \\
 %  DS6 & 1 & 170 & 1070 & 1078 & 12447.39 & 191 & 131 \\
-%  DS7 & 1 & 170 & 1070 & 1078 & 12657.39 & 191 & 131 \\
-%  DS8 & 1 & 170 & 1070 & 1078 & 12867.39 & 191 & 131 \\
+%  DS7 & 1 & 170 & 1070 & 1078 & 12657.39 & 191 & 131 \\ %  DS8 & 1 & 170 & 1070 & 1078 & 12867.39 & 191 & 131 \\
 %  DS9 & 1 & 170 & 1070 & 1078 & 13077.39 & 191 & 131 \\
 %  DS10 & 1 & 170 & 1070 & 1078 & 13287.39 & 191 & 131 \\
 %  DS11 & 1 & 170 & 1070 & 1078 & 13497.39 & 191 & 131 \\

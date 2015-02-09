@@ -21,6 +21,7 @@ PHITS uses its own models for nuclear collisions and for hadron reactions.
 The details of physical model in PHITS are shown in figure~\ref{phitsmodel}.
 As for 8 GeV hadron collision, the Japanese nuclear library, JENDL-4.0, is employed in the low energy region ($\le$20 MeV).
 Between 20 MeV and 3 GeV, there are three kinds of different model in hadron reaction, which are the INCL4.6~\cite{incl}, Bertini and INC-ELF~\cite{incelf}.
+The JAM model is used in the range higher than 3 GeV.
 
   \subsection{FLUKA}
 ~~~~~~FLUKA is a fully integrated particle physics Monte Carlo simulation package developed by CERN~\cite{fluka}.
@@ -43,7 +44,8 @@ G4 also provides the FTF String model from the range of 5 GeV to 20 TeV and QG S
 %\end{table}
 
  \section{Modification of PHITS code}
-~~~~~~Here, the modification of PHITS code will be introduced to achieve the realistic simulation of COMET experiment.
+~~~~~~PHITS code has no powerful function like GEANT4, like which cannot bend the charged particle with field map, no muon physics induced besides the Michel decay and etc.
+Here, the modification of PHITS code will be introduced to achieve the realistic simulation of COMET experiment.
 The main optimization of PHITS code is listed as follows.
 \begin{itemize}
  \setlength{\itemsep}{-5pt}
@@ -70,7 +72,7 @@ The proton beam used in radiation estimation is TURTLE data for phase-I and gaus
  \subsection{Magnetic field}
 ~~~~~~As for nowadays' PHITS, it still cannot bend the charged particles in user's field map.
 However, the radiation estimation is affected by the magnetic field sensitively.
-To solve this issue, one magnetic field interpolation subroutine written by C is compiled with FORTRAN files.
+To solve this issue, one magnetic field interpolation subroutine is included into PHITS code.
 The details of the magnetic field interpolation is described in appendix A.
 The charged particles are bended with a circular path in the magnetic field which is written as
 \begin{equation}
@@ -80,16 +82,28 @@ The charged particles are bended with a circular path in the magnetic field whic
 To ensure the magnetic field interpolation, the uniform field map with 5 Tesla has been tested and the tracking is shown in~\ref{2uniform}.
 Following the equation~\ref{beq}, the bending radius of 0.1 GeV/c momentum electron in 5 Tesla is 6.6 cm.
 The radius from the simulation is totally agree with the calculation.
- \begin{figure}[H]
-  \centering
-  \includegraphics[scale=0.45]{chapter3/fig/magtest.pdf}
-  \caption{Tracking of 100 MeV electron with uniform 5 Tesla field. One electron is injected with angle of 30 degree. Magnetic field is applied in a cylinder with radius of 50 cm and length of 300 cm.}
-  \label{2uniform}
- \end{figure}
+% \begin{figure}[H]
+%  \centering
+%  \includegraphics[scale=0.45]{chapter3/fig/magtest.pdf}
+%  \caption{Tracking of 100 MeV electron with uniform 5 Tesla field. One electron is injected with angle of 30 degree. Magnetic field is applied in a cylinder with radius of 50 cm and length of 300 cm.}
+%  \label{2uniform}
+% \end{figure}
+\begin{figure}[H]
+ \begin{subfigure}{0.3\textwidth}
+ \centering
+ \includegraphics[scale=0.40]{chapter3/fig/5tesla_track.eps}
+ \end{subfigure}
+ \hspace{0.2\textwidth}
+ \begin{subfigure}{0.3\textwidth}
+ \centering
+ \includegraphics[scale=0.30]{chapter3/fig/5tesla_xy.eps}
+ \end{subfigure}
+ \caption{Tracking of 40 MeV (113 MeV/c) negative pion with uniform 5 Tesla field. Pion is shoted at (0,0,0) with 10 degree.}
+ \label{2uniform}
+\end{figure}
 The field map included into COMET PHITS simulation is calculated by Finite Element Method (FEM) with iron yoke, which is shown in figure~\ref{field}.
 There are still some missing part of field map, like the field around the iron yoke and proton beam transport pipe.
 It will affect the proton beam transportation definitely, but this map is enough for the radiation study.
-
  \begin{figure}[H]
   \begin{subfigure}{0.3\textwidth}
    \centering
@@ -128,6 +142,19 @@ The backward production of muon and pion at high energy region is difficult to p
 Especially for the COMET experiment which is employed the backward muon, prediction of backward muon and pion is quite different from the different physics model.
 Thus, as the comparison of backward pion and muon at 1 m far from the target, compared with JAM\_BERT\_JENDL, the pion energy spectrum predicted by QGSP\_BERT\_G4NDL has high energy tail and lower peak.
 Because the pion only comes from the high energy cascade model, the different must be between JAM and QGSP.
+\begin{figure}[H]
+ \begin{subfigure}{0.3\textwidth}
+  \centering
+  \includegraphics[scale=0.41]{chapter3/fig/momentum_g4.eps}
+ \end{subfigure}
+ \hspace{0.2\textwidth}
+ \begin{subfigure}{0.3\textwidth}
+  \centering
+  \includegraphics[scale=0.41]{chapter3/fig/momentum_phits.eps}
+ \end{subfigure}
+ \caption{The comparison of momentum distribution of QGSP\_BERT\_ENDF with JAM\_BERT\_JENDL. Both momentum spectrum and distribution are very similar for these two models.}
+ \label{mom}
+\end{figure}
   \begin{figure}[H]
    \begin{subfigure}{0.3\textwidth}
     \centering
@@ -145,12 +172,7 @@ Because the pion only comes from the high energy cascade model, the different mu
   \subsection{Geometry}
 ~~~~~~The geometry plays an important role in radiation simulation, especially for the high energy physics.
 Every detail of COMET phase-I geometry is established in PHITS simulation in terms of the design drawing from KEK.
- \begin{figure}[H]
-   \centering
-   \includegraphics[scale=0.5]{chapter3/fig/geo.pdf}
-   \caption{COMET phase-I experiment geometry in PHITS simulation.}
-   \label{geom}
-  \end{figure}
+
 As shown in figure~\ref{geom}, the COMET experimental hall is separated by concrete wall with 1 m thickness at end of 90 degree bending and 2 m at beam dump.
 The concrete wall between experimental hall and control room and accelerator hall is with 3 m thickness to prevent the radiation leaking.
 Beam dump consists of iron yoke with 1.5$\times$1.5$\times$1 m and 2.5$\times$2.5$\times$1 m holes which is same to the Mu2e beam absorber design and concrete~\cite{mu2ereport}.
@@ -158,12 +180,26 @@ Ceiling board is made of iron yoke with thickness of 0.6 m, gas (air) with thick
 Shielding supporter structure is made of stainless steel (SUS-304) with two holes for proton beam exit and target changing.
 Radiation shield is employed the composite shield which will be described later.
 In the muon beamline, two 1 mm titanium vacuum windows are set up in the end of pion capture solenoid and muon transport solenoid respectively.
-Cosmic shield is consist of 20 cm concrete with 50\% iron, 10 cm polythylene and 10 cm lead.
+Cosmic shield is consist of 20 cm concrete with 50\% iron, 10 cm polyethylene and 10 cm lead.
+ \begin{figure}[H]
+   \centering
+   \includegraphics[scale=0.5]{chapter3/fig/geo.pdf}
+   \caption{COMET phase-I experiment geometry in PHITS simulation.}
+   \label{geom}
+  \end{figure}
 
   \subsection{Radiation estimation}
 ~~~~~~Since only backward pion is employed to create muon in high magnetic field, the main radiation is neutron and photon because they are not affected with magnetic field.
 As implemented the geometry and magnetic field, the neutron and photon distribution is calculated and shown in figure~\ref{2photon}.
 Because the geometry is only for phase-I experiment, the production target is replaced from graphite to pure tungsten target, and the proton beam intensity is changed to 4.4$\times$10$^{13}$ pps to estimate the radiation for phase-II experiment.
+The neutron energy and photon is cut from 10$^{-12}$ MeV and 1 keV respectively.
+Electron is not included because the electron is calculated by Kerma factor, which is not reliable.
+
+Furthermore, to prevent neutrons leak to the detector room, the concrete wall with 2 m thick is replaced by iron yoke.
+Even if the iron yoke is employed as a wall here, it still has 5$\times$10$^6$ n/cm$^2$/sec neutrons at least which leak from experimental room to detector room which is 5 times higher than phase-I experiment.
+The neutron along the muon beamline is with low energy and it is easy to be capture or scattered in the detector solenoid.
+While, as for the photon, it comes from the neutron capture, muon capture, bremsstrahlung et al.
+Thus, the photon in the detector solenoid is about 10$^9$ n/cm$^2$/sec at peak, which is 100 times higher than phase-I experiment at same place.
 \begin{figure}[H]
    \begin{subfigure}{0.3\textwidth}
     \centering
@@ -190,11 +226,6 @@ Because the geometry is only for phase-I experiment, the production target is re
    \caption{Neutron and photon distribution for COMET phase-II experiment. Top two show the neutron distribution from x-z and y-z view. Bottom two are the distribution of photon from x-z and y-z view.}
    \label{2photon}
   \end{figure}
-Furthermore, to prevent neutrons leak to the detector room, the concrete wall with 2 m thick is replaced by iron yoke.
-Even if the iron yoke is employed as a wall here, it still has 5$\times$10$^6$ n/cm$^2$/sec neutrons at least which leak from experimental room to detector room which is 5 times higher than phase-I experiment.
-The neutron along the muon beamline is with low energy and it is easy to be capture or scattered in the detector solenoid.
-While, as for the photon, it comes from the neutron capture, muon capture, bremsstrahlung et al.
-Thus, the photon in the detector solenoid is about 10$^9$ n/cm$^2$/sec at peak, which is 100 times higher than phase-I experiment at same place.
 
 Figure~\ref{2bending} shows the energy spectrum of muon, photon and neutron for phase-II experiment at the end of 90 degree bending.
 Compared with the other particle, neutron and photon is most dominated particle along the beamline.
@@ -202,12 +233,12 @@ Almost neutron is in the range of low energy, and photon is with energy from 0.0
   \begin{figure}[H]
    \centering
    \includegraphics[scale=0.43]{chapter3/fig/Neutron.eps}
-   \caption{Energy spectrum of muon, photon and neutron from both experimental hall and beamline at the end of 90 degree bending. Most of neutrons are at the low energy region, and photon are all higher than 10 keV.}
+   \caption{Energy spectrum of muon, photon and neutron from both experimental hall and beamline at the end of 90 degree bending along the axis. Most of neutrons are at the low energy region, and photon are all higher than 10 keV.}
    \label{2bending}
   \end{figure}
   \begin{figure}[H]
    \centering
-   \includegraphics[scale=0.43]{chapter3/fig/heat.eps}
+   \includegraphics[scale=0.45]{chapter3/fig/heat.eps}
    \caption{The energy deposition of each magnets in phase-I and phase-II experiment. Black and red point represent the energy deposition of phase-I and phase-II experiment respectively. The energy deposition of phase-II is one order higher than phase-I's, and its peak is located in CS0 coil.}
    \label{2heat}
   \end{figure}
@@ -216,6 +247,197 @@ Once the hot spot is generated in the superconducting magnet, these magnets are 
 The heat load of each magnet for phase-I and phase-II experiment are shown in figure~\ref{2heat}.
 Compared with phase-I experiment, heat load of phase-II experiment is 10 times higher than phase-I experiment at least.
 The peak of heat load is at CS0 coil which 0.03 W/kg corresponding to 0.73 MGy for 280-day operation.
+
+\section{Radiation shielding optimization}
+~~~~~~The heat and radiation shield (HRS) is located around the production target to protect the superconducting from the radiation exposure.
+This radiation shield consists of two parts, one is for protecting MS magnets, another one is for protecting CS magnets.
+It is unable to take long time to change the radiation shield after phase-I experiment due to the residual radiation.
+Thus, radiation shield must be designed for both phase-I and phase-II experiment.
+
+Pure tungsten is most ideal material as the radiation shield due to its high density.
+However, it has several disadvantages such as high costs, heavy mass and complex fabrication.
+Therefore, some parts of radiation shield can be replaced by the other materials.
+
+ \subsection{Radiation shield for MS}
+~~~~~~Inside the superconducting magnets, radiation shield must be made of material without magnetism.
+Thus, there are two candidates for MS radiation shield, copper and stainless steel.
+The heat load of each CS and MS magnet when the copper and stainless steel is used as radiation is estimated by PHITS code in table~\ref{hrsload}.
+It shows that copper shield has better shielding ability than stainless steel shield.
+ \begin{table}[H]
+ \centering
+ \begin{tabular}{cccccc} \hline \hline
+  & CS0 [W] & CS1 [W] & MS1 [W] & MS2 [W] & CS + MS [W] \\ \hline
+  SUS304 & 8.03 & 51.82 & 27.80 & 10.49 & 98.13 \\
+  Copper & 7.56 & 50.14 & 22.99 & 8.73 & 89.42 \\ \hline \hline
+ \end{tabular}
+ \caption{Heat load of stainless steel and copper shield.}
+ \label{hrsload}
+\end{table}
+Considering the residual radiation of radiation shield, the actived isotopes and activity after 1-month operation and 10-month cooling are investigated and shown in table~\ref{2atom}.
+Apparently, copper shield's activity is quite lower than stainless steel shield's.
+Furthermore, the dose equivalent of copper and stainless steel shield are 1.51 $\mu$Sv/h and 7.02 $\mu$Sv/h respectively.
+\begin{table}[H]
+ \centering
+ \begin{tabular}{c}
+  \begin{minipage}{0.4\textwidth}
+  \centering
+  \begin{tabular}{ccc} \hline \hline
+   Nuclei & Activity [MBq] & Half life [year] \\ \hline
+   $^{60}$Co & 192 & 5.27 \\
+   $^{57}$Co & 111 & 0.75 \\
+   $^{63}$Ni & 80.9 & 100 \\
+   $^{58}$Co & 56.9 & 0.19 \\
+   $^{54}$Mn & 54.7 & 0.86 \\
+   $^3$H & 30.9 & 12.3 \\
+   $^{55}$Fe & 29.3 & 2.73 \\
+   $^{49}$V & 16.7 & 0.90 \\
+   $^{56}$Co & 5.52 & 0.21 \\
+   $^{65}$Zn & 5.13 & 0.67 \\ \hline \hline
+  \end{tabular}
+  %\caption{Actived isotopes of copper shield.}
+  \end{minipage}
+  \hspace{0.1\textwidth}
+  \begin{minipage}{0.4\textwidth}
+  \centering
+  \begin{tabular}{ccc} \hline \hline
+   Nuclei & Activity [MBq] & Half life [year] \\ \hline
+   $^{55}$Fe & 4950 & 2.73 \\
+   $^{54}$Mn & 1500 & 0.86 \\
+   $^{49}$V & 878 & 0.90 \\
+   $^{57}$Co & 585 & 0.75 \\
+   $^{58}$Co & 387 & 0.19 \\
+   $^{51}$Cr & 92.6 & 0.08 \\
+   $^{59}$Fe & 29.4 & 0.12 \\
+   $^{63}$Ni & 26.5 & 100 \\
+   $^3$H & 26.0 & 12.3 \\
+   $^{60}$Co & 21.7 & 5.27 \\ \hline \hline
+  \end{tabular}
+  %\caption{Actived isotopes of stainless steel shield.}
+  \end{minipage}
+ \end{tabular}
+ \caption{Actived isotopes of copper (left) and stainless steel (right).}
+ \label{2atom}
+\end{table}
+
+From the aspect of shielding ability and residual radiation, copper is the better material for MS radiation shield.
+Noting that the induced current will be generated by the changing of magnetic field, the copper should be cut in somewhere.
+
+\subsection{Radiation shield for CS}
+~~~~~~Proton is injected into pion capture solenoid with 10 degree, thus, a hot spot is created on the one side of CS1 and CS0 coils, which is the one of the reason why quench occurs.
+Thus, the radiation shield for CS requires
+\begin{itemize}
+ \setlength{\itemsep}{-5pt}
+ \item Limit the maximum heat load in coils.
+ \item Limit the maximum radiation induced damage in coils.
+ \item Reduce the mass of radiation shield.
+ \item Pion yield should not be reduced significantly.
+\end{itemize}
+\begin{figure}[H]
+ \centering
+ \includegraphics[scale=0.43]{chapter3/fig/muon.eps}
+ \caption{A relation of muon and pion yield with shielding backward radius. Current shielding backward radius is 36 cm. Black line: $\mu^-$, red line: $\pi^-$, blue line: $\mu^- + \pi^-$.}
+ \label{radius}
+\end{figure}
+As for the muon yield, it does not depend on the material of radiation but the backward radius of shield.
+Figure~\ref{radius} shows that the muon and pion yield increases about 9\% after the radius is changed from 36 cm to 50 cm.
+
+To reduce the costs and mass of radiation shield, the low radiation region which corresponds to the side far to incident proton enables to be fabricated by another kind of material.
+As for the material, the ideal material is pure tungsten but only the tungsten alloy is cheaper and easy to fabricate.
+Thus, the details of tungsten alloy (AN-1800) are list in table~\ref{alloy}.
+\begin{table}[H]
+ \centering
+ \begin{tabular}{cc} \hline \hline
+  Composition [wt.\%] & Ni: 3.0$_{\pm 0.25}$; Cu: 2.0$_{\pm 0.25}$; W: 95.0$_{\pm 0.5}$ \\
+  Density [g/cm$^3$] & 18.0$_{\pm 0.2}$ \\
+  Hardness & HV 320$_{\pm 50}$ \\
+  Tensile strength & 620 MPa \\
+  Offset yield strength & 500 MPa \\
+  Elastic modulus & 310 GPa \\
+  Thermal conductivity & 104 W/m/K \\
+  Thermal expansion coefficient & 5.5$\times$10$^{-6}$ K$^{-1}$ \\ \hline \hline
+%  Shielding ability & 47\% ($^{60}$Co radiation source) \\
+ \end{tabular}
+ \caption{Material property of tungsten alloy (AN-1800).}
+ \label{alloy}
+\end{table}
+
+ \begin{figure}[H]
+  \begin{subfigure}{0.3\textwidth}
+   \centering
+   \includegraphics[scale=0.3]{chapter3/fig/shielding.pdf}
+  \end{subfigure}
+  \hspace{0.2\textwidth}
+  \begin{subfigure}{0.3\textwidth}
+   \centering
+   \includegraphics[scale=0.3]{chapter3/fig/shieldflux.pdf}
+  \end{subfigure}
+  \caption{The concept of COMET radiation shield. It consists of tungsten alloy, stainless steel and copper. Tungsten ally and stainless steel are employed on the high and low radiation side respectively. On the downstream of target, copper is used. Right figure shows the distribution of neutron from x-y view. Azimuthal angle is also defined in here. The peak of neutron flux is located at 180 degree of CS coils.}
+  \label{2shieldgeo}
+ \end{figure}
+
+As shown in figure~\ref{2shieldgeo}, the radiation shield is designed which consists of tungsten alloy, copper and stainless steel.
+The DPA, neutron fluence and heat load of several shielding design concepts along azimuthal direction is compared in figure~\ref{2dpa} and \ref{2flux}.
+Details of several shielding designs are listed as follows.
+\begin{itemize}
+ \setlength{\itemsep}{-7pt}
+ \item Ideal pure tungsten shield: made of pure tungsten with a cylindrical shape.
+ \item Ideal tungsten alloy shield: made of tungsten alloy with a cylindrical shape.
+ \item Ideal copper shield: made of copper with a cylindrical shape.
+ \item Realistic tungsten alloy shield: made of tungsten alloy with a polygonal shape.
+ \item Realistic composited shield: made of tungsten alloy, copper and stainless steel with a polygonal shape.
+\end{itemize}
+After these comparisons, we come out the conclusion
+\begin{itemize}
+ \setlength{\itemsep}{-7pt}
+ \item The maximum DPA of CS1 coils increases over 4 times when the pure tungsten is replaced by copper.
+ \item Compared with tungsten alloy, pure tungsten has stronger shielding ability.
+ \item Shielding ability of cylindrical shape is stronger than polygonal shape.
+ \item The peak of DPA, heat load and neutron fluence is same between composited shield and tungsten alloy shield.
+\end{itemize}
+ \begin{figure}[H]
+  \begin{subfigure}{0.3\textwidth}
+   \centering
+   \includegraphics[scale=0.43]{chapter3/fig/dpa.eps}
+  \end{subfigure}
+  \hspace{0.2\textwidth}
+  \begin{subfigure}{0.3\textwidth}
+   \centering
+   \includegraphics[scale=0.43]{chapter3/fig/shieldheat.eps}
+  \end{subfigure}
+  \caption{Compared the azimuthal DPA and energy deposition of middle part of CS1 coil in different version of shielding design. The long CS1 coil is cut to 3 parts along the z axis and 12 parts along the azimuthal axis.}
+  \label{2dpa}
+ \end{figure}
+The details of shielding design is listed in table~\ref{hrsdet}.
+ \begin{figure}[H]
+  \centering
+  \includegraphics[scale=0.43]{chapter3/fig/fluence.eps}
+  \caption{High energy neutron (E $\geq$ 0.1 MeV) along the azimuthal direction of CS1 coils.}
+  \label{2flux}
+ \end{figure}
+\begin{table}[H]
+ \centering
+ \begin{tabular}{lll} \hline \hline
+  CS1 & Composited shield & Pure tungsten shield \\ \hline
+  peak neutron fluence [n/m$^2$/280 days] & 2.35$\times$10$^{21}$ & 2.26$\times$10$^{21}$ \\
+  peak power density [W/g] & 2.50$\times$10$^{-5}$ & 2.40$\times$10$^{-5}$ \\
+  power [W] & 57.5 & 36.6 \\
+  peak dose [MGy/280 days] & 0.79 & 0.76 \\
+  peak DPA [DPA/280 days] & 1.05$\times$10$^{-5}$ & 0.98$\times$10$^{-5}$ \\
+  tungsten mass [t] & 15.6 & 28 \\
+  total mass [t] & 21.5 & 28 \\ \hline \hline
+ \end{tabular}
+ \caption{Details of the shielding design. CS1 is cut to 3 parts along the z axis, 12 parts along the azimuthal direction.}
+ \label{hrsdet}
+\end{table}
+
+As for the muon yield, it does not depend on the material of radiation but the backward radius of shield.
+Figure~\ref{radius} shows that the muon and pion yield increases about 9\% after the radius is changed from 36 cm to 50 cm.
+\begin{figure}[H]
+ \centering
+ \includegraphics[scale=0.43]{chapter3/fig/muon.eps}
+ \caption{A relation of muon and pion yield with shielding backward radius. Current shielding backward radius is 36 cm. Black line: $\mu^-$, red line: $\pi^-$, blue line: $\mu^- + \pi^-$.}
+ \label{radius}
+\end{figure}
 
  \section{Residual radiation estimation}
 ~~~~~~To achieve the muon with higher intensity, the graphite target will be replaced by pure tungsten target after phase-I experiment finished.
@@ -344,184 +566,4 @@ Table~\ref{2time} gives the maximum residual radiation after cooling for 10 mont
 From this estimation, the residual radiation will be reduced about 3 times after cooling for 2 years compared with 10 month cooling.
 Considering the beam dump is not included into this simulation, working for 1 hour is possible for co-workers.
 
- \section{Radiation shielding optimization}
-~~~~~~The heat and radiation shield (HRS) is located around the production target to protect the superconducting from the radiation exposure.
-This radiation shield consists of two parts, one is for protecting MS magnets, another one is for protecting CS magnets.
-It is unable to take long time to change the radiation shield after phase-I experiment due to the residual radiation.
-Thus, radiation shield must be designed for both phase-I and phase-II experiment.
-
-Pure tungsten is most ideal material as the radiation shield due to its high density.
-However, it has several disadvantages such as high costs, heavy mass and complex fabrication.
-Therefore, some parts of radiation shield can be replaced by the other materials.
-
- \subsection{Radiation shield for MS}
-~~~~~~Inside the superconducting magnets, radiation shield must be made of material without magnetism.
-Thus, there are two candidates for MS radiation shield, copper and stainless steel.
-The heat load of each CS and MS magnet when the copper and stainless steel is used as radiation is estimated by PHITS code in table~\ref{hrsload}.
-It shows that copper shield has better shielding ability than stainless steel shield.
- \begin{table}[H]
- \centering
- \begin{tabular}{cccccc} \hline \hline
-  & CS0 [W] & CS1 [W] & MS1 [W] & MS2 [W] & CS + MS [W] \\ \hline
-  SUS304 & 8.03 & 51.82 & 27.80 & 10.49 & 98.13 \\
-  Copper & 7.56 & 50.14 & 22.99 & 8.73 & 89.42 \\ \hline \hline
- \end{tabular}
- \caption{Heat load of stainless steel and copper shield.}
- \label{hrsload}
-\end{table}
-Considering the residual radiation of radiation shield, the actived isotopes and activity after 1-month operation and 10-month cooling are investigated and shown in table~\ref{2atom}.
-Apparently, copper shield's activity is quite lower than stainless steel shield's.
-Furthermore, the dose equivalent of copper and stainless steel shield are 1.51 $\mu$Sv/h and 7.02 $\mu$Sv/h respectively.
-
-From the aspect of shielding ability and residual radiation, copper is the better material for MS radiation shield.
-Noting that the induced current will be generated by the changing of magnetic field, the copper should be cut in somewhere.
-\begin{table}[H]
- \centering
- \begin{tabular}{c}
-  \begin{minipage}{0.4\textwidth}
-  \centering
-  \begin{tabular}{ccc} \hline \hline
-   Nuclei & Activity [MBq] & Half life [year] \\ \hline
-   $^{60}$Co & 192 & 5.27 \\
-   $^{57}$Co & 111 & 0.75 \\
-   $^{63}$Ni & 80.9 & 100 \\
-   $^{58}$Co & 56.9 & 0.19 \\
-   $^{54}$Mn & 54.7 & 0.86 \\
-   $^3$H & 30.9 & 12.3 \\
-   $^{55}$Fe & 29.3 & 2.73 \\
-   $^{49}$V & 16.7 & 0.90 \\
-   $^{56}$Co & 5.52 & 0.21 \\
-   $^{65}$Zn & 5.13 & 0.67 \\ \hline \hline
-  \end{tabular}
-  %\caption{Actived isotopes of copper shield.}
-  \end{minipage}
-  \hspace{0.1\textwidth}
-  \begin{minipage}{0.4\textwidth}
-  \centering
-  \begin{tabular}{ccc} \hline \hline
-   Nuclei & Activity [MBq] & Half life [year] \\ \hline
-   $^{55}$Fe & 4950 & 2.73 \\
-   $^{54}$Mn & 1500 & 0.86 \\
-   $^{49}$V & 878 & 0.90 \\
-   $^{57}$Co & 585 & 0.75 \\
-   $^{58}$Co & 387 & 0.19 \\
-   $^{51}$Cr & 92.6 & 0.08 \\
-   $^{59}$Fe & 29.4 & 0.12 \\
-   $^{63}$Ni & 26.5 & 100 \\
-   $^3$H & 26.0 & 12.3 \\
-   $^{60}$Co & 21.7 & 5.27 \\ \hline \hline
-  \end{tabular}
-  %\caption{Actived isotopes of stainless steel shield.}
-  \end{minipage}
- \end{tabular}
- \caption{Actived isotopes of copper (left) and stainless steel (right).}
- \label{2atom}
-\end{table}
-
-\subsection{Radiation shield for CS}
-~~~~~~Proton is injected into pion capture solenoid with 10 degree, thus, a hot spot is created on the one side of CS1 and CS0 coils, which is the one of the reason why quench occurs.
-Thus, the radiation shield for CS requires
-\begin{itemize}
- \setlength{\itemsep}{-5pt}
- \item Limit the maximum heat load in coils.
- \item Limit the maximum radiation induced damage in coils.
- \item Reduce the mass of radiation shield.
- \item Pion yield should not be reduced significantly.
-\end{itemize}
-
-To eliminate the hot spot and keep the balance, the low radiation region which corresponds to the side far to incident proton enables to be fabricated by another kind of material.
-As for the material, the ideal material is pure tungsten but only the tungsten alloy is cheaper and easy to fabricate.
-Thus, the details of tungsten alloy (AN-1800) are list in table~\ref{alloy}.
- \begin{figure}[H]
-  \begin{subfigure}{0.3\textwidth}
-   \centering
-   \includegraphics[scale=0.3]{chapter3/fig/shielding.pdf}
-  \end{subfigure}
-  \hspace{0.2\textwidth}
-  \begin{subfigure}{0.3\textwidth}
-   \centering
-   \includegraphics[scale=0.3]{chapter3/fig/shieldflux.pdf}
-  \end{subfigure}
-  \caption{The concept of COMET radiation shield. It consists of tungsten alloy, stainless steel and copper. Tungsten ally and stainless steel are employed on the high and low radiation side respectively. On the downstream of target, copper is used. Right figure shows the distribution of neutron from x-y view. Azimuthal angle is also defined in here. The peak of neutron flux is located at 180 degree of CS coils.}
-  \label{2shieldgeo}
- \end{figure}
-\begin{table}[H]
- \centering
- \begin{tabular}{cc} \hline \hline
-  Composition [wt.\%] & Ni: 3.0$_{\pm 0.25}$; Cu: 2.0$_{\pm 0.25}$; W: 95.0$_{\pm 0.5}$ \\
-  Density [g/cm$^3$] & 18.0$_{\pm 0.2}$ \\
-  Hardness & HV 320$_{\pm 50}$ \\
-  Tensile strength & 620 MPa \\
-  Offset yield strength & 500 MPa \\
-  Elastic modulus & 310 GPa \\
-  Thermal conductivity & 104 W/m/K \\
-  Thermal expansion coefficient & 5.5$\times$10$^{-6}$ K$^{-1}$ \\ \hline \hline
-%  Shielding ability & 47\% ($^{60}$Co radiation source) \\
- \end{tabular}
- \caption{Material property of tungsten alloy (AN-1800).}
- \label{alloy}
-\end{table}
-As shown in figure~\ref{2shieldgeo}, the radiation shield is designed which consists of tungsten alloy, copper and stainless steel.
-The DPA, neutron fluence and heat load of several shielding design concepts along azimuthal direction is compared in figure~\ref{2dpa} and \ref{2flux}.
-Details of several shielding designs are listed as follows.
- \begin{figure}[H]
-  \begin{subfigure}{0.3\textwidth}
-   \centering
-   \includegraphics[scale=0.43]{chapter3/fig/dpa.eps}
-  \end{subfigure}
-  \hspace{0.2\textwidth}
-  \begin{subfigure}{0.3\textwidth}
-   \centering
-   \includegraphics[scale=0.43]{chapter3/fig/shieldheat.eps}
-  \end{subfigure}
-  \caption{Compared the azimuthal DPA and energy deposition of middle part of CS1 coil in different version of shielding design. The long CS1 coil is cut to 3 parts along the z axis and 12 parts along the azimuthal axis.}
-  \label{2dpa}
- \end{figure}
-\begin{itemize}
- \setlength{\itemsep}{-5pt}
- \item Ideal pure tungsten shield: made of pure tungsten with a cylindrical shape.
- \item Ideal tungsten alloy shield: made of tungsten alloy with a cylindrical shape.
- \item Ideal copper shield: made of copper with a cylindrical shape.
- \item Realistic tungsten alloy shield: made of tungsten alloy with a polygonal shape.
- \item Realistic composited shield: made of tungsten alloy, copper and stainless steel with a polygonal shape.
-\end{itemize}
-
-After these comparisons, we come out the conclusion
-\begin{itemize}
- \setlength{\itemsep}{-5pt}
- \item The maximum DPA of CS1 coils increases over 4 times when the pure tungsten is replaced by copper.
- \item Compared with tungsten alloy, pure tungsten has stronger shielding ability.
- \item Shielding ability of cylindrical shape is stronger than polygonal shape.
- \item The peak of DPA, heat load and neutron fluence is same between composited shield and tungsten alloy shield.
-\end{itemize}
-The details of shielding design is listed in table~\ref{hrsdet}.
- \begin{figure}[H]
-  \centering
-  \includegraphics[scale=0.43]{chapter3/fig/fluence}
-  \caption{High energy neutron (E $\geq$ 0.1 MeV) along the azimuthal direction of CS1 coils.}
-  \label{2flux}
- \end{figure}
-\begin{table}[H]
- \centering
- \begin{tabular}{ccc} \hline \hline
-  CS1 & Composited shield & Pure tungsten shield \\ \hline
-  peak neutron fluence [n/m$^2$/280 days] & 2.35$\times$10$^{21}$ & 2.26$\times$10$^{21}$ \\
-  peak power density [W/g] & 2.50$\times$10$^{-5}$ & 2.40$\times$10$^{-5}$ \\
-  power [W] & 57.5 & 36.6 \\
-  peak dose [MGy/280 days] & 0.79 & 0.76 \\
-  peak DPA [DPA/280 days] & 1.05$\times$10$^{-5}$ & 0.98$\times$10$^{-5}$ \\
-  tungsten mass [t] & 15.6 & 28 \\ \hline \hline
- \end{tabular}
- \caption{Details of the shielding design. CS1 is cut to 3 parts along the z axis, 12 parts along the azimuthal direction.}
- \label{hrsdet}
-\end{table}
-
-As for the muon yield, it does not depend on the material of radiation but the backward radius of shield.
-Figure~\ref{radius} shows that the muon and pion yield increases about 9\% after the radius is changed from 36 cm to 50 cm.
-\begin{figure}[H]
- \centering
- \includegraphics[scale=0.43]{chapter3/fig/muon}
- \caption{A relation of muon and pion yield with shielding backward radius. Current shielding backward radius is 36 cm. Black line: $\mu^-$, red line: $\pi^-$, blue line: $\mu^- + \pi^-$.}
- \label{radius}
-\end{figure}
 

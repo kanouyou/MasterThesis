@@ -66,6 +66,51 @@ In figure~\ref{3resultgfrp}, all samples start to degrade from 90 MGy and they d
 The flexural strength test and outgasing test for GFRPs are described in reference~\cite{takasaki}.
 Considering the mechanical property, outgasing and radiation resistance, BT will be employed as insulation spacer in COMET superconducting magnets.
 
+\section{Insulation tape}
+%~~~~~The conduct is commonly covered with several polyimide tapes as ground insulation between two conducts.
+%As for the COMET superconducting magnets, 4 kinds of insulation tape, BTGU, BTGK-A, BTGK-B, BTGK-C, are developed to enhance the mechanical property and radiation resistance.
+~~~~~~The conductor of pion capture solenoid is wound by two layers of insulation tape so called pre-preg tape as ground insulation.
+This insulation tape shown in figure~\ref{3stur} is made of polyimide film covered by boron free glass with BT and epoxy resin to enhance the mechanical property under the high radiation environment.
+ \begin{figure}[H]
+  \begin{subfigure}{0.3\textwidth}
+  \centering
+  \includegraphics[scale=0.33]{chapter4/fig/preg.pdf}
+  %\caption{ The structure of pre-preg tape.}
+  \end{subfigure}
+  \hspace{0.2\textwidth}
+  \begin{subfigure}{0.3\textwidth}
+  \centering
+  \includegraphics[scale=0.30]{chapter4/fig/BUGT.pdf}
+  %\caption{ Tensile test for pre-preg tape.}
+  \end{subfigure}
+  \caption{Insulation tape is made of glass cross and polyimide film impregnated by BT and epoxy resin (left). The two pieces of insulation tapes are sandwiched with aluminium strip to take tensile test (right).}
+ \label{3stur}
+ \end{figure}
+ \begin{figure}[H]
+  \begin{subfigure}{0.3\textwidth}
+   \centering
+   \includegraphics[scale=0.43]{chapter4/fig/gubt.eps}
+  \end{subfigure}
+  \hspace{0.2\textwidth}
+  \begin{subfigure}{0.3\textwidth}
+   \centering
+   \includegraphics[scale=0.43]{chapter4/fig/BTGU2.eps}
+  \end{subfigure}
+  \caption{3 samples of each BTGU, BTGK-A, BTGK-B and BTGK-C are tensioned without irradiation (left). BTGU shows no degradation after irradiated with 10 MGy at limit by cobalt $\gamma$ ray source.}
+  \label{3gubt}
+ \end{figure}
+Four samples, BTGU, BTGK-A, BTGK-B and BTGK-C, made of same material but different rate of BT and epoxy resin are prepared for tensile test.
+Here, mixing the BT and epoxy resin with different rate can adjust the viscosity of insulation tape.
+Two samples are struck and sandwiched with aluminium strip (Al-GU-UG-Al) as JIS standards for tensile test are cured by 170$^{\circ}$C and 8 hours.
+Figure~\ref{3stur} shows how the pre-preg tape breaks after tensile test.
+
+The result of tensile test for the sample without irradiation is given in figure~\ref{3gubt}, which shows the BTGK-C is the strongest one in these sample.
+However, the glass layer and resin layer is not struck before the thermal process, which is hard to employ it as the insulation tape in superconducting coil.
+Considering the mechanical properties may reduce after irradiation, the irradiation of BTGU samples is taken in Takasaki Advanced Radiation Research Institute with cobalt radiation source.
+As the result shown in figure~\ref{3gubt} (right), the tensile strength of BTGU sample does not reduce after irradiation, however, surprisingly, the tensile strength increases about 10\% after 10 MGy irradiation.
+
+
+
 % \section{Stabilizer and conductor}
 %The early radiation induced damage on superconductors with reactor neutron is studied at cryogenic temperature by Weber~\cite{weber}.
 %The results show that the critical current density of NbTi drops from 10$^{22}$ n/m$^2$ high energy neutron irradiation at 5 Tesla.
@@ -170,7 +215,7 @@ $\epsilon$ and $t_2-t_1$ are the detection efficiency and counting time.
 As shown in figure~\ref{3flux}, neutron flux on diode measured by gold wire is higher nickel's, which is 1.35$\times$10$^7$ n/cm$^2$/sec.
 From the prediction of PHITS code and previous measurement with liquid scintillator, the neutron flux is 6$\times$10$^7$ n/cm$^2$/sec which is about 5 times higher than the measurement of gold wire.
 It is possible that a part of neutron is stopped at flange or the other irradiation sample and causes the different between measurement and prediction.
-Thus, in this case, we trust the measurement and the total neutron fluence irradiated until the end of experiment is estimated for 10$^{12}$ n/cm$^2$/sec.
+Thus, in this case, we trust the measurement and the total neutron fluence irradiated until the end of experiment is estimated for 10$^{12}$ n/cm$^2$.
 
   \subsection{Electrical property of diode}
 ~~~~~To investigate the electrical properties of diode, the turn-on voltage is measured during the irradiation, then the voltage on the operating current is predicted by fitting the V-I curve of diode.
@@ -198,6 +243,18 @@ $V_T$ is thermal voltage and $I_0$ is the saturation current, which are assumed 
    \caption{The temperature during the irradiation (left). The turn-on voltage decreases with the neutron fluence (right).}
    \label{3switch}
   \end{figure}
+\begin{table}[H]
+ \centering
+ \begin{tabular}{cccccc} \hline \hline
+  irradiated time [sec] & I$_0$ & V$_T$ & irradiated time [sec] & I$_0$ & V$_T$ \\ \hline
+  0 & 2.04883$\times$10$^{-7}$ & 23.0918 & 500 & 1.97681$\times$10$^{-7}$ & 23.034 \\
+  1064 & 2.73547$\times$10$^{-7}$ & 22.6213 & 1505 & 3.75863$\times$10$^{-7}$ & 22.2084 \\
+  4274 & 1.35549$\times$10$^{-6}$ & 20.5447 & 9884 & 5.35415$\times$10$^{-6}$ & 18.7640 \\
+  14008 & 9.77339$\times$10$^{-6}$ & 17.9582 & 68468 & 4.15128$\times$10$^{-5}$ & 15.7070 \\ \hline \hline
+ \end{tabular}
+ \caption{Fitting parameters for V-I curve.}
+ \label{fit3}
+\end{table}
   \begin{figure}[H]
    %\begin{subfigure}{0.3\textwidth}
     \centering
@@ -212,19 +269,6 @@ $V_T$ is thermal voltage and $I_0$ is the saturation current, which are assumed 
    \label{3fitdiode}
   \end{figure}
  
-\begin{table}[H]
- \centering
- \begin{tabular}{cccccc} \hline \hline
-  irradiated time [sec] & I$_0$ & V$_T$ & irradiated time [sec] & I$_0$ & V$_T$ \\ \hline
-  0 & 2.04883$\times$10$^{-7}$ & 23.0918 & 500 & 1.97681$\times$10$^{-7}$ & 23.034 \\
-  1064 & 2.73547$\times$10$^{-7}$ & 22.6213 & 1505 & 3.75863$\times$10$^{-7}$ & 22.2084 \\
-  4274 & 1.35549$\times$10$^{-6}$ & 20.5447 & 9884 & 5.35415$\times$10$^{-6}$ & 18.7640 \\
-  14008 & 9.77339$\times$10$^{-6}$ & 17.9582 & 68468 & 4.15128$\times$10$^{-5}$ & 15.7070 \\ \hline \hline
- \end{tabular}
- \caption{Fitting parameters for V-I curve.}
- \label{fit3}
-\end{table}
-
  \subsection{Electrical property at cryogenic temperature}
 ~~~~~Since Quench protection diode is connected to the magnets with superconducting wire, the diode must be cooled to the temperature same as superconducting wire, 4.2 K.
 Therefore, the electrical property at cryogenic temperature needs to be investigated as well.
@@ -245,9 +289,22 @@ Using this fitting parameters, the forward voltage at 300 K and 77 K can be pred
 Compared with the case of room temperature, 0.33 V is increased during the cooling.
  \begin{figure}[H]
   \centering
-  \includegraphics[scale=0.35]{chapter4/fig/cryotemp.pdf}
+  \includegraphics[scale=0.32]{chapter4/fig/cryotemp.pdf}
   \caption{Measurement of the forward voltage of diode at cryogenic temperature.}
   \label{3cryotemp}
+ \end{figure}
+ \begin{figure}[H]
+  \begin{subfigure}{0.3\textwidth}
+   \centering
+   \includegraphics[scale=0.43]{chapter4/fig/cryo.eps}
+  \end{subfigure}
+  \hspace{0.2\textwidth}
+  \begin{subfigure}{0.3\textwidth}
+   \centering
+   \includegraphics[scale=0.43]{chapter4/fig/temp.eps}
+  \end{subfigure}
+  \caption{Forward V-I curve measured at room temperature and nitrogen temperature without irradiation (left). The measurement of turn-on voltage at 100 mA from room temperature to 77 K (right).}
+  \label{3cryo}
  \end{figure}
 
 \subsection{Forward voltage at 210 A}
@@ -271,66 +328,38 @@ Turn-on voltage at 100 mA is proportional to the temperature linearly as
 \begin{equation}
  V = 1.221 - 0.002077 \cdot T
 \end{equation}
-Assuming the forward voltage at 210 is also linear to the temperature, the forward voltage is predicted to 1.33 V at 4.2 K and 210 A.
-Including the voltage change during the irradiation, we assume the forward voltage at 210 A and 4.2 K will increase from 0.9 V to 1.5 V.
-Even if the forward voltage increases to 1.5V, the temperature rises to about 11 K during the cooling of liquid helium which is calculated by one dimensional Finite Element Method.
-Without the cooling, the temperature of diode will increase up to 70 K at 10 sec.
- \begin{figure}[H]
-  \begin{subfigure}{0.3\textwidth}
-   \centering
-   \includegraphics[scale=0.43]{chapter4/fig/cryo.eps}
-  \end{subfigure}
-  \hspace{0.2\textwidth}
-  \begin{subfigure}{0.3\textwidth}
-   \centering
-   \includegraphics[scale=0.43]{chapter4/fig/temp.eps}
-  \end{subfigure}
-  \caption{Forward V-I curve measured at room temperature and nitrogen temperature without irradiation (left). The measurement of turn-on voltage at 100 mA from room temperature to 77 K (right).}
-  \label{3cryo}
- \end{figure}
+Assuming the forward voltage at 210 A is also linear to the temperature, the forward voltage is predicted to 1.33 V at 4.2 K and 210 A without irradiation.
 
- \section{Insulation tape}
-%~~~~~The conduct is commonly covered with several polyimide tapes as ground insulation between two conducts.
-%As for the COMET superconducting magnets, 4 kinds of insulation tape, BTGU, BTGK-A, BTGK-B, BTGK-C, are developed to enhance the mechanical property and radiation resistance.
-~~~~~~The conductor of pion capture solenoid is wound by two layers of insulation tape so called pre-preg tape as ground insulation.
-This insulation tape shown in figure~\ref{3stur} is made of polyimide film covered by boron free glass with BT and epoxy resin to enhance the mechanical property under the high radiation environment.
- \begin{figure}[H]
-  \begin{subfigure}{0.3\textwidth}
+However, the forward voltage is estimated to 0.98 V at 210 A and room temperature after irradiation of 10$^{12}$ n/cm$^2$ neutrons.
+Supposed its forward voltage is 1.5 V at 4.2 K and 210 A with irradiation of 10$^{12}$ n/cm$^2$ neutrons, its heat generation is the product of forward voltage and current, which is 315 W.
+The temperature of quench protection diode is calculated by one dimensional finite element method.
+Diode consists of silicon with length of 8 cm and radius of 3 cm.
+Its thermal conductivity shown in figure~\ref{sicond} is taken and fitted from reference~\cite{glass}\cite{holl}.
+Two sides of diode is cooled by liquid helium at 4.2 K, and heat is generated inside the diode.
+Current decays with the resistance of heater ($R$ = 2.38 $\Omega$, $L$ = 254 $H$).
+As a result, the maximum temperature will be 11 K during the cooling.
+Without the cooling, the temperature of diode will increase up to 70 K at 10 sec.
+\begin{figure}[H]
   \centering
-  \includegraphics[scale=0.36]{chapter4/fig/prepreg.pdf}
-  %\caption{ The structure of pre-preg tape.}
-  \label{3stur}
-  \end{subfigure}
-  \hspace{0.2\textwidth}
-  \begin{subfigure}{0.3\textwidth}
-  \centering
-  \includegraphics[scale=0.31]{chapter4/fig/BUGT.pdf}
-  %\caption{ Tensile test for pre-preg tape.}
-  \label{3break}
-  \end{subfigure}
-  \caption{Insulation tape is made of glass cross and polyimide film impregnated by BT and epoxy resin (left). The two pieces of insulation tapes are sandwiched with aluminium strip to take tensile test (right).}
- \end{figure}
-Four samples, BTGU, BTGK-A, BTGK-B and BTGK-C, made of same material but different rate of BT and epoxy resin are prepared for tensile test.
-Here, mixing the BT and epoxy resin with different rate can adjust the viscosity of insulation tape.
-Two samples are struck and sandwiched with aluminium strip (Al-GU-UG-Al) as JIS standards for tensile test are cured by 170$^{\circ}$C and 8 hours.
-Figure~\ref{3break} shows how the pre-preg tape breaks after tensile test.
-The result of tensile test for the sample without irradiation is given in figure~\ref{3gubt}, which shows the BTGK-C is the strongest one in these sample.
-However, the glass layer and resin layer is not struck before the thermal process, which is hard to employ it as the insulation tape in superconducting coil.
-Considering the mechanical properties may reduce after irradiation, the irradiation of BTGU samples is taken in Takasaki Advanced Radiation Research Institute with cobalt radiation source.
-As the result shown in figure~\ref{3gubt} (right), the tensile strength of BTGU sample does not reduce after irradiation, however, surprisingly, the tensile strength increases about 10\% after 10 MGy irradiation.
- \begin{figure}[H]
-  \begin{subfigure}{0.3\textwidth}
-   \centering
-   \includegraphics[scale=0.43]{chapter4/fig/gubt.eps}
-  \end{subfigure}
-  \hspace{0.2\textwidth}
-  \begin{subfigure}{0.3\textwidth}
-   \centering
-   \includegraphics[scale=0.43]{chapter4/fig/BTGU2.eps}
-  \end{subfigure}
-  \caption{3 samples of each BTGU, BTGK-A, BTGK-B and BTGK-C are tensioned without irradiation (left). BTGU shows no degradation after irradiated with 10 MGy at limit by cobalt $\gamma$ ray source.}
-  \label{3gubt}
- \end{figure}
+  \includegraphics[scale=0.42]{chapter4/fig/thermalcond.eps}
+  \caption{Experimental data of the thermal conductivity for silicon.}
+  \label{sicond}
+\end{figure}
+To confirm the temperature, the temperature of quench protection diode is also estimated by ANSYS.
+The thermal conductivity is approached linearly between the two data points.
+Diode is cooled by liquid helium at 4.2 K on the top and bottom of surface.
+Heat generation is set to 315 W homogeneously without current decay, which is the worst circumstance for diode.
+As a result, it maximum temeprature is about 6.0 K.
+\begin{figure}[H]
+ \centering
+ \includegraphics[scale=0.38]{chapter4/fig/diode000.pdf}
+ \caption{The temperature distribution of quench protection diode during the operation calculated by ANSYS.}
+ \label{ansys}
+\end{figure}
+%Including the voltage change during the irradiation, we assume the forward voltage at 210 A and 4.2 K will increase from 0.9 V to 1.5 V.
+%Even if the forward voltage increases to 1.5V, the temperature rises to about 11 K during the cooling of liquid helium which is calculated by one dimensional Finite Element Method.
+%Without the cooling, the temperature of diode will increase up to 70 K at 10 sec.
+
 
  \section{Radiation test for conductor}
 ~~~~~~The degradation of electrical resistivity occurs when the stabilizer irradiated by radiation due to the production of Frenkel pairs.
@@ -349,6 +378,12 @@ Radiation damage effects of conductor are necessary to investigate because it ma
  \caption{all kinds of particles which hit the CS1 coil (left). The displacement cross section of aluminium for neutron (right).}
  \label{3yield}
 \end{figure}
+  \begin{figure}[H]
+    \centering
+	\includegraphics[scale=0.43]{chapter5/fig/neutron.eps}
+   \caption{Neutron spectrum at core of KUR reactor.}
+   \label{4dpa}
+  \end{figure}
 To ensure what kinds of particle hit the superconducting coils, the simulation is taken by PHITS and its yield is shown in figure~\ref{3yield}.
 Compared with the other particles, the neutron is most biggest issue for superconducting coils.
 Furthermore, the energy of neutron in the range from 0.1 MeV dominates the radiation damage, which is about 100 b.
@@ -356,19 +391,14 @@ Thus, irradiation test of pure aluminium and copper for conductor is studied in 
 The pure aluminium and copper samples are set up in the one of beamline from reactor where can irradiate with cryogenic temperature.
 Neutron fluence is 1.4$\times$10$^{11}$ n/m$^2$/sec for fast neutron in terms of the KUR study~\cite{kur}.
 Figure~\ref{4dpa} shows the energy spectrum at center of reactor, which is higher than the place where we take irradiation test with factor 30.34.
-  \begin{figure}[H]
-    \centering
-	\includegraphics[scale=0.43]{chapter5/fig/neutron.eps}
-   \caption{Neutron spectrum at core of KUR reactor.}
-   \label{4dpa}
-  \end{figure}
+
 As the result, we obverse that the resistivity increases about 0.03 n$\Omega\cdot$m for aluminium and 0.01 n$\Omega\cdot$m for copper after after 10$^{20}$ n/m$^2$ neutron irradiation.
 Thus, due to the neutron induced resistivity, the resistivity of stabilizer at cryogenic temperature should be modified as
 \begin{equation}
- \rho (T) = \rho_0(T) + \bigtriangleup \rho_{n} (\Phi) + \bigtriangleup \rho_{mag} (B)
+ \rho (T) = \rho_0(T) + \Delta \rho_{n} (\Phi) + \Delta \rho_{mag} (B)
 \end{equation}
 where $\rho_0(T)$ is the resistivity at cryogenic temperature without magnetic field and irradiation.
-$\bigtriangleup \rho(\Phi)$ and $\bigtriangleup \rho(B)$ are the neutron induced resistivity which depends on the neutron fluence and magnetoresistivity, respectively.
+$\Delta \rho(\Phi)$ and $\Delta \rho(B)$ are the neutron induced resistivity which depends on the neutron fluence and magnetoresistivity, respectively.
 Thus, the RRR during the irradiation is given by
 \begin{equation}
  RRR = \frac{\rho_{RT}}{\rho_0 + f \cdot \phi \cdot t}
@@ -387,20 +417,7 @@ where the factor $f$ is shown in table~\ref{factorirr}.
 Since the aluminium with RRR of 2000 and 400 will be employed as strip and stabilizer respectively, the relation between RRR and neutron fluence is shown in figure~\ref{4rrr}.
 The RRR of aluminium strip and stabilizer for 280-day operation will become 40 or lower for capture solenoid according to the maximum neutron fluence of 2$\times$10$^{21}$ n/m$^2$ which is predicted by PHITS code (JAM\_INCL4.6\_JENDL4 model).
 Details of RRR degradation for main superconducting magnets of pion capture solenoid is listed in table~\ref{RRRdeg} and figure~\ref{4rrr} (right).
-\begin{table}[H]
- \centering
- \begin{tabular}{ccccc} \hline \hline
-  Name & neutron flux [n/cm$^2$/sec] & DPA [DPA/280 days] & RRR (Al strip) & RRR (stabilizer) \\ \hline
-  CS0 & 1.03$\times$10$^{10}$ & 3.44$\times$10$^{-5}$ & 39 & 36 \\
-  CS1 & 5.12$\times$10$^{9}$ & 2.97$\times$10$^{-5}$ & 77 & 67 \\
-  MS1 & 4.11$\times$10$^{9}$ & 1.82$\times$10$^{-5}$ & 95 & 80 \\
-  MS2 & 1.20$\times$10$^{9}$ & 8.11$\times$10$^{-6}$ & 293 & 185 \\ \hline \hline
- \end{tabular}
- \caption{Details of RRR degradation for pion capture solenoid after 280-day operation.}
- \label{RRRdeg}
-\end{table}
-
-  \begin{figure}[H]
+ \begin{figure}[H]
    \begin{subfigure}{0.3\textwidth}
     \centering
 	\includegraphics[scale=0.43]{chapter5/fig/degradation.eps}
@@ -414,6 +431,19 @@ Details of RRR degradation for main superconducting magnets of pion capture sole
    \label{4rrr}
   \end{figure}
 
+\begin{table}[H]
+ \centering
+ \begin{tabular}{ccccc} \hline \hline
+  Name & neutron flux [n/cm$^2$/sec] & DPA [DPA/280 days] & RRR (Al strip) & RRR (stabilizer) \\ \hline
+  CS0 & 1.03$\times$10$^{10}$ & 3.44$\times$10$^{-5}$ & 39 & 36 \\
+  CS1 & 5.12$\times$10$^{9}$ & 2.97$\times$10$^{-5}$ & 77 & 67 \\
+  MS1 & 4.11$\times$10$^{9}$ & 1.82$\times$10$^{-5}$ & 95 & 80 \\
+  MS2 & 1.20$\times$10$^{9}$ & 8.11$\times$10$^{-6}$ & 293 & 185 \\ \hline \hline
+ \end{tabular}
+ \caption{Details of RRR degradation for pion capture solenoid after 280-day operation.}
+ \label{RRRdeg}
+\end{table}
+
  \subsection{Discussion}
 ~~~~~~The radiation induced damage of material can be estimated by one parameter called Displacement Per Atom (DPA) which is given by
 \begin{equation}
@@ -422,7 +452,7 @@ Details of RRR degradation for main superconducting magnets of pion capture sole
 where $\sigma_{dpa}$ and $\phi_i$ are the displacement cross section and particle flux respectively.
 The displacement cross section depends on the material, and is a predicting value.
 Through the DPA, the radiation damage in different energy region is able to be compared.
-Using the neutron flux and displacement cross section of aluminium in figure~\ref{3yield}, the DPA can be estimated as follows.
+Using the neutron flux and displacement cross section of aluminium in figure~\ref{3yield} and the neutron spectrum of KUR, the DPA for KUR irradiation test can be estimated as follows.
 \begin{table}[H]
  \centering
  \begin{tabular}{cc} \hline \hline
@@ -432,12 +462,8 @@ Using the neutron flux and displacement cross section of aluminium in figure~\re
   NRT (Mu2e) & 2.5$\times$10$^{-5}$ \\
   NRT (COMET) & 3.0$\times$10$^{-5}$ \\ \hline \hline
  \end{tabular}
- \caption{DPA estimation for the neutron irradiation test of pure aluminium.}
+ \caption{DPA estimation for the neutron irradiation test of pure aluminium. NRT (COMET) is estimated PHITS code, and the others are predicted by Mu2e collaboration with same experiment.}
 \end{table}
-Here, BCA + MD, ABBN, and NRT (Mu2e) are the estimation with different DPA models from Mu2e collaboration.
-Our estimation is about 3.0$\times$10$^{-5}$ DPA.
-J.A. Horak et al. measure the neutron induced resistivity of metals, as a result, the induced resistivity for aluminium is 382.3 n$\Omega\cdot$cm per 5.6$\times$10$^{-4}$ Frenkel pair~\cite{horak}.
-In addition, reference~\cite{yu} shows many results of Frenkel pair resistivity of aluminium in table~\ref{frank}.
 \begin{table}[H]
  \centering
  \begin{tabular}{ccc} \hline \hline
@@ -450,11 +476,17 @@ In addition, reference~\cite{yu} shows many results of Frenkel pair resistivity 
   1.35 & Exp T(p) & \cite{ref3} \\
   4.0$\pm$0.6 & Evl E & \cite{ref4} \\
   4.2$\pm$0.5 & Evl E & \cite{ref5} \\
-  4.3 & Evl S & \cite{ref6} \\ \hline \hline
+  4.3 & Evl S & \cite{ref6} \\ 
+  6.8 & Adp & \cite{horak} \\
+  2.0$\pm$1.0 & KEK & \\ \hline \hline
  \end{tabular}
- \caption{The Frenkel pair resistivity $\rho_{FP}$ of aluminium. Methods of the data derivation: Exp D is X-ray diffraction method, Exp T is the threshold energy determination for electron irradiation of single crystals at low temperature. Exp T(p) is for the electron irradiation of polycrystals, Evl S is the estimation made with the help of the systematics~\cite{yu}.}
+ \caption{The Frenkel pair resistivity $\rho_{FP}$ of aluminium. Methods of the data derivation: Exp D is X-ray diffraction method, Exp T is the threshold energy determination for electron irradiation of single crystals at low temperature. Exp T(p) is for the electron irradiation of polycrystals, Evl S is the estimation made with the help of the systematics. Adp is the data adopted by the authors of cited work~\cite{yu}. KEK is the neutron irradiation test in KUR.}
  \label{frank}
 \end{table}
+Here, BCA + MD, ABBN, and NRT (Mu2e) are the estimation with different DPA models from Mu2e collaboration.
+Our estimation is about 3.0$\times$10$^{-5}$ DPA.
+J.A. Horak et al. measure the neutron induced resistivity of metals, as a result, the induced resistivity for aluminium is 382.3 n$\Omega\cdot$cm per 5.6$\times$10$^{-4}$ Frenkel pair~\cite{horak}.
+In addition, reference~\cite{yu} shows many results of Frenkel pair resistivity of aluminium in table~\ref{frank}.
 It shows that J.A. Horak's data is the maximum value compared with the other references.
 The relation between DPA and RRR by using these prediction from experimental data is shown in~\ref{dpaaa}.
 
@@ -464,6 +496,6 @@ However, the design has to consider the worst situation for superconducting coil
 \begin{figure}[H]
  \centering
  \includegraphics[scale=0.5]{chapter4/fig/dpadegradation.eps}
- \caption{ A relation between DPA and RRR.}
+ \caption{A relation between DPA and RRR. Orange line is the maximum radiation induced resistivity, and the others are the prediction of KUR irradiation test with different displacement cross section model.}
  \label{dpaaa}
 \end{figure}
