@@ -389,7 +389,8 @@ Thus, the quench simulation is necessary for estimation of the temperature after
 
 
  \section{Cooling estimation}
-~~~~~~To analyse the thermal stability of superconducting magnet, a thermal simulation code for COMET superconducting magnet has been developed.
+~~~~~~The thermal conductivity of aluminium stabilzer and copper matrix will degrade owing to the radiation, which leads to the overheating of the superconducting coil during the operation.
+To analyse the thermal stability of superconducting magnet, a thermal simulation code for COMET superconducting magnet has been developed.
 This code bases on the three dimensional equation~\cite{heat}, which is written as
 \begin{equation}
  \gamma C \frac{dT}{dt} = k_x \frac{\partial^2 T}{\partial x^2} + k_y \frac{\partial^2 T}{\partial y^2} + k_z \frac{\partial^2 T}{\partial z^2} + W
@@ -476,9 +477,11 @@ The energy deposition of inner layer is about 3 times higher than the outer laye
 
   \subsection{Maximum temperature of cooling}
 ~~~~~~The parameters used in thermal analysis for CS1 coil is listed in table~\ref{para}.
-Heat generation map and neutron induced RRR map are calculated by Monte Carlo code.
+Due to asymmetric distribution of radiation in CS1 coil, heat generation map and neutron induced RRR map calculated by Monte Carlo code are utilized.
+The relation between neutron fluence (E$_n$ $\textgreater$ 0.1 MeV) and RRR degradation is employed in this simulation because it predicts the worst situation.
+Thermal conductivity is converted by Wiedemann-Franz law from the electrical resistivity.
 The specific heat only affects the speed of heat transfer and thermal conductivity has no remarkable change in range from cryogenic temperature to about 20 K for both copper and aluminium, therefore the specific heat and thermal conductivity are set to constant which does not change with temperature here.
-However, the thermal conductivity of insulation tape is still unknown, so it is supposed to 0.01 W/m/K which is worse than Kapton tape.
+However, the thermal conductivity of insulation tape is still unknown, it is supposed to be 0.01 W/m/K which is worse than the Kapton tape.
 Its thermal conductivity although depends on the temperature, setting it to one constant is the worst circumstances for CS1 coil.
  \begin{table}[H]
   \centering
@@ -496,19 +499,6 @@ Its thermal conductivity although depends on the temperature, setting it to one 
  \end{table}
 Due to the finite difference method used in thermal simulation, the result will grow up to infinite if the geometry's mesh and time mesh is not proper in calculation.
 Here, as for the issue of meshing, the proper mesh for thermal analysis in this time is founded and listed in table~\ref{4mesh}.
- \begin{figure}[H]
-   \begin{subfigure}{0.3\textwidth}
-    \centering
-	\includegraphics[scale=0.42]{chapter5/fig/time.eps}
-   \end{subfigure}
-   \hspace{0.2\textwidth}
-   \begin{subfigure}{0.3\textwidth}
-    \centering
-	\includegraphics[scale=0.42]{chapter5/fig/heatdis.pdf}
-   \end{subfigure}
-   \caption{Calculated the temperature rising during the operation.}
-   \label{4heatdis}
-  \end{figure}
  \begin{table}[H]
   \centering
   \begin{tabular}{ccc} \hline \hline
@@ -529,6 +519,19 @@ According to K. H. Mess's book, the current sharing temperature is given by
 \end{equation}
 where $T_0$ is the initial temperature, $I$ is the operating current, and $I_c(T_0)$ is the critical current in initial temperature.
 The current sharing for COMET CS1 coils is 6.5 K (Dr. Sasaki's work).
+ \begin{figure}[H]
+   \begin{subfigure}{0.3\textwidth}
+    \centering
+	\includegraphics[scale=0.42]{chapter5/fig/time.eps}
+   \end{subfigure}
+   \hspace{0.2\textwidth}
+   \begin{subfigure}{0.3\textwidth}
+    \centering
+	\includegraphics[scale=0.42]{chapter5/fig/heatdis.pdf}
+   \end{subfigure}
+   \caption{Calculated the temperature rising during the operation.}
+   \label{4heatdis}
+  \end{figure}
 \begin{figure}[H]
  \centering
  \includegraphics[scale=0.43]{chapter5/fig/temp.eps}
@@ -557,8 +560,8 @@ After these modifications have been employed, in figure~\ref{4tape}, the maximum
 Operating for more than 30 days is feasible for phase-II experiment.
   \begin{figure}[H]
    \centering
-   \includegraphics[scale=0.45]{chapter5/fig/maxtemp.eps}
-   \caption{ The maximum temperature against the operation time.}
+   \includegraphics[scale=0.55]{chapter5/fig/maxtemp.eps}
+   \caption{The maximum temperature against the operation time.}
    \label{4maxtemp}
   \end{figure}
 

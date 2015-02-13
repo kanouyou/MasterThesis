@@ -69,8 +69,8 @@ Considering the mechanical property, outgasing and radiation resistance, BT will
 \section{Insulation tape}
 %~~~~~The conduct is commonly covered with several polyimide tapes as ground insulation between two conducts.
 %As for the COMET superconducting magnets, 4 kinds of insulation tape, BTGU, BTGK-A, BTGK-B, BTGK-C, are developed to enhance the mechanical property and radiation resistance.
-~~~~~~The conductor of pion capture solenoid is wound by two layers of insulation tape so called pre-preg tape as ground insulation.
-This insulation tape shown in figure~\ref{3stur} is made of polyimide film covered by boron free glass with BT and epoxy resin to enhance the mechanical property under the high radiation environment.
+~~~~~~The conductor of pion capture solenoid is wound by two layers of insulation tape so called pre-preg tape as electrical insulation.
+This insulation tape shown in figure~\ref{3stur} is made of polyimide film covered by boron free glass cloth with BT and epoxy resin to enhance the mechanical property and radiation resistance under the high radiation environment.
  \begin{figure}[H]
   \begin{subfigure}{0.3\textwidth}
   \centering
@@ -211,7 +211,12 @@ $\epsilon$ and $t_2-t_1$ are the detection efficiency and counting time.
    \caption{Neutron flux is measured by Au wire, Al and Ni foils. The comparison of experimental data with simulation (left). The neutron flux on the place where samples are set up is shown on rihgt.}
    \label{3flux}
   \end{figure}
-
+\begin{figure}[H]
+ \centering
+ \includegraphics[scale=0.45]{chapter4/fig/dpa.eps}
+ \caption{Factor of displacement cross section in silicon. The displacement damage cross section for 1 MeV neutrons is set as a normalizing value: Dn(1MeV) = 95 MeVmb.}
+ \label{dpafactor}
+\end{figure}
 As shown in figure~\ref{3flux}, neutron flux on diode measured by gold wire is higher nickel's, which is 1.35$\times$10$^7$ n/cm$^2$/sec.
 From the prediction of PHITS code and previous measurement with liquid scintillator, the neutron flux is 6$\times$10$^7$ n/cm$^2$/sec which is about 5 times higher than the measurement of gold wire.
 It is possible that a part of neutron is stopped at flange or the other irradiation sample and causes the different between measurement and prediction.
@@ -338,24 +343,24 @@ Its thermal conductivity shown in figure~\ref{sicond} is taken and fitted from r
 Two sides of diode is cooled by liquid helium at 4.2 K, and heat is generated inside the diode.
 Current decays with the resistance of heater ($R$ = 2.38 $\Omega$, $L$ = 254 $H$).
 As a result, the maximum temperature will be 11 K during the cooling.
-Without the cooling, the temperature of diode will increase up to 70 K at 10 sec.
+Considering the wrost case, the temperature of diode will increase up to 70 K in 10 sec without cooling.
 \begin{figure}[H]
   \centering
-  \includegraphics[scale=0.42]{chapter4/fig/thermalcond.eps}
+  \includegraphics[scale=0.40]{chapter4/fig/thermalcond.eps}
   \caption{Experimental data of the thermal conductivity for silicon.}
   \label{sicond}
+\end{figure}
+\begin{figure}[H]
+ \centering
+ \includegraphics[scale=0.33]{chapter4/fig/diode000.pdf}
+ \caption{The temperature distribution of quench protection diode during the operation calculated by ANSYS.}
+ \label{ansys}
 \end{figure}
 To confirm the temperature, the temperature of quench protection diode is also estimated by ANSYS.
 The thermal conductivity is approached linearly between the two data points.
 Diode is cooled by liquid helium at 4.2 K on the top and bottom of surface.
 Heat generation is set to 315 W homogeneously without current decay, which is the worst circumstance for diode.
 As a result, it maximum temeprature is about 6.0 K.
-\begin{figure}[H]
- \centering
- \includegraphics[scale=0.38]{chapter4/fig/diode000.pdf}
- \caption{The temperature distribution of quench protection diode during the operation calculated by ANSYS.}
- \label{ansys}
-\end{figure}
 %Including the voltage change during the irradiation, we assume the forward voltage at 210 A and 4.2 K will increase from 0.9 V to 1.5 V.
 %Even if the forward voltage increases to 1.5V, the temperature rises to about 11 K during the cooling of liquid helium which is calculated by one dimensional Finite Element Method.
 %Without the cooling, the temperature of diode will increase up to 70 K at 10 sec.
@@ -368,19 +373,19 @@ Radiation damage effects of conductor are necessary to investigate because it ma
 \begin{figure}[H]
  \begin{subfigure}{0.3\textwidth}
   \centering
-  \includegraphics[scale=0.43]{chapter4/fig/yield.eps}
+  \includegraphics[scale=0.45]{chapter4/fig/yield.eps}
  \end{subfigure}
  \hspace{0.2\textwidth}
  \begin{subfigure}{0.3\textwidth}
   \centering
-  \includegraphics[scale=0.43]{chapter5/fig/AlDPA.eps}
+  \includegraphics[scale=0.45]{chapter5/fig/AlDPA.eps}
  \end{subfigure}
  \caption{all kinds of particles which hit the CS1 coil (left). The displacement cross section of aluminium for neutron (right).}
  \label{3yield}
 \end{figure}
   \begin{figure}[H]
     \centering
-	\includegraphics[scale=0.43]{chapter5/fig/neutron.eps}
+	\includegraphics[scale=0.46]{chapter5/fig/neutron.eps}
    \caption{Neutron spectrum at core of KUR reactor.}
    \label{4dpa}
   \end{figure}
@@ -393,6 +398,7 @@ Neutron fluence is 1.4$\times$10$^{11}$ n/m$^2$/sec for fast neutron in terms of
 Figure~\ref{4dpa} shows the energy spectrum at center of reactor, which is higher than the place where we take irradiation test with factor 30.34.
 
 As the result, we obverse that the resistivity increases about 0.03 n$\Omega\cdot$m for aluminium and 0.01 n$\Omega\cdot$m for copper after after 10$^{20}$ n/m$^2$ neutron irradiation.
+It is also confirmed that the resistivity recover by the thermal cycle to the room temperature by 100\% for Al and about 90\% for Cu.
 Thus, due to the neutron induced resistivity, the resistivity of stabilizer at cryogenic temperature should be modified as
 \begin{equation}
  \rho (T) = \rho_0(T) + \Delta \rho_{n} (\Phi) + \Delta \rho_{mag} (B)
@@ -417,20 +423,6 @@ where the factor $f$ is shown in table~\ref{factorirr}.
 Since the aluminium with RRR of 2000 and 400 will be employed as strip and stabilizer respectively, the relation between RRR and neutron fluence is shown in figure~\ref{4rrr}.
 The RRR of aluminium strip and stabilizer for 280-day operation will become 40 or lower for capture solenoid according to the maximum neutron fluence of 2$\times$10$^{21}$ n/m$^2$ which is predicted by PHITS code (JAM\_INCL4.6\_JENDL4 model).
 Details of RRR degradation for main superconducting magnets of pion capture solenoid is listed in table~\ref{RRRdeg} and figure~\ref{4rrr} (right).
- \begin{figure}[H]
-   \begin{subfigure}{0.3\textwidth}
-    \centering
-	\includegraphics[scale=0.43]{chapter5/fig/degradation.eps}
-   \end{subfigure}
-   \hspace{0.2\textwidth}
-   \begin{subfigure}{0.3\textwidth}
-    \centering
-	\includegraphics[scale=0.43]{chapter5/fig/rrrmagnets.eps}
-   \end{subfigure}
-   \caption{ Predicted the RRR-neutron curve from the neutron irradiation test in KUR.}
-   \label{4rrr}
-  \end{figure}
-
 \begin{table}[H]
  \centering
  \begin{tabular}{ccccc} \hline \hline
@@ -443,6 +435,19 @@ Details of RRR degradation for main superconducting magnets of pion capture sole
  \caption{Details of RRR degradation for pion capture solenoid after 280-day operation.}
  \label{RRRdeg}
 \end{table}
+ \begin{figure}[H]
+   \begin{subfigure}{0.3\textwidth}
+    \centering
+	\includegraphics[scale=0.45]{chapter5/fig/degradation.eps}
+   \end{subfigure}
+   \hspace{0.2\textwidth}
+   \begin{subfigure}{0.3\textwidth}
+    \centering
+	\includegraphics[scale=0.45]{chapter5/fig/rrrmagnets.eps}
+   \end{subfigure}
+   \caption{Predicted the RRR-neutron curve from the neutron irradiation test in KUR.}
+   \label{4rrr}
+  \end{figure}
 
  \subsection{Discussion}
 ~~~~~~The radiation induced damage of material can be estimated by one parameter called Displacement Per Atom (DPA) which is given by
@@ -464,6 +469,16 @@ Using the neutron flux and displacement cross section of aluminium in figure~\re
  \end{tabular}
  \caption{DPA estimation for the neutron irradiation test of pure aluminium. NRT (COMET) is estimated PHITS code, and the others are predicted by Mu2e collaboration with same experiment.}
 \end{table}
+Here, BCA + MD, ABBN, and NRT (Mu2e) are the estimation with different DPA models from Mu2e collaboration.
+Our estimation is about 3.0$\times$10$^{-5}$ DPA.
+J.A. Horak et al. measure the neutron induced resistivity of metals, as a result, the induced resistivity for aluminium is 382.3 n$\Omega\cdot$cm per 5.6$\times$10$^{-4}$ Frenkel pair~\cite{horak}.
+In addition, reference~\cite{yu} shows many results of Frenkel pair resistivity of aluminium in table~\ref{frank}.
+It shows that J.A. Horak's data is the maximum value compared with the other references.
+The relation between DPA and RRR by using these prediction from experimental data is shown in~\ref{dpaaa}.
+
+For the COMET phase-II experiment, the DPA peak of CS1 coil is about 1.1$\times$10$^{-5}$ DPA for 280-day operation from the prediction of PHITS code with NRT model.
+The aluminium strip will not degrade lower than 100 for 280-day operation from this estimation.
+However, the design has to consider the worst situation for superconducting coils, the uncertainty of the prediction from neutron DPA and neutron fluence needs to be reconsidered.
 \begin{table}[H]
  \centering
  \begin{tabular}{ccc} \hline \hline
@@ -483,19 +498,10 @@ Using the neutron flux and displacement cross section of aluminium in figure~\re
  \caption{The Frenkel pair resistivity $\rho_{FP}$ of aluminium. Methods of the data derivation: Exp D is X-ray diffraction method, Exp T is the threshold energy determination for electron irradiation of single crystals at low temperature. Exp T(p) is for the electron irradiation of polycrystals, Evl S is the estimation made with the help of the systematics. Adp is the data adopted by the authors of cited work~\cite{yu}. KEK is the neutron irradiation test in KUR.}
  \label{frank}
 \end{table}
-Here, BCA + MD, ABBN, and NRT (Mu2e) are the estimation with different DPA models from Mu2e collaboration.
-Our estimation is about 3.0$\times$10$^{-5}$ DPA.
-J.A. Horak et al. measure the neutron induced resistivity of metals, as a result, the induced resistivity for aluminium is 382.3 n$\Omega\cdot$cm per 5.6$\times$10$^{-4}$ Frenkel pair~\cite{horak}.
-In addition, reference~\cite{yu} shows many results of Frenkel pair resistivity of aluminium in table~\ref{frank}.
-It shows that J.A. Horak's data is the maximum value compared with the other references.
-The relation between DPA and RRR by using these prediction from experimental data is shown in~\ref{dpaaa}.
-
-For the COMET phase-II experiment, the DPA peak of CS1 coil is about 1.1$\times$10$^{-5}$ DPA for 280-day operation from the prediction of PHITS code with NRT model.
-The aluminium strip will not degrade lower than 100 for 280-day operation from this estimation.
-However, the design has to consider the worst situation for superconducting coils, the uncertainty of the prediction from neutron DPA and neutron fluence needs to be reconsidered.
 \begin{figure}[H]
  \centering
  \includegraphics[scale=0.5]{chapter4/fig/dpadegradation.eps}
  \caption{A relation between DPA and RRR. Orange line is the maximum radiation induced resistivity, and the others are the prediction of KUR irradiation test with different displacement cross section model.}
  \label{dpaaa}
 \end{figure}
+

@@ -1,4 +1,4 @@
-\documentclass[a4paper, 11pt, twoside]{book}
+\documentclass[a4paper, 11pt, oneside]{book}
 
 % including package
 \usepackage{times}
@@ -6,16 +6,17 @@
 \usepackage{fancyhdr}
 \usepackage{amsmath, amsthm, mathtools}
 \usepackage[dvipdfmx]{graphicx}
-\usepackage[top=25truemm,bottom=25truemm,left=22.5truemm,right=22.5truemm]{geometry}
+\usepackage[top=25truemm,bottom=25truemm,left=30truemm,right=15truemm]{geometry}
 \usepackage[nottoc, notlot, notlof]{tocbibind}
 \usepackage{CJKutf8}
-\usepackage[titletoc]{appendix}
+\usepackage{appendix}
 \usepackage{float}
 \usepackage{subcaption}
 \usepackage[dvipdfmx, colorlinks=true, 
-			linkcolor=blue, citecolor=red,
+			linkcolor=black, citecolor=black,
 			bookmarks=true, bookmarkstype=toc]{hyperref}
 \usepackage{url}
+\usepackage{appendix}
 \usepackage[font=small,labelfont=bf]{caption}
 \usepackage{setspace}
 \setstretch{1.28}
@@ -58,9 +59,27 @@
   % reference
   \bibliographystyle{phcpc}
   \bibliography{others/reference}
- 
- \appendix
+
+%\begin{appendices}
+%\appendixpage
+%\noappendicestocpagenum
+%\addappheadtotoc
+\newcommand{\appendixpagenumbering}{
+  \break
+    \pagenumbering{arabic}
+	  \renewcommand{\thepage}{\thesection-\roman{page}}
+	  }
+
+\renewcommand{\thesection}{\Alph{section}}
+\renewcommand{\thesubsection}{\thesection-\Roman{subsection}}
+
+\appendix
+\noappendicestocpagenum
+\addappheadtotoc
+\appendixpage
+\appendixpagenumbering
   \input{others/appendix1}
+%\end{appendices}
 
  \printindex
 

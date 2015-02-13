@@ -1,12 +1,12 @@
 \chapter{Radiation estimation}
-~~~~~~Since the high energy and high intensity proton beam is used in COMET experiment, the radiation is an important issue for superconducting magnet design.
-In this chapter, the details of prompt and residual radiation will be described.
-Moreover, one radiation shield is designed for protecting the pion capture solenoid.
+~~~~~~Since high intensity proton beam with 8 GeV will be used in COMET experiment, the radiation is an important issue for superconducting magnet design.
+In this chapter, the estimations of prompt and residual radiation are described.
+Moreover, one radiation shield is optimized for protecting the pion capture solenoid.
 
  \section{Hadronic models}
-~~~~~~Monte Carlo code is usually used in high energy physics to simulate the physical process.
+~~~~~~Monte Carlo code is usually employed in high energy physics to simulate the physical process.
 Recently, it is also playing increasingly role in the other studies, like heavy ion therapy~\cite{therapy}, nuclear fusion reactor et al.
-The hadron model in some Monte Carlo codes which is used in the paper is introduced as follows.
+Several hadron models in some Monte Carlo codes which is used in the paper is introduced as follows.
 
   \subsection{PHITS}
 ~~~~~~Particle and Heavy Ion Transport code System (PHITS) is developed by Japan Atomic Energy Agency (JAEA)~\cite{phits}.
@@ -44,7 +44,7 @@ G4 also provides the FTF String model from the range of 5 GeV to 20 TeV and QG S
 %\end{table}
 
  \section{Modification of PHITS code}
-~~~~~~PHITS code has no powerful function like GEANT4, like which cannot bend the charged particle with field map, no muon physics induced besides the Michel decay and etc.
+~~~~~~PHITS code has no powerful function like GEANT4, which cannot bend the charged particle with field map, no muon physics induced besides the Michel decay and etc.
 Here, the modification of PHITS code will be introduced to achieve the realistic simulation of COMET experiment.
 The main optimization of PHITS code is listed as follows.
 \begin{itemize}
@@ -57,11 +57,13 @@ The main optimization of PHITS code is listed as follows.
 \end{itemize}
 
  \subsection{Proton beam}
-The proton beam source is simulated by the accelerator simulation code, called TURTLE in COMET experiment.
-The simulation of TURTLE has been already shown in figure~\ref{beam}, and one bunch of the proton beam where locates in front of production target is gaussian distribution with size of 2 cm $\times$ 0.8 cm and momentum of 8.9 MeV/c.
-PHITS can read the external file as the radiation source, but due to the different coordinate used in PHITS and TURTLE.
+~~~~~~The proton beam source is simulated by the accelerator simulation code, TURTLE.
+As the TURTLE simulation shown in figure~\ref{beam}, one bunch of the proton beam where locates in front of production target is gaussian distribution with size of 2 cm $\times$ 0.8 cm and momentum of 8.9 MeV/c.
+Its momentum vector is point to the target.
+
+PHITS can read the external file as a source, but due to the different coordinate used in PHITS and TURTLE.
 One script has been written to convert the coordinate and pretend the PHITS dump file to be read. 
-The proton beam used in radiation estimation is TURTLE data for phase-I and gaussian beam for phase-II, respectively.
+The proton beam used in radiation estimation is from TURTLE data for phase-I and gaussian beam for phase-II, respectively.
 \begin{figure}[H]
  \centering
  \includegraphics[scale=0.6]{chapter3/fig/beam.eps}
@@ -70,17 +72,18 @@ The proton beam used in radiation estimation is TURTLE data for phase-I and gaus
 \end{figure}
  
  \subsection{Magnetic field}
-~~~~~~As for nowadays' PHITS, it still cannot bend the charged particles in user's field map.
+~~~~~~As for current PHITS, it still cannot bend the charged particles in field map.
 However, the radiation estimation is affected by the magnetic field sensitively.
 To solve this issue, one magnetic field interpolation subroutine is included into PHITS code.
-The details of the magnetic field interpolation is described in appendix A.
+The details of the magnetic field interpolation is described in appendix.
 The charged particles are bended with a circular path in the magnetic field which is written as
 \begin{equation}
- R = \frac{p}{eB} = \frac{m\gamma \beta c}{eB} = p \cdot \frac{3.336}{B}
+ R = \frac{p_\perp}{eB} = \frac{m\gamma \beta c}{eB} = p_\perp \cdot \frac{3.336}{B}
 \label{beq}
 \end{equation}
-To ensure the magnetic field interpolation, the uniform field map with 5 Tesla has been tested and the tracking is shown in~\ref{2uniform}.
-Following the equation~\ref{beq}, the bending radius of 0.1 GeV/c momentum electron in 5 Tesla is 6.6 cm.
+where $p_\perp$ is the transverse momentum with unit of GeV/c and $B$ is the magnetic field with unit of Tesla.
+To confirm the magnetic field interpolation, the uniform field map with 5 Tesla has been tested and its tracking is shown in~\ref{2uniform}.
+Following the equation~\ref{beq}, the bending radius of incident negative pion with 0.113 GeV/c momentum and 10 degree in 5 Tesla is 1.2 cm.
 The radius from the simulation is totally agree with the calculation.
 % \begin{figure}[H]
 %  \centering
@@ -101,9 +104,9 @@ The radius from the simulation is totally agree with the calculation.
  \caption{Tracking of 40 MeV (113 MeV/c) negative pion with uniform 5 Tesla field. Pion is shoted at (0,0,0) with 10 degree.}
  \label{2uniform}
 \end{figure}
-The field map included into COMET PHITS simulation is calculated by Finite Element Method (FEM) with iron yoke, which is shown in figure~\ref{field}.
+The field map included into COMET simulation is calculated by Finite Element Method (FEM) with iron yoke, which is shown in figure~\ref{field}.
 There are still some missing part of field map, like the field around the iron yoke and proton beam transport pipe.
-It will affect the proton beam transportation definitely, but this map is enough for the radiation study.
+It affects the proton beam transportation definitely, but this map is enough for the radiation study.
  \begin{figure}[H]
   \begin{subfigure}{0.3\textwidth}
    \centering
@@ -120,7 +123,7 @@ It will affect the proton beam transportation definitely, but this map is enough
 
  \section{Prompt radiation}
   \subsection{Physical model comparison}
-~~~~~~Since PHITS does not include a lot of physics model involved muon such as muon decay on the orbits, specific X-ray of muon capture, rate decay of muon et al., on the other hand, GEANT4 physics model is almost implement compared to PHITS, the comparison of particle yield between GEANT4 and PHITS is necessary to make sure the missing physics model can be neglected in radiation estimation.
+~~~~~~Since PHITS does not include a lot of physics model involved muon such as muon decay on the orbits, specific X-ray of muon capture, rate decay of muon and etc. but GEANT4 did, the comparison of particle yield between GEANT4 and PHITS is necessary to make sure whether the missing physics model can be neglected in radiation estimation or not.
 
 The comparison is taken by using a very simple geometry, which is only one graphite target with 60 cm length and 2 cm radius.
 Incident proton beam is 8 GeV with gaussian distribution.
@@ -139,8 +142,8 @@ For the neutron, the production yield has 17\% difference between GEANT4 and PHI
  \label{2model}
 \end{table}
 The backward production of muon and pion at high energy region is difficult to predict because of the lack of experimental data.
-Especially for the COMET experiment which is employed the backward muon, prediction of backward muon and pion is quite different from the different physics model.
-Thus, as the comparison of backward pion and muon at 1 m far from the target, compared with JAM\_BERT\_JENDL, the pion energy spectrum predicted by QGSP\_BERT\_G4NDL has high energy tail and lower peak.
+Especially for the COMET experiment which employs the backward muon, prediction of backward muon and pion is quite different from the different physics model.
+Thus, as the comparison of backward pion and muon at 1 m far from the target, not only the momentum spectrum but also the momentum direction are similar.
 Because the pion only comes from the high energy cascade model, the different must be between JAM and QGSP.
 \begin{figure}[H]
  \begin{subfigure}{0.3\textwidth}
@@ -429,15 +432,6 @@ The details of shielding design is listed in table~\ref{hrsdet}.
  \caption{Details of the shielding design. CS1 is cut to 3 parts along the z axis, 12 parts along the azimuthal direction.}
  \label{hrsdet}
 \end{table}
-
-As for the muon yield, it does not depend on the material of radiation but the backward radius of shield.
-Figure~\ref{radius} shows that the muon and pion yield increases about 9\% after the radius is changed from 36 cm to 50 cm.
-\begin{figure}[H]
- \centering
- \includegraphics[scale=0.43]{chapter3/fig/muon.eps}
- \caption{A relation of muon and pion yield with shielding backward radius. Current shielding backward radius is 36 cm. Black line: $\mu^-$, red line: $\pi^-$, blue line: $\mu^- + \pi^-$.}
- \label{radius}
-\end{figure}
 
  \section{Residual radiation estimation}
 ~~~~~~To achieve the muon with higher intensity, the graphite target will be replaced by pure tungsten target after phase-I experiment finished.
