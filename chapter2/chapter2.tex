@@ -6,7 +6,7 @@ In phase-II experiment, nowadays' 90 degree bent transport solenoid will be exte
  \section{Pion capture solenoid}
 ~~~~~~Pion capture solenoid shown in figure~\ref{capturesol} is most critical magnet for capturing the pions from production target with a large solid angle.
 Considering the valleys of magnetic field causes the trapping of charged particle, the magnetic field distribution must be smooth.
-The details of the magnetic field of pion capture solenoid is shown in table~\ref{magfldcs}.
+The details of the magnetic design of pion capture solenoid is shown in table~\ref{magfldcs}.
 \begin{figure}[H]
  \centering
  \includegraphics[scale=0.4]{chapter2/fig/capturesol.pdf}
@@ -147,12 +147,12 @@ The time constant is written as
 Another way is to make the superconducting magnet quench to increase the self resistance by external heater.
 It needs external power supply to heat the heater.
 
-The quench protection system for pion capture solenoid is shown in figure~\ref{capture}.
+A tentative design of the quench protection system for pion capture solenoid is shown in figure~\ref{capture}.
 All superconducting magnets in pion capture solenoid are connected together.
 The power supply for capture solenoid is 2700 A, and 4 reserve trim power supplies and dump resistors are to reduce the current for TS1b, TS1d, TS1e and TS1f.
 A dump resistor for capture solenoid is 0.185 $\Omega$, supposed the power supply is 500 V.
-Once quench is occurred in one of the superconducting magnet of pion capture solenoid, the power supply will be turned off, and quench back heater will heat the all magnets.
-Total resistivity of pion capture solenoid increases after heated, thus, the current will decay to zero in 1 min.
+Once quench is occurred in one of the superconducting magnet of pion capture solenoid, the power supply will be turned off, and the magnet stored energy is extracted by the dump resistors.
+As for the current design, the quench back heater will not be employed in pion capture solenoid due to the high resistivity of aluminium stabilizer after quench.
 \begin{figure}[H]
  \centering
  \includegraphics[scale=0.38]{chapter2/fig/capture.pdf}
@@ -180,11 +180,10 @@ All of the coils of muon transport solenoid are connected to each other.
 Details of each coil and design parameters are listed in table~\ref{tscoil} and \ref{designts}.
 \begin{figure}[H]
  \centering
- \includegraphics[scale=0.40]{chapter2/fig/transportsol.pdf}
+ \includegraphics[scale=0.38]{chapter2/fig/transportsol.pdf}
  \caption{Schematic layout of muon transport solenoid and detector solenoid.}
  \label{transol}
 \end{figure}
-
 \begin{table}[H]
  \centering
  \begin{tabular}{ll} \hline \hline
@@ -216,7 +215,8 @@ Details of each coil and design parameters are listed in table~\ref{tscoil} and 
 \end{table}
 
 \subsection{Quench protection}
-~~~~~~The coils in transport solenoid is not stabilized by aluminium, their self resistivity is very small.
+~~~~~~The coils in transport solenoid is not stabilized by aluminium and with high inductance.
+To decrease the current quickly, the self resistivity must be high enough.
 Thus, one semi-active quench back heater is employed in transport solenoid, which is shown in figure~\ref{transqu}.
 \begin{figure}[H]
  \centering
@@ -230,7 +230,7 @@ Every heater will be actived by it own current and heat every coil in muon trans
 
 Diode is switch to prevent the current flows to the heaters during the operation and turn on the heater when quench.
 In the case of muon transport solenoid, it operates in the cold mass (4.2 K).The radiation may cause the turn-on voltage reduced 
-Considering the radiation may cause the turn-on voltage reduced and temperature rising, the radiation test is described in next chapter.
+Considering the radiation may cause the degradation of forward voltage and temperature rising, the radiation test is described in next chapter.
 
 
 
